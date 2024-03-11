@@ -1,0 +1,132 @@
+.footerWrapper svg {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.footerWrapper svg path {
+  color: #999;
+}
+
+.footerContainer {
+  background-color: #cccccc;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footerContainer h4 {
+  text-align: center;
+  border-bottom: 3px solid #e6e5e5;
+  padding-bottom: 15px;
+}
+
+.recentContainer {
+  margin-top: 30px;
+}
+
+.recentContainer span {
+  color: #757575;
+}
+
+.recentContainer p {
+  line-height: 1.4;
+}
+
+.recentContainer a {
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.recentContainer a:hover {
+  color: #008ca1;
+}
+
+.borderBottomFooter {
+  border-bottom: 1px solid #efefef;
+}
+
+.footerLower {
+  padding: 30px;
+  background: #313131;
+}
+
+.footerLower a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #999;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.footerLower a span {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.footerLower a:hover {
+  color: #6eb48c;
+}
+
+.footerLower a:hover svg {
+  background: #6eb48c;
+  border-color: #6eb48c;
+}
+
+.footerLower a:hover svg path {
+  color: white;
+}
+
+.flexFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1px solid #999;
+  padding-bottom: 30px;
+}
+
+.flexFooter a {
+  padding: 0 20px;
+}
+
+.copyrights {
+  text-align: center;
+  color: #999 !important;
+}
+
+.copyrights p {
+  font-style: italic;
+}
+
+.copyrights a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footerContainer {
+    display: none;
+  }
+  .recentContainer {
+    margin-top: auto;
+  }
+  .flexFooter a span {
+    display: none;
+  }
+}
+/*# sourceMappingURL=footerstyle.module.css.map */

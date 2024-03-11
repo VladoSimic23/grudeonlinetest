@@ -1,0 +1,161 @@
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+        padding: 0;
+        display: flex;
+        width: 100%;
+        justify-content: space-between; 
+        list-style: none;
+        li {
+            
+            a {
+                text-decoration: none;
+                font-size: 12px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: #313131;
+            }
+        }
+    }
+}
+
+.navWrap {
+    border-bottom: 1px solid rgb(211, 211, 211);
+    border-top: 1px solid rgb(211, 211, 211);
+    position: relative;
+}
+.imageContainer {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        position: relative !important;
+        height: auto !important;
+        width: auto !important;
+    }
+}
+
+.searchStyle {
+    width: 100%;
+    input {
+        padding: 18px 20px;
+        border: none;
+        width: 100%;
+    }
+    button {
+        margin-left: 10px;
+    }
+}
+.navMarginLeft {
+    margin-left: 100px;
+    svg {
+        font-size: 18px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+}
+
+
+///////
+///  
+/* NavMenu.css */
+
+.navMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //padding: 15px;
+    //background-color: #33333313;
+    width: 100%;
+    color: #fff;
+  }
+  
+//   .nav-logo {
+//     font-size: 1.5rem;
+//     font-weight: bold;
+//   }
+  
+  .navItems {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .navItems a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .mobileMenuToggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Initially hide on larger screens */
+  }
+  
+  @media (max-width: 992px) {
+    .navMobileWrap {
+        display: flex;
+        align-items: center;
+    }
+    .navMarginLeft {
+        margin-right: 20px;
+      }
+    .navItems {
+      display: none; /* Hide items on smaller screens */
+      flex-direction: column;
+      position: absolute;
+      top: 41px; /* Adjust the top position according to your design */
+      left: 0;
+      width: 100%;
+      background-color: #403633;
+      z-index: 10;
+      padding: 10px;
+     
+      ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        li {
+            text-align: center;
+            margin-bottom: 8px;
+            a {
+                color: white !important;
+            }
+        }
+      } 
+    
+       
+      
+    }
+  
+    .navItems.mobileOpen {
+      display: flex;
+    }
+  
+    .mobileMenuToggle {
+      display: block; /* Show the toggle button on smaller screens */
+      margin-right: 20px;
+    }
+    .navWrap {
+        top: 66px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        z-index: 10;
+        border-top: none;
+    }
+    .searchStyle {
+        input {
+            padding: 12px 20px;
+        }
+    }
+    .imageContainer {
+        padding: 15px 0;
+    }
+  }
+  

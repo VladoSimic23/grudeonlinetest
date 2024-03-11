@@ -1,0 +1,75 @@
+.mobilePost {
+   
+    img {
+        position: relative !important;
+    
+        //border-radius: 15px;
+        object-fit: cover;
+    }
+    h4 {
+        line-height: 0;
+        margin-top: 5px;
+        a {
+            font-size: 14px;
+            text-decoration: none;
+            line-height: 1.4;
+        }
+    }
+}
+.singleMobilePost {
+    border-bottom: 1px solid rgb(219, 219, 219);
+    padding: 15px 0;
+}
+.singleMobilePostBottom {
+    font-size: 13px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span:nth-child(1) {
+        border-bottom: 1px solid #e79645;
+        padding-bottom: 2px;
+    }
+}
+.singleMobilePostTop {
+    img {
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+.loadMoreBtn {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    button {
+        font-size: 12px;
+        border: none;
+        padding: 8px 20px 10px 20px;
+        text-align: center;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+        cursor: pointer;
+        background: #ea8a2b;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: all 0.2s ease-in-out;
+        border-radius: 5px;
+        &:hover {
+            background:#e79645;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .mobilePost {
+        display: none;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .mobilePost {
+        margin-top: 20px;
+    }
+}

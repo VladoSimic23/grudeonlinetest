@@ -1,0 +1,114 @@
+// src/index.js or src/App.css
+
+.footerWrapper {
+    svg {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #999;;
+        padding: 10px;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        path {
+            color: #999;
+        }
+    }
+}
+
+.footerContainer {
+    background-color: #cccccc;
+    padding: 40px 0;
+    margin-top: 60px;
+    h4 {
+        text-align: center;
+        border-bottom: 3px solid rgb(230, 229, 229);
+        padding-bottom: 15px;
+    }
+
+}
+
+
+.recentContainer {
+    margin-top: 30px;
+    span {
+        color: rgb(117, 117, 117)
+    }
+    p {
+        line-height: 1.4;
+    }
+    a {
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            color: #008ca1;
+        }
+    }
+}
+.borderBottomFooter {
+    border-bottom: 1px solid rgb(239, 239, 239);
+}
+.footerLower {
+    padding: 30px;
+    background: #313131;
+    a {
+        display: flex;
+        align-items: center;
+        color: #999;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        span {margin-left: 15px; font-weight: bold;}
+        &:hover {
+            color: #6eb48c;
+            svg {
+                background: #6eb48c;
+                border-color: #6eb48c;
+                path {
+                    color: white;
+                }
+            }
+          
+        }
+    }
+}
+
+.flexFooter {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #999;
+    padding-bottom: 30px;
+    a {
+        padding: 0 20px;
+    }
+}
+.copyrights {
+    text-align: center;
+    color: #999 !important;
+    p {
+        font-style: italic;
+    }
+    a {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footerContainer {
+        display: none;
+    }
+    // .footerLower {
+    //     display: none;
+    // }
+    .recentContainer {
+        margin-top: auto;
+    }
+    .flexFooter {
+        a {
+            span {
+                display: none;
+            }
+        }
+    }
+}

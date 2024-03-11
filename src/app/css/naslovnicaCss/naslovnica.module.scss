@@ -1,0 +1,111 @@
+.naslovnicaHeading {
+  border-bottom: 2px solid #008ca1;
+  padding-bottom: 6px;
+  a {
+    text-decoration: none;
+    background-color: #008ca1;
+    color: white !important;
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+.grid2GrudeOnline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+.grid3GrudeOnline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.imageOverlay {
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.grudeOnlineMainImg {
+  width: 100%;
+  margin-top: 15px;
+}
+.naslovnaOverlay {
+  position: relative;
+
+  img {
+    object-fit: cover;
+  }
+  a {
+    &:hover {
+      .imageOverlay {
+        background: rgba(255, 255, 255, 0.116);
+      }
+    }
+  }
+}
+
+.linkFont {
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: #008ca1;
+  }
+}
+.grudeOnlineDate {
+  span {
+    color: #888888;
+    padding: 20px 0 10px 0;
+    font-size: 14px;
+    &::after {
+      background: #008ca1;
+      height: 1px;
+      width: 66px;
+      display: block;
+      content: "";
+      margin-top: 10px;
+    }
+  }
+}
+.grudeOnlineGrid13 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  padding: 15px 0 10px 0;
+}
+.grudeOnlineContent {
+  h3 {
+    margin-top: 0;
+    a {
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: #008ca1;
+      }
+    }
+  }
+  span {
+    font-size: 14px;
+    color: #888888;
+  }
+}
+.ostaleVijesti {
+  margin-top: 20px;
+  img {
+    width: 100%;
+  }
+}
+.ostalo {
+  h3 {
+    margin-bottom: 5px;
+  }
+}
+.sportBorder {
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.gospSportMargin {
+    margin-top: 20px;
+}
