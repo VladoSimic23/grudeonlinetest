@@ -1,6 +1,7 @@
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const GrudeOnlineNaslovnaDetails = ({ data }: any) => {
   const {
@@ -24,7 +25,7 @@ const GrudeOnlineNaslovnaDetails = ({ data }: any) => {
         <h3>
           <Link href={`/${slug}`}>{title}</Link>
         </h3>
-        <span>{date}</span>
+        <span>{formatDateToCroatian(date)}</span>
       </div>
     </div>
   );

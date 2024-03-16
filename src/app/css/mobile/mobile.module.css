@@ -40,10 +40,10 @@
 }
 
 .singleMobilePostTop img {
-  max-height: 200px;
+  max-height: 220px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 .loadMoreBtn {

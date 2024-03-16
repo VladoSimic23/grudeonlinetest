@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const Gospodarstvo = async () => {
-  revalidatePath("/gospodarstvo");
+  //revalidatePath("/gospodarstvo");
   return (
     <div className={styles.postList}>
       <h1 className={styles.headingEdit}>GOSPODARSTVO</h1>

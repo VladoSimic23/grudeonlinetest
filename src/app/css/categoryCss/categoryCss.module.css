@@ -43,6 +43,7 @@
 
 .flexDate {
   display: block;
+  margin-top: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -75,9 +76,13 @@
     margin-right: 20px;
   }
   .grid2PostList {
-    -ms-grid-columns: 1.5fr 4fr;
-        grid-template-columns: 1.5fr 4fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     grid-gap: 10px;
+  }
+  .grid2PostList img {
+    max-height: 220px;
+    border-radius: 7px;
   }
   .categoryPaddingBottom {
     padding: 8px 0;

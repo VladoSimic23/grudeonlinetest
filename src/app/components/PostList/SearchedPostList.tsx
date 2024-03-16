@@ -3,6 +3,8 @@ import React from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import Image from "next/image";
+import { formatDateToCroatian } from "@/app/lib/utils";
+import { FaComments } from "react-icons/fa";
 
 const SearchedPostList = ({ data }: { data: any }) => {
   return (
@@ -11,14 +13,14 @@ const SearchedPostList = ({ data }: { data: any }) => {
         return (
           <div
             key={idx}
-            className={`${styles.grid2} ${categoryStyles.categoryPaddingBottom}`}
+            className={`${categoryStyles.grid2PostList} ${categoryStyles.categoryPaddingBottom}`}
           >
             <Link href={`/${item?.slug}`}>
               <div className={styles.relativeEle}>
                 <Image
                   src={item?.featuredImage?.node?.sourceUrl}
                   alt={item?.title}
-                  sizes="500px"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   fill
                   priority={true}
                 />
@@ -27,7 +29,12 @@ const SearchedPostList = ({ data }: { data: any }) => {
             </Link>
             <div className={categoryStyles.flexCategory}>
               <Link href={`/${item?.slug}`}>{item?.title}</Link>
-              <span>{item?.date}</span>
+              <div className={categoryStyles.flexDate}>
+                <span>{formatDateToCroatian(item?.date)}</span>
+                <p>
+                  {item.comments.nodes.length} <FaComments />
+                </p>
+              </div>
               <div
                 className={styles.dangerHtml}
                 dangerouslySetInnerHTML={{

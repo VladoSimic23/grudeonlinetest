@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const Vijesti = () => {
-  revalidatePath("/vijesti");
+  //revalidatePath("/vijesti");
   return (
     <div className={styles.postList}>
       <h1 className={styles.headingEdit}>VIJESTI</h1>

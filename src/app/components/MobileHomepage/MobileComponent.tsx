@@ -4,6 +4,9 @@ import Link from "next/link";
 import mobileStyles from "../../css/mobile/mobile.module.css";
 import { FaComments } from "react-icons/fa";
 import { revalidatePath } from "next/cache";
+import { format } from "date-fns";
+import { hr } from "date-fns/locale";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileComponent = async () => {
   //revalidatePath("/");
@@ -31,7 +34,7 @@ const MobileComponent = async () => {
               </h4>
             </div>
             <div className={mobileStyles.singleMobilePostBottom}>
-              <span>{item?.date}</span>
+              <span>{formatDateToCroatian(item?.date)}</span>
               <span>
                 {item?.comments?.nodes?.length} <FaComments />
               </span>

@@ -9,6 +9,7 @@ import GrudeOnlineNaslovnaDetails from "./GrudeOnlineNaslovnaDetails";
 import { temporaryApiUrl } from "@/app/lib/fetchDb";
 import { useCustomSWR } from "@/app/lib/api";
 import MobileComponent from "../../MobileHomepage/MobileComponent";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const GrudeOnlineNaslovna = () => {
   const isMobile = useWindowSize();
@@ -59,7 +60,7 @@ const GrudeOnlineNaslovna = () => {
             </Link>
           </h3>
           <div className={nasStyles.grudeOnlineDate}>
-            <span>{data[0].date}</span>
+            <span>{formatDateToCroatian(data[0]?.date)}</span>
           </div>
           <div
             className={styles.dangerHtml}

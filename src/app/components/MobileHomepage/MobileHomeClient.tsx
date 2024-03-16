@@ -6,6 +6,7 @@ import mobileStyles from "../../css/mobile/mobile.module.css";
 import Link from "next/link";
 import { FaComments } from "react-icons/fa";
 import Image from "next/image";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileHomeClient = () => {
   const [numOfPosts, setPostNum] = useState(4);
@@ -52,7 +53,7 @@ const MobileHomeClient = () => {
               </h4>
             </div>
             <div className={mobileStyles.singleMobilePostBottom}>
-              <span>{item?.date}</span>
+              <span>{formatDateToCroatian(item?.date)}</span>
               <span>
                 {item?.comments?.nodes?.length} <FaComments />
               </span>

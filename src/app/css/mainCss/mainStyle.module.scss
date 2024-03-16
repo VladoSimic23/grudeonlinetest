@@ -57,19 +57,18 @@ $borderGreys: #DEDEDE;
     width: 100%;
     height: 100%;
     min-height: 550px;
-    // img {
-    //     object-fit: cover;
-    // }   
+    img {
+        object-fit: cover;
+    }   
 }
 .relativeEle {
     position: relative;
     width: 100%;
     height: 100%;
     min-height: 280px;
-    // img {
-    //     max-width: 100%;
-    //     width: 100%;
-    // }
+    img {
+        object-fit: cover;
+    }
     &:hover {
         .hoverOverlay {
             transition: all 0.2s ease-in-out;
@@ -313,6 +312,11 @@ margin-top: 30px;
     .postList {
         margin-top: 30px;
     }
+    .singlePostHeader {
+        h1 {
+            font-size: 22px;
+        }
+    }
 
 }
 @media only screen and (max-width: 992px) {
@@ -332,7 +336,7 @@ margin-top: 30px;
     }
     .heroEle {
         img {
-            object-fit: contain;
+            object-fit: cover;
         }
     }
 }

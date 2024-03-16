@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "./components/Nav/Navbar";
+//import Navbar from "./components/Nav/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import styles from "./css/mainCss/mainStyle.module.css";
 import FooterComponent from "./components/Footer/FooterComponent";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { headers } from "next/headers";
 import { Suspense } from "react";
-import NaslovneVijesti from "./components/NaslovneVijesti/NaslovneVijesti";
+import dynamic from "next/dynamic";
+//import NaslovneVijesti from "./components/NaslovneVijesti/NaslovneVijesti";
+const NaslovneVijesti = dynamic(
+  () => import("./components/NaslovneVijesti/NaslovneVijesti"),
+  { ssr: false }
+);
+const Navbar = dynamic(() => import("./components/Nav/Navbar"), { ssr: false });
 //import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });

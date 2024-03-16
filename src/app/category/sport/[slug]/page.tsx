@@ -50,7 +50,7 @@ export async function generateStaticParams() {
 const SingleSport = async ({ params }: any) => {
   const category = "sport";
   const { slug } = params;
-  revalidatePath(`/${category}/${slug}`);
+  //revalidatePath(`/${category}/${slug}`);
   const thePost = await getSinglePost(slug);
 
   return (
@@ -62,9 +62,11 @@ const SingleSport = async ({ params }: any) => {
         <TagsComponent slug={slug} />
       </Suspense>
 
-      <CommentComponent post={thePost} />
-
-      <CommentForm slug={slug} id={thePost?.postId} />
+      {thePost.commentStatus === "open" && <CommentComponent post={thePost} />}
+      {thePost.commentStatus === "open" && (
+        <CommentForm slug={slug} id={thePost?.postId} />
+      )}
+      {thePost.commentStatus === "closed" && <h1>Comments are closed!</h1>}
     </div>
   );
 };

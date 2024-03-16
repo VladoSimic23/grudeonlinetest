@@ -6,6 +6,7 @@ import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import Image from "next/image";
 import { FaComments } from "react-icons/fa";
 import { revalidatePath } from "next/cache";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 export async function getData(category: string, nums: number) {
   const res = await getPostsByCategory(category, nums);
@@ -24,7 +25,7 @@ const PostList = async ({
   category: string;
   amount: number;
 }) => {
-  revalidatePath(`/${category}`);
+  //revalidatePath(`/${category}`);
   const data = await getData(category, amount);
 
   return (
@@ -40,7 +41,7 @@ const PostList = async ({
                 <Image
                   src={item.featuredImage.node.sourceUrl}
                   alt={item.title}
-                  sizes="(max-width: 640px) 150px, (max-width: 768px) 300px"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   fill
                   priority={true}
                 />
@@ -50,7 +51,7 @@ const PostList = async ({
             <div className={categoryStyles.flexCategory}>
               <Link href={`/${item.slug}`}>{item.title}</Link>
               <div className={categoryStyles.flexDate}>
-                <span>{item.date}</span>
+                <span>{formatDateToCroatian(item?.date)}</span>
                 <p>
                   {item.comments.nodes.length} <FaComments />
                 </p>

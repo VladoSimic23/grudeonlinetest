@@ -8,6 +8,7 @@ import { FaComments } from "react-icons/fa";
 import Image from "next/image";
 import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import styles from "../../css/mainCss/mainStyle.module.css";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobilePostListCategory = ({ category }: { category: string }) => {
   const [numOfPosts, setPostNum] = useState(4);
@@ -53,7 +54,7 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
             <div className={categoryStyles.flexCategory}>
               <Link href={`/${item.slug}`}>{item.title}</Link>
               <div className={categoryStyles.flexDate}>
-                <span>{item.date}</span>
+                <span>{formatDateToCroatian(item?.date)}</span>
                 <p>
                   {item.comments.nodes.length} <FaComments />
                 </p>

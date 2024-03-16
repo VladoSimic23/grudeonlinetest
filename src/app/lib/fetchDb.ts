@@ -62,6 +62,7 @@ export async function fetchAPI(query: any, { variables }: any = {}) {
   };
 
   const res = await fetch(API_URL, {
+    next: { revalidate: 60, tags: ["collection"] },
     method: "POST",
     headers,
     body: JSON.stringify({

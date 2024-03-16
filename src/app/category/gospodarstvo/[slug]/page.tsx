@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 
 const SingleGospodarstvo = async ({ params }: any) => {
   const category = "gospodarstvo";
-  //revalidatePath(`/${category}`);
+  // revalidatePath(`/${category}`);
   const { slug } = params;
   const thePost = await getSinglePost(slug);
 
@@ -34,12 +34,11 @@ const SingleGospodarstvo = async ({ params }: any) => {
       <Suspense>
         <TagsComponent slug={slug} />
       </Suspense>
-      <Suspense>
-        <CommentComponent post={thePost} />
-      </Suspense>
-      <Suspense>
+      {thePost.commentStatus === "open" && <CommentComponent post={thePost} />}
+      {thePost.commentStatus === "open" && (
         <CommentForm slug={slug} id={thePost?.postId} />
-      </Suspense>
+      )}
+      {thePost.commentStatus === "closed" && <h1>Comments are closed!</h1>}
     </div>
   );
 };

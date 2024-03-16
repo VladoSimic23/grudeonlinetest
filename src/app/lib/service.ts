@@ -9,6 +9,7 @@ export async function getAllPosts() {
             title
             content
             postId
+            commentStatus
             featuredImage {
               node {
                 sourceUrl(size: LARGE)
@@ -42,6 +43,7 @@ export async function getSinglePost(slug: string) {
             content
             date
             postId
+            commentStatus
             featuredImage {
               node {
                 sourceUrl(size: LARGE)

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import Link from "next/link";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const NaslovneVijestiDetails = ({ data }: any) => {
   return (
@@ -13,7 +14,7 @@ const NaslovneVijestiDetails = ({ data }: any) => {
         <div className={styles.datumKoment}>
           <h3>{data.title}</h3>
           <div>
-            <span>{data.date}</span> |{" "}
+            <span>{formatDateToCroatian(data?.date)}</span> |{" "}
             <span>{data.comments.nodes.length} komentara</span>
           </div>
         </div>

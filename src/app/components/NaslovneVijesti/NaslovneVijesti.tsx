@@ -7,6 +7,7 @@ import Link from "next/link";
 import useWindowSize from "@/app/lib/useWindowSize";
 import { temporaryApiUrl } from "@/app/lib/fetchDb";
 import { useCustomSWR2 } from "@/app/lib/api";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const NaslovneVijesti = () => {
   //const [vijesti, setVijesti] = useState<any[]>([]);
@@ -102,7 +103,7 @@ const NaslovneVijesti = () => {
               <div className={styles.datumKoment}>
                 <h3>{data[0].title}</h3>
                 <div>
-                  <span>{data[0].date}</span> |{" "}
+                  <span>{formatDateToCroatian(data[0]?.date)}</span> |{" "}
                   <span>{data[0].comments.nodes.length} komentara</span>
                 </div>
               </div>

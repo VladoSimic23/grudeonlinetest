@@ -5,10 +5,10 @@ import SearchBar from "../SearchComp/SearchBars";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import navStyles from "../../css/nav/nav.module.css";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {} from "@fortawesome/free-brands-svg-icons";
 import { FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import Link from "next/link";
 // import SearchBar from "../SearchComp/SearchBars";
 
 const Navbar = () => {
@@ -54,22 +54,27 @@ const Navbar = () => {
     <div className={navStyles.navMobileWrap}>
       <div className={styles.container}>
         <div className={navStyles.imageContainer}>
-          <Image
-            src={"/Grude_online_Logotip2.png"}
-            // fill
-            // sizes="(max-width: 992px) 350px, (min-width: 993px) 330px"
-            width={isMobileMenuOpen ? 50 : 330}
-            height={42}
-            alt="Grude-Online"
-            priority
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/Grude_online_Logotip2.png"}
+              // fill
+              // sizes="(max-width: 992px) 350px, (min-width: 993px) 330px"
+              width={330}
+              height={42}
+              alt="Grude-Online"
+              priority
+            />
+          </Link>
         </div>
       </div>
       <div className={navStyles.navWrap}>
         <div className={styles.container}>
           <div className={navStyles.navbar}>
             {/**/}
-            <div className={navStyles.navMenu}>
+            <div
+              className={`${navStyles.navMenu}`}
+              style={isSearch ? { width: "0" } : { width: "100%" }}
+            >
               <div
                 className={`${navStyles.navItems} ${
                   isMobileMenuOpen ? navStyles.mobileOpen : ""

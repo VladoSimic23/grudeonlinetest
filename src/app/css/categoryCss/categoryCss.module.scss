@@ -34,6 +34,7 @@ $borderColor:#dddddd;
 }
 .flexDate {
     display: block;
+    margin-top: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -58,8 +59,12 @@ $borderColor:#dddddd;
         }
     }
     .grid2PostList {
-        grid-template-columns: 1.5fr 4fr;
+        grid-template-columns: 1fr;
         grid-gap: 10px;
+        img {
+            max-height: 220px;         
+            border-radius: 7px;
+        }
     }
     .categoryPaddingBottom {
 

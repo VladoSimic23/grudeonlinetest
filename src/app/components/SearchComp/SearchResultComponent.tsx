@@ -46,6 +46,17 @@ const SearchResultsComponent = () => {
                             name
                           }
                         }
+                        comments {
+                          nodes {
+                            content
+                            date
+                            author {
+                              node {
+                                name
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }

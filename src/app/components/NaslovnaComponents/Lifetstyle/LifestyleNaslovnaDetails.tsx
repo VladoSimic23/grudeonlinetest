@@ -1,6 +1,7 @@
 import Link from "next/link";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import Image from "next/image";
+import { formatDateToCroatian } from "@/app/lib/utils";
 
 const LifestyleNaslovnaDetails = ({ data }: any) => {
   const {
@@ -23,7 +24,7 @@ const LifestyleNaslovnaDetails = ({ data }: any) => {
         <h3>
           <Link href={`/${slug}`}>{title}</Link>
         </h3>
-        <span>{date}</span>
+        <span>{formatDateToCroatian(date)}</span>
       </div>
     </div>
   );
