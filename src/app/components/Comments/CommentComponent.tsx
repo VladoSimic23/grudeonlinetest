@@ -1,9 +1,6 @@
 "use client";
-// export default CommentComponent;
-import React, { useState } from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
-import { revalidatePath, revalidateTag } from "next/cache";
 
 const CommentComponent = ({ post }: any) => {
   if (!post?.comments?.nodes) {

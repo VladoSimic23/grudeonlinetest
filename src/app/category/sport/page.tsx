@@ -2,14 +2,12 @@ import PostList from "@/app/components/PostList/PostList";
 import { Metadata } from "next";
 import React, { Suspense } from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
-import { revalidatePath, revalidateTag } from "next/cache";
-import incrementLike from "@/app/actions/actions";
-//import MobilePostListCategory from "@/app/components/MobileHomepage/MobilePostListCategory";
 import dynamic from "next/dynamic";
 const MobilePostListCategory = dynamic(
   () => import("@/app/components/MobileHomepage/MobilePostListCategory"),
   { ssr: false }
 );
+//import { revalidatePath } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Arhiva Sport - Grude Online",
@@ -18,19 +16,6 @@ export const metadata: Metadata = {
 
 const Sport = async () => {
   //revalidatePath("/sport");
-  // let amount = 1;
-  // const likes = await incrementLike();
-  // console.log(`likes : ${likes}`);
-
-  // const handleIncrement = async () => {
-  //   "use server";
-  //   await incrementLike(2);
-  //   console.log(likes);
-  //   revalidateTag("");
-  //   // amount += 1;
-
-  //   //revalidateTag("likes");
-  // };
 
   return (
     <div className={styles.postList}>
@@ -38,9 +23,6 @@ const Sport = async () => {
       <Suspense fallback={"Loading Posts..."}>
         <PostList category={"sport"} amount={2} />
       </Suspense>
-      {/* <form action={handleIncrement}>
-        <button type="submit">Submit</button>
-      </form> */}
       <MobilePostListCategory category={"sport"} />
     </div>
   );

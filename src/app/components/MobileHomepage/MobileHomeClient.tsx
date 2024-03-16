@@ -42,8 +42,6 @@ const MobileHomeClient = () => {
                   src={item?.featuredImage?.node?.sourceUrl}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  // width={100}
-                  // height={80}
                   alt={item.title}
                   priority={true}
                 />

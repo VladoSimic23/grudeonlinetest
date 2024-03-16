@@ -1,4 +1,4 @@
-import { fetchAPI, fetchAPI2 } from "./fetchDb";
+import { fetchAPI, fetchAPI2, temporaryApiUrl } from "./fetchDb";
 
 /// POSTS SECTION
 export async function getAllPosts() {
@@ -268,7 +268,7 @@ export async function submitComment(
   username: string
 ) {
   try {
-    const response = await fetch("http://localhost:10010/graphql", {
+    const response = await fetch(temporaryApiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

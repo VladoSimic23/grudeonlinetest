@@ -61,7 +61,7 @@ export async function fetchAPI(query: any, { variables }: any = {}) {
     "Content-Type": "application/json",
   };
 
-  const res = await fetch(API_URL, {
+  const res = await fetch(temporaryApiUrl, {
     next: { revalidate: 60, tags: ["collection"] },
     method: "POST",
     headers,
@@ -93,7 +93,7 @@ export async function fetchAPI2(query: string, variables: any = {}) {
   });
 
   try {
-    const res = await fetch(API_URL, {
+    const res = await fetch(temporaryApiUrl, {
       method: "POST",
       headers,
       body,

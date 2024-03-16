@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import navStyles from "../../css/nav/nav.module.css";
 import SearchedPostList from "@/app/components/PostList/SearchedPostList";
 import styles from "../../css/mainCss/mainStyle.module.css";
+import { temporaryApiUrl } from "@/app/lib/fetchDb";
 
 const SearchResultsComponent = () => {
   const urlSearchParams = useSearchParams();
@@ -15,7 +16,7 @@ const SearchResultsComponent = () => {
     const fetchData = async () => {
       if (searchQuery) {
         try {
-          const response = await fetch(`http://localhost:10010/graphql`, {
+          const response = await fetch(temporaryApiUrl, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

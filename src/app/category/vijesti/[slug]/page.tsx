@@ -3,8 +3,8 @@ import CommentForm from "@/app/components/Comments/CommentsForm";
 import SinglePost from "@/app/components/SinglePost/SinglePost";
 import TagsComponent from "@/app/components/Tags/TagsComp";
 import { getAllPosts, getSinglePost } from "@/app/lib/service";
-import { revalidatePath } from "next/cache";
 import React, { Suspense } from "react";
+//import { revalidatePath } from "next/cache";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();

@@ -15,10 +15,10 @@ import SinglePost from "@/app/components/SinglePost/SinglePost";
 import TagsComponent from "@/app/components/Tags/TagsComp";
 import { getAllPosts, getSinglePost } from "@/app/lib/service";
 import { Metadata, ResolvingMetadata } from "next";
-import { revalidatePath, revalidateTag } from "next/cache";
 import dynamic from "next/dynamic";
 import React from "react";
 import { Suspense } from "react";
+//import { revalidatePath} from "next/cache";
 
 type Props = {
   params: { id: string };
