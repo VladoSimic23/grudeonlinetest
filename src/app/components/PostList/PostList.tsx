@@ -12,7 +12,7 @@ export async function getData(category: string, nums: number) {
   const res = await getPostsByCategory(category, nums);
 
   if (!res) {
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed to fetch data..");
   }
 
   return res;
@@ -49,11 +49,11 @@ const PostList = async ({
               </div>
             </Link>
             <div className={categoryStyles.flexCategory}>
-              <Link href={`/${item.slug}`}>{item.title}</Link>
+              <Link href={`/${item.slug}`}>{item?.title}</Link>
               <div className={categoryStyles.flexDate}>
                 <span>{formatDateToCroatian(item?.date)}</span>
                 <p>
-                  {item.comments.nodes.length} <FaComments />
+                  {item?.comments?.nodes?.length} <FaComments />
                 </p>
               </div>
               <div

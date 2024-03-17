@@ -69,12 +69,16 @@
     }
   }
 }
+.grudeOnlineGrid13:last-child {
+  border: none;
+}
 .grudeOnlineGrid13 {
   display: grid;
   grid-template-columns: 1fr 2fr;
   border-bottom: 1px solid rgb(230, 230, 230);
   padding: 15px 0 10px 0;
 }
+
 .grudeOnlineContent {
   h3 {
     margin-top: 0;

@@ -79,14 +79,23 @@ export async function getSinglePost(slug: string) {
   const variables = {
     slug,
   };
-
   try {
     const data = await fetchAPI(query, { variables });
-    return data?.postBy; // Adjust this based on the actual response structure
+    if (!data || !data.postBy) {
+      throw new Error("Post not found");
+    }
+    return data.postBy;
   } catch (error) {
     console.error("Error fetching single post:", error);
     throw new Error("Failed to fetch single post");
   }
+  // try {
+  //   const data = await fetchAPI(query, { variables });
+  //   return data?.postBy; // Adjust this based on the actual response structure
+  // } catch (error) {
+  //   console.error("Error fetching single post:", error);
+  //   throw new Error("Failed to fetch single post");
+  // }
 }
 
 export const getRecentPosts = async (numOfPosts: number) => {
@@ -262,6 +271,26 @@ export async function getPostsByCategory(category: string, numOfPosts: number) {
 }
 
 /// COMENTS SECTION
+// export async function getCommentsBySlug(contentName: string) {
+//   const data = await fetchAPI2(`query NewQuery {
+//     comments(where: {contentName: "${contentName}"}) {
+//       nodes {
+//         content
+//         date
+//         author {
+//           node {
+//             name
+//           }
+//         }
+//       }
+//     }
+//   }`);
+//   // const variables = {
+//   //   contentName,
+//   // };
+//   return data?.comments?.nodes;
+// }
+
 export async function submitComment(
   id: number,
   comment: string,
@@ -269,6 +298,7 @@ export async function submitComment(
 ) {
   try {
     const response = await fetch(temporaryApiUrl, {
+      //next: { revalidate: 1, tags: ["collection"] },
       method: "POST",
       headers: {
         "Content-Type": "application/json",

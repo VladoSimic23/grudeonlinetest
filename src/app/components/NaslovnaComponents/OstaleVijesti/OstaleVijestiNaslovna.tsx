@@ -15,7 +15,7 @@ const OstaleVijestiNaslovna = () => {
 
     const { data, error, isValidating } = useSWR(
       isMobile ? null : apiUrl,
-      (url) => fetcher(url, "Ostale Vijesti", 5)
+      (url) => fetcher(url, "Ostale Vijesti", 6)
     );
 
     if (error) {

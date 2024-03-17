@@ -14,8 +14,8 @@ export async function generateStaticParams() {
   }));
 }
 
-const SingleGospodarstvo = async ({ params }: any) => {
-  const category = "gospodarstvo";
+const SingleLifestyle = async ({ params }: any) => {
+  const category = "lifestyle";
   // revalidatePath(`/${category}`);
   const { slug } = params;
   const thePost = await getSinglePost(slug);
@@ -37,4 +37,4 @@ const SingleGospodarstvo = async ({ params }: any) => {
   );
 };
 
-export default SingleGospodarstvo;
+export default SingleLifestyle;

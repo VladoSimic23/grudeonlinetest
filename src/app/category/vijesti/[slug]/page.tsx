@@ -28,11 +28,11 @@ const SingleVijesti = async ({ params }: any) => {
       <Suspense>
         <TagsComponent slug={slug} />
       </Suspense>
-      {thePost.commentStatus === "open" && <CommentComponent post={thePost} />}
-      {thePost.commentStatus === "open" && (
+      {thePost?.commentStatus === "open" && <CommentComponent post={thePost} />}
+      {thePost?.commentStatus === "open" && (
         <CommentForm slug={slug} id={thePost?.postId} />
       )}
-      {thePost.commentStatus === "closed" && <h1>Comments are closed!</h1>}
+      {thePost?.commentStatus === "closed" && <h1>Comments are closed!</h1>}
     </div>
   );
 };

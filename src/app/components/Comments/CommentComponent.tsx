@@ -1,16 +1,28 @@
 "use client";
+import { useEffect, useState } from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
+import { fetchClientComments } from "@/app/lib/fetchDb";
 
 const CommentComponent = ({ post }: any) => {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await fetchClientComments(post?.slug);
+      setComments(data);
+    };
+    getData();
+  }, [post?.slug]);
+
   if (!post?.comments?.nodes) {
     return <h1>Loading comments...</h1>;
   }
 
   return (
     <div>
-      <h2>{post?.comments?.nodes?.length} Komentara</h2>
-      {post?.comments?.nodes.map((item: any, idx: number) => {
+      <h2>{comments?.length} Komentara</h2>
+      {comments?.map((item: any, idx: number) => {
         return (
           <div key={idx} className={commentStyles.commentWrapper}>
             <div className={commentStyles.displayComments}>

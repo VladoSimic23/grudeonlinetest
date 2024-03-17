@@ -14,8 +14,8 @@ export async function generateStaticParams() {
   }));
 }
 
-const SingleGospodarstvo = async ({ params }: any) => {
-  const category = "gospodarstvo";
+const SingleCrnaKronika = async ({ params }: any) => {
+  const category = "crna-kronika";
   // revalidatePath(`/${category}`);
   const { slug } = params;
   const thePost = await getSinglePost(slug);
@@ -37,4 +37,4 @@ const SingleGospodarstvo = async ({ params }: any) => {
   );
 };
 
-export default SingleGospodarstvo;
+export default SingleCrnaKronika;

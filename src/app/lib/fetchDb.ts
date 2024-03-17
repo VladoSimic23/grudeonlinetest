@@ -5,6 +5,41 @@ import useWindowSize from "./useWindowSize";
 export const API_URL = process.env.NEXT_WORDPRESS_API_URL as string;
 export const temporaryApiUrl = "http://localhost:10010/graphql";
 
+export const fetchClientComments = async (contentName: string) => {
+  try {
+    const response = await fetch(temporaryApiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `query NewQuery {
+          comments(where: {contentName: "${contentName}"}) {
+            nodes {
+              content
+              date
+              author {
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const result = await response.json();
+    return result?.data?.comments?.nodes;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
 export const fetchClientApi = async (category: string, numOfPosts: number) => {
   try {
     const response = await fetch(temporaryApiUrl, {
@@ -62,7 +97,7 @@ export async function fetchAPI(query: any, { variables }: any = {}) {
   };
 
   const res = await fetch(temporaryApiUrl, {
-    next: { revalidate: 60, tags: ["collection"] },
+    next: { revalidate: 30, tags: ["collection"] },
     method: "POST",
     headers,
     body: JSON.stringify({

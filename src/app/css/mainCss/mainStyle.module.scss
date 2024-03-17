@@ -123,6 +123,9 @@ $borderGreys: #DEDEDE;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 45px;
 }
+.grid2:last-child {
+    border: none !important;
+}
 .sidebar {
     margin-top: 70px;
     .grid2 {
@@ -136,6 +139,7 @@ $borderGreys: #DEDEDE;
             max-width: 70px;
             max-height: 70px;
         }
+        
         a {
             font-size: 14px;
             text-decoration: none;
@@ -252,6 +256,11 @@ margin-top: 30px;
         }
     }
 }
+.wpEditorContent {
+    img {
+        text-align: center;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     // .container {
@@ -277,6 +286,18 @@ margin-top: 30px;
 }
 
 @media only screen and (max-width: 768px) {
+    .wpEditorContent {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .sidebar {
+        .grid2 {
+            border: none;
+        }
+    }
     .container {
         padding: 0;
     }

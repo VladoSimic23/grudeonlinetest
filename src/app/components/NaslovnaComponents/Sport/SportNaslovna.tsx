@@ -13,7 +13,7 @@ const SportNaslovna = () => {
   const isMobile = useWindowSize();
   const url = temporaryApiUrl; // Replace with your actual API endpoint
   const category = "Sport";
-  const numOfPosts = 10;
+  const numOfPosts = 4;
 
   // Use the custom SWR hook with the URL, category, and numberOfPosts
   const { data, error, isLoading } = useCustomSWR({

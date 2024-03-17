@@ -10,7 +10,7 @@ const LifestyleNaslovna = () => {
   const isMobile = useWindowSize();
   const url = temporaryApiUrl; // Replace with your actual API endpoint
   const category = "Lifestyle";
-  const numOfPosts = 10;
+  const numOfPosts = 6;
 
   // Use the custom SWR hook with the URL, category, and numberOfPosts
   const { data, error, isLoading } = useCustomSWR({

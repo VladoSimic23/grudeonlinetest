@@ -81,6 +81,10 @@
   margin-top: 10px;
 }
 
+.grudeOnlineGrid13:last-child {
+  border: none;
+}
+
 .grudeOnlineGrid13 {
   display: -ms-grid;
   display: grid;

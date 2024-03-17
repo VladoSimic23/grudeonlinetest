@@ -24,7 +24,10 @@ const SinglePost = async ({ slug, category }: any) => {
           fetchPriority="high"
         />
       </div>
-      <div dangerouslySetInnerHTML={{ __html: thePost?.content }}></div>
+      <div
+        className={styles.wpEditorContent}
+        dangerouslySetInnerHTML={{ __html: thePost?.content }}
+      ></div>
     </div>
   );
 };

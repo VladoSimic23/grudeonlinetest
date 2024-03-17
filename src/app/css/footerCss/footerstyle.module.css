@@ -63,7 +63,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #999;
+  color: #999 !important;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -75,7 +75,7 @@
 }
 
 .footerLower a:hover {
-  color: #6eb48c;
+  color: #6eb48c !important;
 }
 
 .footerLower a:hover svg {
@@ -100,6 +100,10 @@
 
 .flexFooter a {
   padding: 0 20px;
+}
+
+.flexFooter a svg span {
+  color: #999 !important;
 }
 
 .copyrights {
