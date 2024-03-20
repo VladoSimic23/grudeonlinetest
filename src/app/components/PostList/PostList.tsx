@@ -36,7 +36,7 @@ const PostList = async ({
             key={idx}
             className={`${categoryStyles.grid2PostList} ${categoryStyles.categoryPaddingBottom}`}
           >
-            <Link href={`/${category}/${item.slug}`}>
+            <Link href={`/${item.slug}`}>
               <div className={styles.relativeEle}>
                 <Image
                   src={item.featuredImage.node.sourceUrl}
