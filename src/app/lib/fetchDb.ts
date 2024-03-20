@@ -4,7 +4,7 @@ import useWindowSize from "./useWindowSize";
 
 export const API_URL = process.env.NEXT_WORDPRESS_API_URL as string;
 //export const temporaryApiUrl = "http://localhost:10010/graphql";
-export const temporaryApiUrl = "https://193.108.130.23/~vlado/graphql";
+export const temporaryApiUrl = "http://193.108.130.23/~vlado/graphql";
 
 export const fetchClientComments = async (contentName: string) => {
   try {
