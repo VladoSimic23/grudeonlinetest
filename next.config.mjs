@@ -5,22 +5,14 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-      // {
-      //   source: "/category/sport/:slug",
-      //   destination: "/:slug",
-      // },
-      // {
-      //   source: "/tag/:slug",
-      //   destination: "/category/tag/:slug",
-      // },
-      // {
-      //   source: "/:slug",
-      //   destination: "/category/sport/:slug",
-      // },
-      // {
-      //   source: "/tag/:slug",
-      //   destination: "/category/tag/:slug",
-      // },
+      {
+        source: "/:slug",
+        destination: "/category/sport/:slug",
+      },
+      {
+        source: "/tag/:slug",
+        destination: "/category/tag/:slug",
+      },
     ];
   },
 };
