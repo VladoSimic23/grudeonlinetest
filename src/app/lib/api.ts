@@ -2,7 +2,7 @@
 
 import useSWR, { SWRConfiguration } from "swr";
 import useWindowSize from "./useWindowSize";
-import { fetchAPI } from "./fetchDb";
+import { fetchAPI, temporaryApiUrl } from "./fetchDb";
 
 interface FetcherArgs {
   url: string;
@@ -63,7 +63,7 @@ export const fetcher = async ({ url, category, numOfPosts }: FetcherArgs) => {
 
 export const fetcher2 = async ({ url, category, numOfPosts }: FetcherArgs) => {
   try {
-    const response = await fetch("http://localhost:10010/graphql", {
+    const response = await fetch(temporaryApiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
