@@ -31,11 +31,6 @@ export default function RootLayout({
         <Navbar />
         <div className={styles.container}>
           <div>{children}</div>
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3659129502676976"
-            crossOrigin="anonymous"
-          ></script>
         </div>
         <FooterComponent />
       </body>
