@@ -15,6 +15,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { isMobileDevice } from "./lib/deviceCheck";
 import { headers } from "next/headers";
 import { Suspense } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export const metadata: Metadata = {
   title: "Grude Online - Grudski News Portal",
@@ -27,7 +29,11 @@ export default async function Home() {
   const pathname = heads.get("next-url");
   return (
     <>
-      {!isMob && <NaslovneVijesti />}
+      {!isMob && (
+        <Suspense fallback={<h2>Loading...</h2>}>
+          <NaslovneVijesti />
+        </Suspense>
+      )}
       <div className={styles.grid23}>
         <div>
           {isMob && (

@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // images: {
+  //   domains: ["193.108.130.23"],
+  // },
   images: {
-    domains: ["193.108.130.23"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "193.108.130.23",
+        pathname: "**",
+      },
+    ],
   },
   async rewrites() {
     return [

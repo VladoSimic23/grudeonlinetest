@@ -6,17 +6,19 @@ import { formatDateToCroatian } from "@/app/lib/utils";
 
 const NaslovneVijestiDetails = async ({ data }: any) => {
   return (
-    <Link href={`/${data.slug}`}>
+    <Link href={`/${data?.slug}`}>
       <div className={styles.naslovnicaOverly}></div>
       <div
         className={styles.naslovnica}
-        style={{ backgroundImage: `url(${data.featuredImage.node.sourceUrl})` }}
+        style={{
+          backgroundImage: `url(${data?.featuredImage?.node?.sourceUrl})`,
+        }}
       >
         <div className={styles.datumKoment}>
-          <h3>{data.title}</h3>
+          <h3>{data?.title}</h3>
           <div>
             <span>{formatDateToCroatian(data?.date)}</span> |{" "}
-            <span>{data.comments.nodes.length} komentara</span>
+            <span>{data?.comments?.nodes?.length} komentara</span>
           </div>
         </div>
       </div>
