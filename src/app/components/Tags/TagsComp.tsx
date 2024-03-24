@@ -26,7 +26,9 @@ const TagsComponent = async ({ slug }: { slug: string }) => {
         const tagEdit = tag.name.split(" ").join("-").toLowerCase();
         return (
           <div key={idx}>
-            <Link href={`/tag/${tagEdit}`}>{tag.name}</Link>
+            <Link href={`/tag/${tagEdit}`} prefetch={false}>
+              {tag.name}
+            </Link>
           </div>
         );
       })}
