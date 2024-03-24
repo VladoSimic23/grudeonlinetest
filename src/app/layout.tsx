@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-//import Navbar from "./components/Nav/Navbar";
-import Sidebar from "./components/Sidebar/Sidebar";
 import styles from "./css/mainCss/mainStyle.module.css";
 import FooterComponent from "./components/Footer/FooterComponent";
 import "@fortawesome/fontawesome-free/css/all.css";
-import { headers } from "next/headers";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 //import NaslovneVijesti from "./components/NaslovneVijesti/NaslovneVijesti";
@@ -33,13 +30,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${styles.styleContainer}`}>
         <Navbar />
         <div className={styles.container}>
-          <NaslovneVijesti />
-          <div className={styles.grid23}>
-            <div>{children}</div>
-            <div>
-              <Sidebar />
-            </div>
-          </div>
+          <div>{children}</div>
         </div>
         <FooterComponent />
       </body>

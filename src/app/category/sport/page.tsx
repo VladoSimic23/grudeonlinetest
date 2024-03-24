@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import React, { Suspense } from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import dynamic from "next/dynamic";
+import Sidebar from "@/app/components/Sidebar/Sidebar";
 const MobilePostListCategory = dynamic(
   () => import("@/app/components/MobileHomepage/MobilePostListCategory"),
   { ssr: false }
@@ -18,12 +19,15 @@ const Sport = async () => {
   //revalidatePath("/sport");
 
   return (
-    <div className={styles.postList}>
-      <h1 className={styles.headingEdit}>SPORT</h1>
-      <Suspense fallback={"Loading Posts..."}>
-        <PostList category={"sport"} amount={2} />
-      </Suspense>
-      <MobilePostListCategory category={"sport"} />
+    <div className={`${styles.postList} ${styles.grid23}`}>
+      <div>
+        <h1 className={styles.headingEdit}>SPORT</h1>
+        <Suspense fallback={"Loading Posts..."}>
+          <PostList category={"sport"} amount={2} />
+        </Suspense>
+        <MobilePostListCategory category={"sport"} />
+      </div>
+      <Sidebar />
     </div>
   );
 };

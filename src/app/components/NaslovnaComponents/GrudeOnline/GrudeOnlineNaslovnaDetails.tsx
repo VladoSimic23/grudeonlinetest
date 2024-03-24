@@ -1,9 +1,10 @@
+"use server";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
 
-const GrudeOnlineNaslovnaDetails = ({ data }: any) => {
+const GrudeOnlineNaslovnaDetails = async ({ data }: any) => {
   const {
     title,
     slug,

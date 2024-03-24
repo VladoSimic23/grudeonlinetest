@@ -1,33 +1,14 @@
-"use client";
+"use server";
 import useWindowSize from "@/app/lib/useWindowSize";
 import Link from "next/link";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import LifestyleNaslovnaDetails from "./LifestyleNaslovnaDetails";
 import { temporaryApiUrl } from "@/app/lib/fetchDb";
 import { useCustomSWR } from "@/app/lib/api";
+import { getPostsByCategory } from "@/app/lib/service";
 
-const LifestyleNaslovna = () => {
-  const isMobile = useWindowSize();
-  const url = temporaryApiUrl; // Replace with your actual API endpoint
-  const category = "Lifestyle";
-  const numOfPosts = 6;
-
-  // Use the custom SWR hook with the URL, category, and numberOfPosts
-  const { data, error, isLoading } = useCustomSWR({
-    url,
-    category,
-    numOfPosts,
-  });
-
-  if (isMobile) {
-    return;
-  }
-  if (isMobile === undefined) {
-    return null;
-  }
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching data</div>;
-  if (!data) return <div>No data available</div>;
+const LifestyleNaslovna = async () => {
+  const data = await getPostsByCategory("lifestyle", 6);
 
   return (
     <div>

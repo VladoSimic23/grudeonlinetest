@@ -98,7 +98,7 @@ export async function fetchAPI(query: any, { variables }: any = {}) {
   };
 
   const res = await fetch(temporaryApiUrl, {
-    next: { revalidate: 30, tags: ["collection"] },
+    next: { revalidate: 120, tags: ["collection"] },
     method: "POST",
     headers,
     body: JSON.stringify({

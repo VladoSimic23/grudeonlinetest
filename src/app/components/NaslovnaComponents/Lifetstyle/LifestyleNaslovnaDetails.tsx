@@ -1,9 +1,10 @@
+"use server";
 import Link from "next/link";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
 
-const LifestyleNaslovnaDetails = ({ data }: any) => {
+const LifestyleNaslovnaDetails = async ({ data }: any) => {
   const {
     title,
     slug,

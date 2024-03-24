@@ -23,14 +23,14 @@ const TagDetails = async ({ tag }: { tag: string }) => {
           return (
             <div
               key={idx}
-              className={`${styles.grid2} ${categoryStyles.categoryPaddingBottom}`}
+              className={`${categoryStyles.grid2PostList} ${categoryStyles.categoryPaddingBottom}`}
             >
               <Link href={`/${item.slug}`}>
                 <div className={styles.relativeEle}>
                   <Image
                     src={item.featuredImage.node.sourceUrl}
                     alt={item.title}
-                    sizes="500px"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     fill
                     priority={true}
                   />

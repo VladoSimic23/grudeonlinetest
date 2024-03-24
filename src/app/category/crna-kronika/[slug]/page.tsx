@@ -4,6 +4,8 @@ import SinglePost from "@/app/components/SinglePost/SinglePost";
 import TagsComponent from "@/app/components/Tags/TagsComp";
 import { getAllPosts, getSinglePost } from "@/app/lib/service";
 import React, { Suspense } from "react";
+import styles from "../../../css/mainCss/mainStyle.module.css";
+import Sidebar from "@/app/components/Sidebar/Sidebar";
 //import { revalidatePath } from "next/cache";
 
 export async function generateStaticParams() {
@@ -22,17 +24,21 @@ const SingleCrnaKronika = async ({ params }: any) => {
 
   return (
     <div>
-      <Suspense>
-        <SinglePost slug={slug} category={category} />
-      </Suspense>
-      <Suspense>
-        <TagsComponent slug={slug} />
-      </Suspense>
-      {thePost?.commentStatus === "open" && <CommentComponent post={thePost} />}
-      {thePost?.commentStatus === "open" && (
-        <CommentForm slug={slug} id={thePost?.postId} />
-      )}
-      {thePost?.commentStatus === "closed" && <h1>Comments are closed!</h1>}
+      <div>
+        <Suspense>
+          <SinglePost slug={slug} category={category} />
+        </Suspense>
+        <Suspense>
+          <TagsComponent slug={slug} />
+        </Suspense>
+        {thePost?.commentStatus === "open" && (
+          <CommentComponent post={thePost} />
+        )}
+        {thePost?.commentStatus === "open" && (
+          <CommentForm slug={slug} id={thePost?.postId} />
+        )}
+        {thePost?.commentStatus === "closed" && <h1>Comments are closed!</h1>}
+      </div>
     </div>
   );
 };

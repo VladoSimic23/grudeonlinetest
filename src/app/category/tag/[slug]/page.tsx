@@ -1,6 +1,8 @@
+import Sidebar from "@/app/components/Sidebar/Sidebar";
 import TagDetails from "@/app/components/Tags/TagDetails";
 import { getAllPosts } from "@/app/lib/service";
 import { Metadata, ResolvingMetadata } from "next";
+import styles from "../../../css/mainCss/mainStyle.module.css";
 import React, { Suspense } from "react";
 
 type Props = {
@@ -33,10 +35,13 @@ const Tag = async ({ params }: any) => {
   const decodedTag = decodeURIComponent(slug);
 
   return (
-    <div>
-      <Suspense fallback={<h1>Loading...</h1>}>
-        <TagDetails tag={decodedTag} />
-      </Suspense>
+    <div className={`${styles.postList} ${styles.grid23}`}>
+      <div>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <TagDetails tag={decodedTag} />
+        </Suspense>
+      </div>
+      <Sidebar />
     </div>
   );
 };

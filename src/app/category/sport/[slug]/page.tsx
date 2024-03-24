@@ -18,6 +18,8 @@ import { Metadata, ResolvingMetadata } from "next";
 import dynamic from "next/dynamic";
 import React from "react";
 import { Suspense } from "react";
+import styles from "../../../css/mainCss/mainStyle.module.css";
+import Sidebar from "@/app/components/Sidebar/Sidebar";
 //import { revalidatePath} from "next/cache";
 
 type Props = {
@@ -54,19 +56,24 @@ const SingleSport = async ({ params }: any) => {
   const thePost = await getSinglePost(slug);
 
   return (
-    <div>
-      <Suspense fallback={<h1>Loading Post...</h1>}>
-        <SinglePost slug={slug} category={category} />
-      </Suspense>
-      <Suspense fallback={<h1>Loading Tags...</h1>}>
-        <TagsComponent slug={slug} />
-      </Suspense>
+    <div className={styles.grid23}>
+      <div>
+        <Suspense fallback={<h1>Loading Post...</h1>}>
+          <SinglePost slug={slug} category={category} />
+        </Suspense>
+        <Suspense fallback={<h1>Loading Tags...</h1>}>
+          <TagsComponent slug={slug} />
+        </Suspense>
 
-      {thePost?.commentStatus === "open" && <CommentComponent post={thePost} />}
-      {thePost?.commentStatus === "open" && (
-        <CommentForm slug={slug} id={thePost?.postId} />
-      )}
-      {thePost?.commentStatus === "closed" && <h1>Comments are closed!</h1>}
+        {thePost?.commentStatus === "open" && (
+          <CommentComponent post={thePost} />
+        )}
+        {thePost?.commentStatus === "open" && (
+          <CommentForm slug={slug} id={thePost?.postId} />
+        )}
+        {thePost?.commentStatus === "closed" && <h1>Comments are closed!</h1>}
+      </div>
+      <Sidebar />
     </div>
   );
 };

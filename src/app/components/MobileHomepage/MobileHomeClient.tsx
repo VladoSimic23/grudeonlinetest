@@ -28,7 +28,7 @@ const MobileHomeClient = () => {
   };
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching data</div>;
+  if (error) return <div>Load more posts not available</div>;
   if (!theData) return <div>No data available</div>;
 
   return (

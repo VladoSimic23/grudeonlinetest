@@ -145,6 +145,7 @@ export const getPopularPosts = async (numOfPosts: number) => {
         nodes {
           title
           slug
+          date
           featuredImage {
             node {
               sourceUrl(size: LARGE)

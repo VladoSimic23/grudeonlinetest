@@ -1,36 +1,14 @@
-"use client";
-import useWindowSize from "@/app/lib/useWindowSize";
+"use server";
 import Link from "next/link";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import styles from "../../../css/mainCss/mainStyle.module.css";
 import Image from "next/image";
-import { temporaryApiUrl } from "@/app/lib/fetchDb";
 import GospodarstvoNaslovnaDetails from "./GospodarstvoNaslovnaDetails";
-import { useCustomSWR } from "@/app/lib/api";
 import { formatDateToCroatian } from "@/app/lib/utils";
+import { getPostsByCategory } from "@/app/lib/service";
 
-const GospodarstvoNaslovna = () => {
-  const isMobile = useWindowSize();
-  const url = temporaryApiUrl; // Replace with your actual API endpoint
-  const category = "Gospodarstvo";
-  const numOfPosts = 4;
-
-  // Use the custom SWR hook with the URL, category, and numberOfPosts
-  const { data, error, isLoading } = useCustomSWR({
-    url,
-    category,
-    numOfPosts,
-  });
-
-  if (isMobile) {
-    return null;
-  }
-  if (isMobile === undefined) {
-    return null;
-  }
-  if (isLoading && !isMobile) return <div>Loading..dasdasd.</div>;
-  if (error) return <div>Error fetching data</div>;
-  if (!data) return <div>No data available</div>;
+const GospodarstvoNaslovna = async () => {
+  const data = await getPostsByCategory("gospodarstvo", 6);
 
   return (
     <>

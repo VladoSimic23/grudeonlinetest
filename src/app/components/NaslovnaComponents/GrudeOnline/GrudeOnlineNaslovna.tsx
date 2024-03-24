@@ -1,38 +1,14 @@
-"use client";
-import useFetchGrudeOnline from "@/app/lib/useFetchGrudeOnline";
-import useWindowSize from "@/app/lib/useWindowSize";
+"use server";
 import Link from "next/link";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import styles from "../../../css/mainCss/mainStyle.module.css";
 import Image from "next/image";
 import GrudeOnlineNaslovnaDetails from "./GrudeOnlineNaslovnaDetails";
-import { temporaryApiUrl } from "@/app/lib/fetchDb";
-import { useCustomSWR } from "@/app/lib/api";
-import MobileComponent from "../../MobileHomepage/MobileComponent";
 import { formatDateToCroatian } from "@/app/lib/utils";
+import { getPostsByCategory } from "@/app/lib/service";
 
-const GrudeOnlineNaslovna = () => {
-  const isMobile = useWindowSize();
-  const url = temporaryApiUrl; // Replace with your actual API endpoint
-  const category = "Grude Online";
-  const numOfPosts = 5;
-
-  // Use the custom SWR hook with the URL, category, and numberOfPosts
-  const { data, error, isLoading } = useCustomSWR({
-    url,
-    category,
-    numOfPosts,
-  });
-
-  if (isMobile || isMobile === undefined) {
-    return;
-  }
-  if (isMobile === undefined) {
-    return null;
-  }
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching data</div>;
-  if (!data) return <div>No data available</div>;
+const GrudeOnlineNaslovna = async () => {
+  const data = await getPostsByCategory("grude-online", 5);
 
   return (
     <div>

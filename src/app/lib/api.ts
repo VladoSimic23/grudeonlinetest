@@ -248,7 +248,7 @@ export const useCustomSWR2 = <T>(
   config?: SWRConfiguration<T>
 ) => {
   const aw = useWindowSize();
-  const { data, error } = useSWR<any>(aw ? null : key, fetcher2, config);
+  const { data, error } = useSWR<any>(key, fetcher2, config);
 
   return {
     data,

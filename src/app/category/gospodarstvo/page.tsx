@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import React, { Suspense } from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import MobilePostListCategory from "@/app/components/MobileHomepage/MobilePostListCategory";
+import Sidebar from "@/app/components/Sidebar/Sidebar";
 //import { revalidatePath } from "next/cache";
 
 export const metadata: Metadata = {
@@ -13,12 +14,15 @@ export const metadata: Metadata = {
 const Gospodarstvo = async () => {
   //revalidatePath("/gospodarstvo");
   return (
-    <div className={styles.postList}>
-      <h1 className={styles.headingEdit}>GOSPODARSTVO</h1>
-      <Suspense>
-        <PostList category={"gospodarstvo"} amount={2} />
-      </Suspense>
-      <MobilePostListCategory category={"gospodarstvo"} />
+    <div className={`${styles.postList} ${styles.grid23}`}>
+      <div>
+        <h1 className={styles.headingEdit}>GOSPODARSTVO</h1>
+        <Suspense>
+          <PostList category={"gospodarstvo"} amount={2} />
+        </Suspense>
+        <MobilePostListCategory category={"gospodarstvo"} />
+      </div>
+      <Sidebar />
     </div>
   );
 };

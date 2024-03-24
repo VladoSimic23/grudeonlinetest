@@ -1,9 +1,10 @@
+"use server";
 import React from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import Link from "next/link";
 import { formatDateToCroatian } from "@/app/lib/utils";
 
-const NaslovneVijestiDetails = ({ data }: any) => {
+const NaslovneVijestiDetails = async ({ data }: any) => {
   return (
     <Link href={`/${data.slug}`}>
       <div className={styles.naslovnicaOverly}></div>

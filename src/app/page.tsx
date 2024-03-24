@@ -10,6 +10,11 @@ import SportNaslovna from "./components/NaslovnaComponents/Sport/SportNaslovna";
 import styles from "./css/mainCss/mainStyle.module.css";
 import MobileHomeClient from "./components/MobileHomepage/MobileHomeClient";
 import { Metadata } from "next";
+import NaslovneVijesti from "./components/NaslovneVijesti/NaslovneVijesti";
+import Sidebar from "./components/Sidebar/Sidebar";
+import { isMobileDevice } from "./lib/deviceCheck";
+import { headers } from "next/headers";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Grude Online - Grudski News Portal",
@@ -17,17 +22,53 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  const isMob = isMobileDevice();
+  const heads = headers();
+  const pathname = heads.get("next-url");
   return (
     <>
-      <MobileComponent />
-      <MobileHomeClient />
-      <GrudeOnlineNaslovna />
-      <OstaleVijestiNaslovna />
-      <div className={styles.grid2}>
-        <SportNaslovna />
-        <GospodarstvoNaslovna />
+      {!isMob && <NaslovneVijesti />}
+      <div className={styles.grid23}>
+        <div>
+          {isMob && (
+            <>
+              <Suspense fallback={<h2>Loading...</h2>}>
+                <MobileComponent />
+              </Suspense>
+              <MobileHomeClient />
+            </>
+          )}
+          {!isMob && (
+            <>
+              <Suspense fallback={<h2>Loading...</h2>}>
+                <GrudeOnlineNaslovna />
+              </Suspense>
+              <Suspense fallback={<h2>Loading...</h2>}>
+                <OstaleVijestiNaslovna />
+              </Suspense>
+              <Suspense fallback={<h2>Loading...</h2>}>
+                <LifestyleNaslovna />
+              </Suspense>
+            </>
+          )}
+
+          <div className={styles.grid2}>
+            {!isMob && (
+              <>
+                <Suspense fallback={<h2>Loading...</h2>}>
+                  <SportNaslovna />
+                </Suspense>
+                <Suspense fallback={<h2>Loading...</h2>}>
+                  <GospodarstvoNaslovna />
+                </Suspense>
+              </>
+            )}
+          </div>
+        </div>
+        <div>
+          <Sidebar />
+        </div>
       </div>
-      <LifestyleNaslovna />
       {/* <GalerijaNaslovna /> */}
     </>
   );

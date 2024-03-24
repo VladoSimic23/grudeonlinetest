@@ -3,9 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import mobileStyles from "../../css/mobile/mobile.module.css";
 import { FaComments } from "react-icons/fa";
-import { revalidatePath } from "next/cache";
-import { format } from "date-fns";
-import { hr } from "date-fns/locale";
 import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileComponent = async () => {
