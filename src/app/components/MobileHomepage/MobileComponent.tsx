@@ -7,7 +7,7 @@ import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileComponent = async () => {
   //revalidatePath("/");
-  const data = await getRecentPostsHomepage(2);
+  const data = await getRecentPostsHomepage(5);
 
   return (
     <div className={mobileStyles.mobilePost}>

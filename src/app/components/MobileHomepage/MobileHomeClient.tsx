@@ -9,7 +9,7 @@ import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileHomeClient = () => {
-  const [numOfPosts, setPostNum] = useState(4);
+  const [numOfPosts, setPostNum] = useState(10);
   const [theData, setTheData] = useState<any[]>([]);
   const url = temporaryApiUrl; // Replace with your actual API endpoint
   const category = "Grude Online";
@@ -23,17 +23,17 @@ const MobileHomeClient = () => {
   });
 
   const handleClick = () => {
-    setPostNum((prev) => prev + 2);
+    setPostNum((prev) => prev + 5);
     setTheData(data);
   };
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Load more posts not available</div>;
+  if (error) return <div>Loading more posts not available</div>;
   if (!theData) return <div>No data available</div>;
 
   return (
     <div className={mobileStyles.mobilePost}>
-      {theData.slice(2).map((item: any, index: number) => {
+      {theData.slice(5).map((item: any, index: number) => {
         return (
           <div key={index} className={mobileStyles.singleMobilePost}>
             <div className={mobileStyles.singleMobilePostTop}>
