@@ -10,7 +10,7 @@
 }
 
 .mobilePost h4 a {
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   line-height: 1.4;
 }
@@ -40,7 +40,7 @@
 }
 
 .singleMobilePostTop img {
-  max-height: 220px;
+  max-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 7px;
