@@ -10,6 +10,36 @@
   display: inline-block;
 }
 
+.active {
+  color: #008ca1 !important;
+}
+
+.navLinks li a {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.navLinks li a::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background: #008ca1;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navLinks li a:hover {
+  color: #008ca1;
+}
+
+.navLinks li a:hover::after {
+  width: 100%;
+}
+
 .tagsStyles {
   display: -webkit-box;
   display: -ms-flexbox;

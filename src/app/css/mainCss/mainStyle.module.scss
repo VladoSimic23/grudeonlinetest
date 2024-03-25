@@ -13,6 +13,38 @@ $borderGreys: #DEDEDE;
 .dangerHtml {
     display: inline-block;
 }
+// NAV
+//
+
+.active {
+    color: #008ca1 !important;
+}
+.navLinks {
+    li {
+        a {
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            &::after {
+                content: "";
+                width: 0px;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                background: #008ca1;
+                transition: all 0.2s ease-in-out;
+            }
+            &:hover {
+                color: #008ca1;
+                //border-bottom: 1px solid red;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
 .tagsStyles {
     display: flex;
     // flex-direction: column;
