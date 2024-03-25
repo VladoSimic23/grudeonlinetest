@@ -201,6 +201,12 @@
   margin-bottom: 5px;
 }
 
+.naslovnaLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .naslovnicaWrap {
   margin-top: 30px;
 }
@@ -216,6 +222,7 @@
 }
 
 .naslovnica1 {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,6 +241,7 @@
 }
 
 .naslovnica {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

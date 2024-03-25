@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   const isMob = isMobileDevice();
   const heads = headers();
-  const pathname = heads.get("next-url");
+
   return (
     <>
       {!isMob && (

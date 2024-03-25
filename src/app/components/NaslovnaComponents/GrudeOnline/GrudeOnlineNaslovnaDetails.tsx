@@ -19,7 +19,13 @@ const GrudeOnlineNaslovnaDetails = async ({ data }: any) => {
       <div className={nasStyles.naslovnaOverlay}>
         <Link href={`/${slug}`}>
           <div className={nasStyles.imageOverlay}></div>
-          <Image src={sourceUrl} width={120} height={80} alt={title} />
+          <Image
+            src={sourceUrl}
+            width={120}
+            height={80}
+            alt={title}
+            priority={true}
+          />
         </Link>
       </div>
       <div className={nasStyles.grudeOnlineContent}>

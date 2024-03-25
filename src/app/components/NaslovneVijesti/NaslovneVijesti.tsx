@@ -4,6 +4,8 @@ import NaslovneVijestiDetails from "./NaslovneVijestiDetails";
 import Link from "next/link";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { getPopularPosts } from "@/app/lib/service";
+import { preload } from "react-dom";
+import Image from "next/image";
 
 const NaslovneVijesti = async () => {
   const data = await getPopularPosts(5);
@@ -13,16 +15,25 @@ const NaslovneVijesti = async () => {
       <div className={styles.naslovnicaWrap}>
         <div className={styles.naslovnicaContainer}>
           <div className={styles.grid2Vijesti}>
-            <Link href={`/${data[0]?.slug}`}>
+            <Link href={`/${data[0]?.slug}`} className={styles.naslovnaLink}>
               <div className={styles.naslovnicaOverly}></div>
               <div
                 className={`${styles.naslovnica1}`}
-                style={{
-                  backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`,
-                  height: "421px",
-                  width: "auto",
-                }}
+                // style={{
+                //   backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`,
+                //   height: "421px",
+                //   width: "auto",
+                // }}
               >
+                <Image
+                  src={data[0]?.featuredImage?.node?.sourceUrl}
+                  fill
+                  sizes="auto"
+                  priority={true}
+                  // width={421}
+                  // height={400}
+                  alt={data[0]?.title}
+                />
                 <div className={styles.datumKoment}>
                   <h3>{data[0]?.title}</h3>
                   <div>
