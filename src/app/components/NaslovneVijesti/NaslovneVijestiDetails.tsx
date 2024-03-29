@@ -4,6 +4,7 @@ import styles from "../../css/mainCss/mainStyle.module.css";
 import Link from "next/link";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import Image from "next/image";
+import { FaComments } from "react-icons/fa";
 
 const NaslovneVijestiDetails = async ({ data }: any) => {
   return (
@@ -28,7 +29,9 @@ const NaslovneVijestiDetails = async ({ data }: any) => {
           <h3>{data?.title}</h3>
           <div>
             <span>{formatDateToCroatian(data?.date)}</span> |{" "}
-            <span>{data?.comments?.nodes?.length} komentara</span>
+            <span>
+              {data?.comments?.nodes?.length} <FaComments />
+            </span>
           </div>
         </div>
       </div>

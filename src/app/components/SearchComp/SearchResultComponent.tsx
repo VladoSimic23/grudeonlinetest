@@ -5,6 +5,7 @@ import navStyles from "../../css/nav/nav.module.css";
 import SearchedPostList from "@/app/components/PostList/SearchedPostList";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import { temporaryApiUrl } from "@/app/lib/fetchDb";
+import Sidebar from "../Sidebar/Sidebar";
 
 const SearchResultsComponent = () => {
   const urlSearchParams = useSearchParams();
@@ -92,11 +93,14 @@ const SearchResultsComponent = () => {
   }
 
   return (
-    <div className={styles.postList}>
-      <h1 className={styles.headingEdit}>
-        Search Results for: {searchQuery?.toUpperCase()}
-      </h1>
-      <SearchedPostList data={results} />
+    <div className={`${styles.postList} ${styles.grid23}`}>
+      <div>
+        <h1 className={styles.headingEdit}>
+          Search Results for: {searchQuery?.toUpperCase()}
+        </h1>
+        <SearchedPostList data={results} />
+      </div>
+      <Sidebar />
     </div>
   );
 };

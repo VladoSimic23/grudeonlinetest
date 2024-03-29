@@ -24,8 +24,8 @@
 }
 
 .navWrap {
-    border-bottom: 1px solid rgb(211, 211, 211);
-    border-top: 1px solid rgb(211, 211, 211);
+    border-bottom: 1px solid #ea8624;
+    border-top: 1px solid #ea8624;
     position: relative;
 }
 .imageContainer {
@@ -46,6 +46,9 @@
         padding: 18px 20px;
         border: none;
         width: 100%;
+        &:focus-visible {
+          outline: 1px solid #ea8624;
+        }
     }
     button {
         margin-left: 10px;

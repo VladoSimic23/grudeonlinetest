@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
-      <body className={`${inter.className} ${styles.styleContainer}`}>
+      <body
+        className={`${inter.className} ${styles.styleContainer} ${styles.darkMobile}`}
+      >
         <Navbar />
         <div className={styles.container}>
           <div>{children}</div>

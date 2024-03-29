@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { FaComments } from "react-icons/fa";
 
 const SidebarPostList = async ({ data }: any) => {
   return (
@@ -25,7 +26,9 @@ const SidebarPostList = async ({ data }: any) => {
             </div>
             <div className={styles.flexSidebar}>
               <Link href={`/${item?.slug}`}>{item?.title}</Link>
-              <span>{item?.comments?.nodes?.length} Comments</span>
+              <span>
+                {item?.comments?.nodes?.length} <FaComments />
+              </span>
             </div>
           </div>
         );

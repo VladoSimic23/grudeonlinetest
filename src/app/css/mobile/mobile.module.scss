@@ -63,6 +63,25 @@
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .singleMobilePostTop {
+        h4 {
+            margin-bottom: 0;
+        }
+    }
+    .singleMobilePost {
+        padding: 15px 0;
+        border-bottom: none;
+    }
+    .singleMobilePostBottom {
+        padding-bottom: 0;
+        padding-top: 10px;
+        span:nth-child(1) {
+            padding-bottom: 5px;
+        }
+    }
+}
+
 @media only screen and (min-width: 992px) {
     .mobilePost {
         display: none;

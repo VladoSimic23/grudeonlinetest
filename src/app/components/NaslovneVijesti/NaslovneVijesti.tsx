@@ -4,8 +4,8 @@ import NaslovneVijestiDetails from "./NaslovneVijestiDetails";
 import Link from "next/link";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { getPopularPosts } from "@/app/lib/service";
-import { preload } from "react-dom";
 import Image from "next/image";
+import { FaComments } from "react-icons/fa";
 
 const NaslovneVijesti = async () => {
   const data = await getPopularPosts(5);
@@ -38,7 +38,9 @@ const NaslovneVijesti = async () => {
                   <h3>{data[0]?.title}</h3>
                   <div>
                     <span>{formatDateToCroatian(data[0]?.date)}</span> |{" "}
-                    <span>{data[0]?.comments?.nodes?.length} komentara</span>
+                    <span>
+                      {data[0]?.comments?.nodes?.length} <FaComments />
+                    </span>
                   </div>
                 </div>
               </div>

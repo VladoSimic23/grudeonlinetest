@@ -32,8 +32,8 @@
 }
 
 .navWrap {
-  border-bottom: 1px solid lightgray;
-  border-top: 1px solid lightgray;
+  border-bottom: 1px solid #ea8624;
+  border-top: 1px solid #ea8624;
   position: relative;
 }
 
@@ -64,6 +64,10 @@
   padding: 18px 20px;
   border: none;
   width: 100%;
+}
+
+.searchStyle input:focus-visible {
+  outline: 1px solid #ea8624;
 }
 
 .searchStyle button {
