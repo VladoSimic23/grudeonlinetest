@@ -35,7 +35,7 @@ export default async function Home() {
         </Suspense>
       )}
       <div className={styles.grid23}>
-        <div>
+        <div className={styles.tabletContainer}>
           {isMob && (
             <>
               <Suspense fallback={<h2>Loading...</h2>}>

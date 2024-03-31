@@ -362,6 +362,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .noSearchResults h2 {
+    font-size: 16px;
+  }
   .darkMobile {
     background: #222222;
     color: #e4e4e4;
@@ -427,6 +430,30 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .tabletContainer, .sidebar, .naslovnicaContainer {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .naslovnaLink1 {
+    height: 350px;
+  }
+  .grid2Vijesti {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .grid2Vijesti .naslovnica1 {
+    width: 100%;
+  }
+  .grid2Vijesti .naslovnica1 img {
+    width: 100% !important;
+  }
+  .grid2VijestiOstale {
+    -ms-grid-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr 1fr !important;
+  }
+  .grid2VijestiOstale .naslovnica {
+    width: 100%;
+  }
   .grid3 {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;

@@ -113,3 +113,12 @@
 .gospSportMargin {
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 992px) {
+  .grudeOnlineGrid13 {
+    grid-gap: 15px;
+  }
+  .grid3GrudeOnline {
+    grid-template-columns: 1fr 1fr;
+  }
+}

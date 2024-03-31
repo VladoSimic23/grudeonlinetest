@@ -21,7 +21,7 @@ const CommentComponent = ({ post }: any) => {
 
   return (
     <div>
-      <h2>{comments?.length} Komentara</h2>
+      <h2>Komentari : {comments?.length}</h2>
       {comments?.map((item: any, idx: number) => {
         return (
           <div key={idx} className={commentStyles.commentWrapper}>

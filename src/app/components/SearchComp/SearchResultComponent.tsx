@@ -92,6 +92,23 @@ const SearchResultsComponent = () => {
     return <h1>Loading Posts List...</h1>;
   }
 
+  if (results.length < 1) {
+    return (
+      <div>
+        <div className={styles.noSearchResults}>
+          <h1 className={styles.headingEdit}>
+            Search Results for: {searchQuery?.toUpperCase()}
+          </h1>
+          <h2>
+            Sorry, but nothing matched your search terms. Please try again with
+            some different keywords.
+          </h2>
+        </div>
+        <Sidebar />
+      </div>
+    );
+  }
+
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>

@@ -133,4 +133,14 @@
 .gospSportMargin {
   margin-top: 20px;
 }
+
+@media only screen and (max-width: 992px) {
+  .grudeOnlineGrid13 {
+    grid-gap: 15px;
+  }
+  .grid3GrudeOnline {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
 /*# sourceMappingURL=naslovnica.module.css.map */

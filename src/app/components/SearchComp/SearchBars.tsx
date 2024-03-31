@@ -52,7 +52,6 @@ const SearchBar: React.FC = () => {
     <div className={navStyles.searchStyle}>
       <input
         type="text"
-        autoFocus
         placeholder="Type and hit enter ..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}

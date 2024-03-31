@@ -15,7 +15,10 @@ const NaslovneVijesti = async () => {
       <div className={styles.naslovnicaWrap}>
         <div className={styles.naslovnicaContainer}>
           <div className={styles.grid2Vijesti}>
-            <Link href={`/${data[0]?.slug}`} className={styles.naslovnaLink}>
+            <Link
+              href={`/${data[0]?.slug}`}
+              className={`${styles.naslovnaLink} ${styles.naslovnaLink1}`}
+            >
               <div className={styles.naslovnicaOverly}></div>
               <div
                 className={`${styles.naslovnica1}`}
@@ -46,7 +49,9 @@ const NaslovneVijesti = async () => {
               </div>
             </Link>
 
-            <div className={styles.grid2Vijesti}>
+            <div
+              className={`${styles.grid2Vijesti} ${styles.grid2VijestiOstale}`}
+            >
               {data.map((item: any, index: number) => {
                 if (index !== 0) {
                   return <NaslovneVijestiDetails key={index} data={item} />;
