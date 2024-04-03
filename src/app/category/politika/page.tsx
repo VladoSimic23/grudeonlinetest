@@ -4,6 +4,7 @@ import React, { Suspense } from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import MobilePostListCategory from "@/app/components/MobileHomepage/MobilePostListCategory";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
+import { revalidateTag } from "next/cache";
 //import { revalidatePath } from "next/cache";
 
 export const metadata: Metadata = {
@@ -13,14 +14,15 @@ export const metadata: Metadata = {
 
 const Politika = async () => {
   //revalidatePath("/gospodarstvo");
+
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
         <h1 className={styles.headingEdit}>POLITIKA</h1>
         <Suspense>
-          <PostList category={"crna-kronika"} amount={2} />
+          <PostList category={"politika"} amount={2} />
         </Suspense>
-        <MobilePostListCategory category={"crna-kronika"} />
+        <MobilePostListCategory category={"politika"} />
       </div>
       <Sidebar />
     </div>

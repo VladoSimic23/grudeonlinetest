@@ -1,7 +1,7 @@
 "use client";
 import { useCustomSWR3 } from "@/app/lib/api";
 import { temporaryApiUrl } from "@/app/lib/fetchDb";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import mobileStyles from "../../css/mobile/mobile.module.css";
 import Link from "next/link";
 import { FaComments } from "react-icons/fa";
@@ -23,9 +23,29 @@ const MobileHomeClient = () => {
   });
 
   const handleClick = () => {
-    setPostNum((prev) => prev + 5);
+    setPostNum((prevNum) => prevNum + 5);
     setTheData(data);
+    //window.scrollTo(theData[-1]);
   };
+  // useEffect(() => {
+  //   if (data) {
+  //     setTheData(data);
+  //   }
+  // }, [data]);
+
+  useEffect(() => {
+    // Preserve scroll position
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    // Scroll to preserved position after updating
+    window.scrollTo(0, scrollPosition);
+  }, [theData]);
+  // const handleLoadMoreClick = () => {
+  //   // Preserve current scroll position
+  //   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  //   handleClick(); // Increment the number of posts
+  //   window.scrollTo(0, scrollTop); // Restore scroll position
+  // };
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Loading more posts not available</div>;

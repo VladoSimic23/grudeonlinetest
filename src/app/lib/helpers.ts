@@ -1,3 +1,5 @@
+import { revalidatePath } from "next/cache";
+
 // filter by category function
 export const filterPostsByCategory = (
   posts: any[],
@@ -10,3 +12,11 @@ export const filterPostsByCategory = (
     );
   });
 };
+
+export async function triggerRevalidateForPage(pagePath: any) {
+  revalidatePath(`/${pagePath}`);
+}
+
+export async function triggerRevalidateForAllPages() {
+  revalidatePath("/");
+}

@@ -21,9 +21,8 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
     category,
     numOfPosts,
   });
-
   const handleClick = () => {
-    setPostNum((prev) => prev + 2);
+    setPostNum((prev) => prev + 1);
     setTheData(data);
   };
 

@@ -59,3 +59,10 @@ export default async function incrementLike(): Promise<number> {
 //     data: false,
 //   };
 // }
+
+let numOfPosts = 0;
+
+export async function incrementNumOfPosts() {
+  numOfPosts += 1;
+  return numOfPosts;
+}
