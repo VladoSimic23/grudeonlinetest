@@ -15,6 +15,7 @@ export async function POST(req: NextRequest) {
     try {
       const body = await req.json();
       const payload = body || {};
+      console.log(payload);
 
       //const payload = req.body; // Assuming WordPress sends post data
       // Handle the payload from WordPress and trigger revalidation or any other necessary action
@@ -24,7 +25,11 @@ export async function POST(req: NextRequest) {
       // Trigger revalidation or any other action based on the payload
       //await triggerRevalidateForAllPages();
       if (payload.post_status === "publish") {
+        await triggerRevalidateForAllPages();
         await triggerRevalidateForPage(payload.post_name);
+        payload?.categorie.map(async (item: any) => {
+          await triggerRevalidateForPage(`category/${item}`);
+        });
       }
       if (payload.post_status === "trash") {
         // const arr = [payload.taxonomies.keys()];
@@ -32,10 +37,10 @@ export async function POST(req: NextRequest) {
 
         await triggerRevalidateForAllPages();
         await triggerRevalidateForPage(payload.post_title);
-        await triggerRevalidateForPage(`/category`);
-        // payload?.taxonimies.map((item: any) => {
-        //   console.log(item);
-        // });
+        //await triggerRevalidateForPage(`category`);
+        payload?.categorie.map(async (item: any) => {
+          await triggerRevalidateForPage(`category/${item}`);
+        });
       }
 
       NextResponse.json({ message: "Webhook received and processed" }); // Send JSON response

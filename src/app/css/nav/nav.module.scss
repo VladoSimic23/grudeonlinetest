@@ -104,6 +104,7 @@
     .navMobileWrap {
         display: flex;
         align-items: center;
+        margin-top: 8px;
     }
     .navMarginLeft {
         margin-right: 20px;
@@ -117,7 +118,7 @@
       width: 100%;
       background-color: #403633;
       z-index: 10;
-      padding: 10px;
+      //padding: 10px;
      
       ul {
         padding: 0;

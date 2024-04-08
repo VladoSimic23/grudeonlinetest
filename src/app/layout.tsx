@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto, Oswald } from "next/font/google";
 import styles from "./css/mainCss/mainStyle.module.css";
 import FooterComponent from "./components/Footer/FooterComponent";
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -13,7 +13,9 @@ const NaslovneVijesti = dynamic(
 const Navbar = dynamic(() => import("./components/Nav/Navbar"), { ssr: false });
 //import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Oswald({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Home",
@@ -28,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <body
-        className={`${inter.className} ${styles.styleContainer} ${styles.darkMobile}`}
+        className={`${roboto.className} ${styles.styleContainer} ${styles.darkMobile}`}
       >
         <Navbar />
         <div className={styles.container}>

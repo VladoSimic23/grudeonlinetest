@@ -127,6 +127,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 8px;
   }
   .navMarginLeft {
     margin-right: 20px;
@@ -145,7 +146,6 @@
     width: 100%;
     background-color: #403633;
     z-index: 10;
-    padding: 10px;
   }
   .navItems ul {
     padding: 0;
