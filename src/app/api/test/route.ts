@@ -37,7 +37,6 @@ export async function POST(req: NextRequest) {
       }
       if (payload.post_status === "trash") {
         // const arr = [payload.taxonomies.keys()];
-        // console.log(arr);
 
         await triggerRevalidateForAllPages();
         await triggerRevalidateForPage(payload.post_title);
