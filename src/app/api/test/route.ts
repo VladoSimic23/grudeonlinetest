@@ -28,6 +28,9 @@ export async function POST(req: NextRequest) {
         await triggerRevalidateForAllPages();
         await triggerRevalidateForPage(payload.post_name);
         await triggerRevalidateForPage(payload.post_title);
+        await triggerRevalidateForPage("category");
+        await triggerRevalidateForPage(payload.dynamic_segment);
+
         payload?.categorie.map(async (item: any) => {
           await triggerRevalidateForPage(`category/${item}`);
         });
