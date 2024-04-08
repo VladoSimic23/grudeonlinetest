@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
       if (payload.post_status === "publish") {
         await triggerRevalidateForAllPages();
         await triggerRevalidateForPage(payload.post_name);
+        await triggerRevalidateForPage(payload.post_title);
         payload?.categorie.map(async (item: any) => {
           await triggerRevalidateForPage(`category/${item}`);
         });
