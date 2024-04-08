@@ -18,5 +18,5 @@ export async function triggerRevalidateForPage(pagePath: any) {
 }
 
 export async function triggerRevalidateForAllPages() {
-  revalidatePath("/");
+  revalidatePath("/", "layout");
 }
