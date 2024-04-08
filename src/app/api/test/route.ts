@@ -27,12 +27,16 @@ export async function POST(req: NextRequest) {
       if (payload.post_status === "publish") {
         await triggerRevalidateForAllPages();
         await triggerRevalidateForPage(payload.dynamic_segment);
+
         // await triggerRevalidateForPage(payload.post_name);
         // await triggerRevalidateForPage(payload.post_title);
         await triggerRevalidateForPage("category");
 
         payload?.categorie.map(async (item: any) => {
           await triggerRevalidateForPage(`category/${item}`);
+          await triggerRevalidateForPage(
+            `category/${item}/${payload.dynamic_segment}`
+          );
         });
       }
       if (payload.post_status === "trash") {
