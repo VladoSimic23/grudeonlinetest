@@ -438,6 +438,7 @@
   }
   .singlePostHeader h1 {
     font-size: 22px;
+    padding: 0 10px;
   }
   .grid23 {
     grid-gap: 40px;

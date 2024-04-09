@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
 import { fetchClientComments } from "@/app/lib/fetchDb";
+import { isMobileDevice } from "@/app/lib/deviceCheck";
 
 const CommentComponent = ({ post }: any) => {
   const [comments, setComments] = useState([]);
+  const isMobile = isMobileDevice();
 
   useEffect(() => {
     const getData = async () => {
@@ -25,21 +27,46 @@ const CommentComponent = ({ post }: any) => {
       {comments?.map((item: any, idx: number) => {
         return (
           <div key={idx} className={commentStyles.commentWrapper}>
-            <div className={commentStyles.displayComments}>
-              <div>
-                <Image
-                  src={"/none.jpg"}
-                  width={60}
-                  height={60}
-                  alt="commentIcon"
-                />
+            {isMobile && (
+              <div className={commentStyles.displayComments}>
+                <div className={commentStyles.commentDetailsMobile}>
+                  <div className={commentStyles.mobileComments}>
+                    <Image
+                      src={"/none.jpg"}
+                      width={60}
+                      height={60}
+                      alt="commentIcon"
+                    />
+                    <div>
+                      <h4>{item?.author?.node?.name}</h4>
+                      <span>{item?.date}</span>
+                    </div>
+                  </div>
+                  <p>
+                    {item?.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}
+                  </p>
+                </div>
               </div>
-              <div className={commentStyles.commentDetails}>
-                <h4>{item?.author?.node?.name}</h4>
-                <span>{item?.date}</span>
-                <p>{item?.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}</p>
+            )}
+            {!isMobile && (
+              <div className={commentStyles.displayComments}>
+                <div>
+                  <Image
+                    src={"/none.jpg"}
+                    width={60}
+                    height={60}
+                    alt="commentIcon"
+                  />
+                </div>
+                <div className={commentStyles.commentDetails}>
+                  <h4>{item?.author?.node?.name}</h4>
+                  <span>{item?.date}</span>
+                  <p>
+                    {item?.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
             <div>
               <button>
                 <Image
