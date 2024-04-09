@@ -20,7 +20,7 @@ const CommentComponent = ({ post }: any) => {
   }
 
   return (
-    <div>
+    <div className={commentStyles.commentsContainer}>
       <h2>Komentari : {comments?.length}</h2>
       {comments?.map((item: any, idx: number) => {
         return (

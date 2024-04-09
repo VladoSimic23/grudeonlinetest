@@ -365,6 +365,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .tagsStyles {
+    padding: 0 15px;
+  }
   .noSearchResults h2 {
     font-size: 16px;
   }
@@ -393,8 +396,14 @@
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .sidebar {
+    padding: 0 10px;
+  }
   .sidebar .grid2 {
     border: none;
+  }
+  .sidebar h4 {
+    margin: 10px 0;
   }
   .container {
     padding: 0;
@@ -430,11 +439,14 @@
   .singlePostHeader h1 {
     font-size: 22px;
   }
+  .grid23 {
+    grid-gap: 40px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
   .wpEditorContent {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   .tabletContainer, .sidebar, .naslovnicaContainer {
     max-width: 700px;

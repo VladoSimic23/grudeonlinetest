@@ -51,6 +51,7 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding: 0 10px;
   }
   .flexCategory a {
     font-size: 16px !important;
@@ -89,20 +90,16 @@
   }
   .grid2PostList img {
     max-height: 200px;
-    border-radius: 7px;
   }
   .categoryPaddingBottom {
     border: none;
-    padding: 15px 0;
+    padding: 15px 0 0 0;
   }
   .categoryPaddingBottom a {
     font-size: 16px;
   }
   .categoryPaddingBottom span {
     font-size: 13px;
-  }
-  .categoryPaddingBottom img {
-    border-radius: 4px;
   }
 }
 /*# sourceMappingURL=categoryCss.module.css.map */

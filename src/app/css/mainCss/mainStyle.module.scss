@@ -331,6 +331,9 @@ margin-top: 30px;
 }
 
 @media only screen and (max-width: 768px) {
+    .tagsStyles {
+        padding: 0 15px;
+    }
     ///DARK MOBILE
     /// 
     .noSearchResults {
@@ -366,8 +369,12 @@ margin-top: 30px;
         }
     }
     .sidebar {
+        padding: 0 10px;
         .grid2 {
             border: none;
+        }
+        h4 {
+            margin: 10px 0;
         }
     }
     .container {
@@ -410,11 +417,14 @@ margin-top: 30px;
             font-size: 22px;
         }
     }
+    .grid23 {
+        grid-gap: 40px;
+    }
 
 }
 @media only screen and (max-width: 992px) {
     .wpEditorContent {
-    padding: 0 30px;
+    padding: 0 15px;
 }
     .tabletContainer,.sidebar,.naslovnicaContainer {
         max-width: 700px;
