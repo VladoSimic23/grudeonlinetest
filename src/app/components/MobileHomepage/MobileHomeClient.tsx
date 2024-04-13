@@ -13,7 +13,6 @@ const MobileHomeClient = () => {
   const [theData, setTheData] = useState<any[]>([]);
   const url = temporaryApiUrl; // Replace with your actual API endpoint
   const category = "Grude Online";
-  //const numOfPosts = 5;
 
   // Use the custom SWR hook with the URL, category, and numberOfPosts
   const { data, error, isLoading } = useCustomSWR3({
@@ -25,13 +24,7 @@ const MobileHomeClient = () => {
   const handleClick = () => {
     setPostNum((prevNum) => prevNum + 5);
     setTheData(data);
-    //window.scrollTo(theData[-1]);
   };
-  // useEffect(() => {
-  //   if (data) {
-  //     setTheData(data);
-  //   }
-  // }, [data]);
 
   useEffect(() => {
     // Preserve scroll position
@@ -39,13 +32,6 @@ const MobileHomeClient = () => {
     // Scroll to preserved position after updating
     window.scrollTo(0, scrollPosition);
   }, [theData]);
-  // const handleLoadMoreClick = () => {
-  //   // Preserve current scroll position
-  //   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  //   handleClick(); // Increment the number of posts
-  //   window.scrollTo(0, scrollTop); // Restore scroll position
-  // };
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Loading more posts not available</div>;

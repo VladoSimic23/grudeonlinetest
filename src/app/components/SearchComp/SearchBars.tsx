@@ -1,20 +1,3 @@
-// const handleSearch = () => {
-//   setLoading(true);
-//   const params = new URLSearchParams(searchParams);
-//   if (searchQuery) {
-//     params.set("query", searchQuery);
-//   } else {
-//     params.delete("query");
-//   }
-
-//   // Switch to the searchResults route
-//   const url = format({
-//     pathname: "/search",
-//     query: { q: decodeURIComponent(searchQuery) },
-//   });
-//   router.push(url);
-//   setLoading(false);
-// };
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";

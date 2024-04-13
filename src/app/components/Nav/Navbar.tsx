@@ -9,13 +9,10 @@ import {} from "@fortawesome/free-brands-svg-icons";
 import { FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
-// import SearchBar from "../SearchComp/SearchBars";
 
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // const [isOver993, setIsSmallMenu] = useState(994);
-  //const [windowSize, setWindowSize] = useState(window.innerWidth || 0);
   const [windowSize, setWindowSize] = useState({
     width: typeof window !== "undefined" ? window.innerWidth || 800 : 800,
   });
@@ -57,8 +54,6 @@ const Navbar = () => {
           <Link href={"/"}>
             <Image
               src={"/Grude_online_Logotip2.png"}
-              // fill
-              // sizes="(max-width: 992px) 350px, (min-width: 993px) 330px"
               width={330}
               height={42}
               alt="Grude-Online"
@@ -110,7 +105,13 @@ const Navbar = () => {
         </div>
       </div>
       <div className={navStyles.mobileMenuToggle} onClick={toggleMobileMenu}>
-        <i className={`fas ${isMobileMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+        <i
+          className={`fas ${
+            isMobileMenuOpen
+              ? `fa-times ${navStyles.closeBarMargin}`
+              : "fa-bars"
+          }`}
+        ></i>
       </div>
     </div>
   );

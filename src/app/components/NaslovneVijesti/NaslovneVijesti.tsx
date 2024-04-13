@@ -20,21 +20,12 @@ const NaslovneVijesti = async () => {
               className={`${styles.naslovnaLink} ${styles.naslovnaLink1}`}
             >
               <div className={styles.naslovnicaOverly}></div>
-              <div
-                className={`${styles.naslovnica1}`}
-                // style={{
-                //   backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`,
-                //   height: "421px",
-                //   width: "auto",
-                // }}
-              >
+              <div className={`${styles.naslovnica1}`}>
                 <Image
                   src={data[0]?.featuredImage?.node?.sourceUrl}
                   fill
                   sizes="auto"
                   priority={true}
-                  // width={421}
-                  // height={400}
                   alt={data[0]?.title}
                 />
                 <div className={styles.datumKoment}>

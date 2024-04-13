@@ -4,7 +4,6 @@ import SinglePost from "@/app/components/SinglePost/SinglePost";
 import TagsComponent from "@/app/components/Tags/TagsComp";
 import { getAllPosts, getSinglePost } from "@/app/lib/service";
 import React, { Suspense } from "react";
-//import { revalidatePath } from "next/cache";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -16,7 +15,6 @@ export async function generateStaticParams() {
 
 const SingleKultura = async ({ params }: any) => {
   const category = "kultura";
-  // revalidatePath(`/${category}`);
   const { slug } = params;
   const thePost = await getSinglePost(slug);
 

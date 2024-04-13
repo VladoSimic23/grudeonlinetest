@@ -1,11 +1,9 @@
 import { getSinglePost } from "@/app/lib/service";
 import Image from "next/image";
 import styles from "../../css/mainCss/mainStyle.module.css";
-import { revalidatePath } from "next/cache";
 import { formatDateToCroatian } from "@/app/lib/utils";
 
-const SinglePost = async ({ slug, category }: any) => {
-  //revalidatePath(`/${category}`);
+const SinglePost = async ({ slug }: any) => {
   const thePost = await getSinglePost(slug);
 
   return (

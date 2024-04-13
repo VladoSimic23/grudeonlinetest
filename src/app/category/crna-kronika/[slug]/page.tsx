@@ -4,9 +4,6 @@ import SinglePost from "@/app/components/SinglePost/SinglePost";
 import TagsComponent from "@/app/components/Tags/TagsComp";
 import { getAllPosts, getSinglePost } from "@/app/lib/service";
 import React, { Suspense } from "react";
-import styles from "../../../css/mainCss/mainStyle.module.css";
-import Sidebar from "@/app/components/Sidebar/Sidebar";
-//import { revalidatePath } from "next/cache";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -18,7 +15,6 @@ export async function generateStaticParams() {
 
 const SingleCrnaKronika = async ({ params }: any) => {
   const category = "crna-kronika";
-  // revalidatePath(`/${category}`);
   const { slug } = params;
   const thePost = await getSinglePost(slug);
 

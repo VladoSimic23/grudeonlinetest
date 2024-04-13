@@ -1,6 +1,5 @@
 import { getAllPostsByTags } from "@/app/lib/service";
 import { Metadata } from "next";
-import { revalidatePath } from "next/cache";
 import React from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import categoryStyles from "../../css/categoryCss/categoryCss.module.css";

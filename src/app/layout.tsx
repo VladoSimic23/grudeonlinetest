@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto, Oswald } from "next/font/google";
+import { Roboto } from "next/font/google";
 import styles from "./css/mainCss/mainStyle.module.css";
 import FooterComponent from "./components/Footer/FooterComponent";
 import "@fortawesome/fontawesome-free/css/all.css";
-import { Suspense } from "react";
 import dynamic from "next/dynamic";
-//import NaslovneVijesti from "./components/NaslovneVijesti/NaslovneVijesti";
-const NaslovneVijesti = dynamic(
-  () => import("./components/NaslovneVijesti/NaslovneVijesti"),
-  { ssr: false }
-);
 const Navbar = dynamic(() => import("./components/Nav/Navbar"), { ssr: false });
-//import "./globals.css";
 
 const roboto = Roboto({
   weight: ["300", "400", "700"],

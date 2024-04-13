@@ -4,7 +4,6 @@ import styles from "../../css/mainCss/mainStyle.module.css";
 import PostList from "@/app/components/PostList/PostList";
 import MobilePostListCategory from "@/app/components/MobileHomepage/MobilePostListCategory";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
-//import { revalidatePath } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Arhiva Vijesti - Grude Online",
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 const Vijesti = () => {
-  //revalidatePath("/vijesti");
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>

@@ -5,9 +5,7 @@ import styles from "../../css/mainCss/mainStyle.module.css";
 import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import Image from "next/image";
 import { FaComments } from "react-icons/fa";
-import { revalidatePath } from "next/cache";
 import { formatDateToCroatian } from "@/app/lib/utils";
-import Sidebar from "../Sidebar/Sidebar";
 
 export async function getData(category: string, nums: number) {
   const res = await getPostsByCategory(category, nums);
@@ -26,7 +24,6 @@ const PostList = async ({
   category: string;
   amount: number;
 }) => {
-  //revalidatePath(`/${category}`);
   const data = await getData(category, amount);
 
   return (

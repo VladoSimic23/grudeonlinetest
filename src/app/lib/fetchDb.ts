@@ -256,37 +256,3 @@ export const fetcher2 = async (
     throw error; // Re-throw the error so that useSWR can handle it
   }
 };
-
-// export const useClientApi = (category: string, numOfPosts: number) => {
-//   const apiUrl = temporaryApiUrl; // Replace with your actual API URL
-//   const { data, error } = useSWR([apiUrl, category, numOfPosts], (url) =>
-//     fetcher(url, category, numOfPosts)
-//   );
-//   console.log(data);
-
-//   return {
-//     data,
-//     error,
-//     isLoading: !data && !error,
-//   };
-// };
-// export const useClientApi = () => {
-//   const apiUrl = "http://localhost:10010/graphql";
-//   const isMobile = useWindowSize();
-
-//   const { data, error, isValidating } = useSWR(
-//     isMobile ? null : [apiUrl],
-//     (url) => fetcher(url, "Sport", 5)
-//   );
-
-//   if (error) {
-//     console.error("SWR Error:", error);
-//   }
-
-//   return {
-//     data,
-//     error,
-//     isLoading: !data && !error,
-//     isFetching: isValidating,
-//   };
-// };

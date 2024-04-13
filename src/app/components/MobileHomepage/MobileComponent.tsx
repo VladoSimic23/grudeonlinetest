@@ -6,7 +6,6 @@ import { FaComments } from "react-icons/fa";
 import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileComponent = async () => {
-  //revalidatePath("/");
   const data = await getRecentPostsHomepage(5);
 
   return (

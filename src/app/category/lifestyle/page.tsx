@@ -4,7 +4,6 @@ import React, { Suspense } from "react";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import MobilePostListCategory from "@/app/components/MobileHomepage/MobilePostListCategory";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
-//import { revalidatePath } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Arhiva Lifestyle - Grude Online",
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 const Lifestyle = async () => {
-  //revalidatePath("/gospodarstvo");
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>

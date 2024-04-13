@@ -20,7 +20,6 @@ import React from "react";
 import { Suspense } from "react";
 import styles from "../../../css/mainCss/mainStyle.module.css";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
-//import { revalidatePath} from "next/cache";
 
 type Props = {
   params: { id: string };
@@ -52,7 +51,6 @@ export async function generateStaticParams() {
 const SingleSport = async ({ params }: any) => {
   const category = "sport";
   const { slug } = params;
-  //revalidatePath(`/${category}/${slug}`);
   const thePost = await getSinglePost(slug);
 
   return (

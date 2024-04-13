@@ -1,4 +1,4 @@
-import { fetchAPI, fetchAPI2, temporaryApiUrl } from "./fetchDb";
+import { fetchAPI, temporaryApiUrl } from "./fetchDb";
 
 /// POSTS SECTION
 export async function getAllPosts() {
@@ -272,26 +272,6 @@ export async function getPostsByCategory(category: string, numOfPosts: number) {
 }
 
 /// COMENTS SECTION
-// export async function getCommentsBySlug(contentName: string) {
-//   const data = await fetchAPI2(`query NewQuery {
-//     comments(where: {contentName: "${contentName}"}) {
-//       nodes {
-//         content
-//         date
-//         author {
-//           node {
-//             name
-//           }
-//         }
-//       }
-//     }
-//   }`);
-//   // const variables = {
-//   //   contentName,
-//   // };
-//   return data?.comments?.nodes;
-// }
-
 export async function submitComment(
   id: number,
   comment: string,
