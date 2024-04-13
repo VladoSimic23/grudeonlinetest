@@ -6,6 +6,8 @@ import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import Image from "next/image";
 import { FaComments } from "react-icons/fa";
 import { formatDateToCroatian } from "@/app/lib/utils";
+import { isMobileDevice } from "@/app/lib/deviceCheck";
+import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 export async function getData(category: string, nums: number) {
   const res = await getPostsByCategory(category, nums);
@@ -25,7 +27,7 @@ const PostList = async ({
   amount: number;
 }) => {
   const data = await getData(category, amount);
-
+  const isMobile = isMobileDevice();
   return (
     <div>
       <div>
@@ -40,8 +42,11 @@ const PostList = async ({
                   <Image
                     src={item.featuredImage.node.sourceUrl}
                     alt={item.title}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    fill
+                    width={(isMobile && 190) || (!isMobile && 315) || 0}
+                    //{isMobile && width={150}}
+                    height={(isMobile && 200) || (!isMobile && 280) || 0}
+                    // sizes="(max-width: 768px) 100vw, 992px"
+                    // fill
                     priority={true}
                   />
                   <div className={styles.hoverOverlay}></div>

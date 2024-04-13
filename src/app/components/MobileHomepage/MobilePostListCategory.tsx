@@ -43,8 +43,8 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
                 <Image
                   src={item.featuredImage.node.sourceUrl}
                   alt={item.title}
-                  sizes="(max-width: 640px) 150px, (max-width: 768px) 300px"
-                  fill
+                  width={315}
+                  height={280}
                   priority={true}
                 />
                 <div className={styles.hoverOverlay}></div>

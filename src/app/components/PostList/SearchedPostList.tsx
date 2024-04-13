@@ -5,8 +5,10 @@ import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { FaComments } from "react-icons/fa";
+import { isMobileDevice } from "@/app/lib/deviceCheck";
 
 const SearchedPostList = ({ data }: { data: any }) => {
+  const isMobile = isMobileDevice();
   return (
     <div>
       {data?.map((item: any, idx: number) => {
@@ -20,8 +22,11 @@ const SearchedPostList = ({ data }: { data: any }) => {
                 <Image
                   src={item?.featuredImage?.node?.sourceUrl}
                   alt={item?.title}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  fill
+                  width={315}
+                  height={280}
+                  // width={(isMobile && 190) || (!isMobile && 315) || 0}
+                  // //{isMobile && width={150}}
+                  // height={(isMobile && 200) || (!isMobile && 280) || 0}
                   priority={true}
                 />
                 <div className={styles.hoverOverlay}></div>

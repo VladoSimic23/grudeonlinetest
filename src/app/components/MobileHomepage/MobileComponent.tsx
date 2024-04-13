@@ -7,7 +7,6 @@ import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileComponent = async () => {
   const data = await getRecentPostsHomepage(5);
-  console.log(data);
 
   return (
     <div className={mobileStyles.mobilePost}>

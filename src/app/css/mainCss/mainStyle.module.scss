@@ -104,6 +104,7 @@ $borderGreys: #DEDEDE;
     min-height: 280px;
     img {
         object-fit: cover;
+        width: 100%;
     }
     &:hover {
         .hoverOverlay {
