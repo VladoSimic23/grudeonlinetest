@@ -7,6 +7,7 @@ import { formatDateToCroatian } from "@/app/lib/utils";
 
 const MobileComponent = async () => {
   const data = await getRecentPostsHomepage(5);
+  console.log(data);
 
   return (
     <div className={mobileStyles.mobilePost}>
@@ -17,8 +18,8 @@ const MobileComponent = async () => {
               <Link href={`/${item?.slug}`}>
                 <Image
                   src={item?.featuredImage?.node?.sourceUrl}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  width={190}
+                  height={200}
                   alt={item.title}
                   priority={true}
                 />

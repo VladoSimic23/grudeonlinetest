@@ -46,8 +46,10 @@ const MobileHomeClient = () => {
               <Link href={`/${item?.slug}`}>
                 <Image
                   src={item?.featuredImage?.node?.sourceUrl}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  width={190}
+                  height={200}
+                  // fill
+                  // sizes="(max-width: 768px) 100vw, 33vw"
                   alt={item.title}
                   priority={true}
                 />
