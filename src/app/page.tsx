@@ -70,6 +70,15 @@ export default async function Home() {
               </>
             )}
           </div>
+          <div>
+            {!isMob && (
+              <>
+                <Suspense fallback={<h2>Loading...</h2>}>
+                  <GalerijaNaslovna />
+                </Suspense>
+              </>
+            )}
+          </div>
         </div>
         <div>
           <Sidebar />

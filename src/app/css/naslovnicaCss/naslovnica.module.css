@@ -143,6 +143,60 @@
   margin-top: 20px;
 }
 
+.galerijeDetails {
+  position: relative;
+  min-height: 228px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.galerijeDetails .imageOverlay {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 3;
+  background: rgba(29, 27, 27, 0.178);
+}
+
+.galerijeDetails .imageOverlay:hover {
+  background: rgba(29, 27, 27, 0.719);
+}
+
+.galerijeDetails img {
+  max-height: 268px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.galerijeDetails a, .galerijeDetails span {
+  color: white;
+  font-size: 16px !important;
+}
+
+.galerijeContentNaslovna {
+  position: relative;
+  z-index: 5;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.galerijeContentNaslovna:hover {
+  background: rgba(29, 27, 27, 0.904);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.galerijeContentNaslovna:hover a {
+  color: white !important;
+}
+
 @media only screen and (max-width: 992px) {
   .grudeOnlineGrid13 {
     grid-gap: 15px;
