@@ -82,6 +82,24 @@
   display: flex;
 }
 
+.mobileComments img {
+  margin-right: 20px;
+  height: 45px;
+  width: 45px;
+}
+
+.mobileComments span {
+  font-size: 12px;
+}
+
+.mobileCommentsContent {
+  padding: 10px;
+}
+
+.mobileCommentsContent p {
+  margin: 0;
+}
+
 .commentDetailsMobile span {
   font-size: 14px;
 }

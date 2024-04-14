@@ -24,8 +24,8 @@ const GospodarstvoNaslovna = async () => {
                   <div className={nasStyles.imageOverlay}></div>
                   <Image
                     src={data[0].featuredImage.node.sourceUrl}
-                    width={400}
-                    height={260}
+                    width={260}
+                    height={120}
                     alt={data[0].title}
                     className={nasStyles.grudeOnlineMainImg}
                   />

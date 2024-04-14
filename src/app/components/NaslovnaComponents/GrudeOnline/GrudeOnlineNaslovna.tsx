@@ -22,8 +22,8 @@ const GrudeOnlineNaslovna = async () => {
               <div className={nasStyles.imageOverlay}></div>
               <Image
                 src={data[0].featuredImage.node.sourceUrl}
-                width={400}
-                height={260}
+                width={300}
+                height={200}
                 alt={data[0].title}
                 priority={true}
                 className={nasStyles.grudeOnlineMainImg}

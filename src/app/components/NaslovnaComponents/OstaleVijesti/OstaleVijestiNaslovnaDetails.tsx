@@ -18,7 +18,7 @@ const OstaleVijestiNaslovnaDetails = async ({ data }: any) => {
       <div className={`${nasStyles.naslovnaOverlay}`}>
         <Link href={`/${slug}`}>
           <div className={nasStyles.imageOverlay}></div>
-          <Image src={sourceUrl} width={258} height={172} alt={title} />
+          <Image src={sourceUrl} width={180} height={100} alt={title} />
         </Link>
       </div>
       <div className={`${nasStyles.grudeOnlineContent} ${nasStyles.ostalo}`}>

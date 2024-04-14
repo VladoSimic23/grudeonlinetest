@@ -40,6 +40,8 @@
 .grudeOnlineMainImg {
   width: 100%;
   margin-top: 15px;
+  max-height: 260px;
+  height: 100%;
 }
 
 .naslovnaOverlay {
@@ -94,6 +96,11 @@
   padding: 15px 0 10px 0;
 }
 
+.grOnlineChildImg {
+  max-height: 80px;
+  height: 100%;
+}
+
 .grudeOnlineContent h3 {
   margin-top: 0;
 }
@@ -120,6 +127,8 @@
 
 .ostaleVijesti img {
   width: 100%;
+  max-height: 172px;
+  height: 100%;
 }
 
 .ostalo h3 {

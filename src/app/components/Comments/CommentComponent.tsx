@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
 import { fetchClientComments } from "@/app/lib/fetchDb";
+import CommentDetails from "./CommentDetails";
 
 const CommentComponent = ({ post }: any) => {
   const [comments, setComments] = useState([]);
@@ -22,7 +23,7 @@ const CommentComponent = ({ post }: any) => {
   return (
     <div className={commentStyles.commentsContainer}>
       <h2>Komentari : {comments?.length}</h2>
-      {comments?.map((item: any, idx: number) => {
+      {/* {comments?.map((item: any, idx: number) => {
         return (
           <div key={idx} className={commentStyles.commentWrapper}>
             <div className={commentStyles.displayComments}>
@@ -61,6 +62,9 @@ const CommentComponent = ({ post }: any) => {
             </div>
           </div>
         );
+      })} */}
+      {comments?.map((item: any, idx: number) => {
+        return <CommentDetails key={idx} item={item} />;
       })}
     </div>
   );

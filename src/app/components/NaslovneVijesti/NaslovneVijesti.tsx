@@ -23,8 +23,10 @@ const NaslovneVijesti = async () => {
               <div className={`${styles.naslovnica1}`}>
                 <Image
                   src={data[0]?.featuredImage?.node?.sourceUrl}
-                  fill
-                  sizes="auto"
+                  width={400}
+                  height={250}
+                  // fill
+                  // sizes="auto"
                   priority={true}
                   alt={data[0]?.title}
                 />

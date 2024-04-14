@@ -66,6 +66,21 @@
 
 .mobileComments {
     display: flex;
+    //align-items: flex-end;
+    img {
+        margin-right: 20px;
+        height: 45px;
+        width: 45px;
+    }
+    span {
+        font-size: 12px;
+    }
+}
+.mobileCommentsContent {
+    padding: 10px;
+    p {
+        margin: 0;
+    }
 }
 .commentDetailsMobile {
     span {
