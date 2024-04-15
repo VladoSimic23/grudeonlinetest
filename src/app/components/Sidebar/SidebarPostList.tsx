@@ -10,7 +10,7 @@ const SidebarPostList = async ({ data }: any) => {
       <h4>POPULARNO</h4>
       {data?.map((item: any, index: number) => {
         return (
-          <div key={index} className={styles.grid2}>
+          <div key={index} className={styles.flexSidebarParent}>
             <div>
               <Link href={`/${item?.slug}`}>
                 <Image

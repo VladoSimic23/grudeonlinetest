@@ -90,8 +90,11 @@
 }
 
 .grudeOnlineContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   h3 {
-    margin-top: 0;
+    margin-top: -5px;
     a {
       text-decoration: none;
       font-size: 14px;
@@ -147,6 +150,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    object-fit: cover;
   }
   a, span {
     color: white;
@@ -168,7 +172,12 @@
   }
 }
 
-
+.flexGrOnline {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 15px 0 10px;
+}
 @media only screen and (max-width: 992px) {
   .grudeOnlineGrid13 {
     grid-gap: 15px;

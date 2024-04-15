@@ -15,7 +15,7 @@ const SportNaslovnaDetails = async ({ data }: any) => {
   } = data;
 
   return (
-    <div className={nasStyles.grudeOnlineGrid13}>
+    <div className={nasStyles.flexGrOnline}>
       <div className={nasStyles.naslovnaOverlay}>
         <Link href={`/${slug}`}>
           <div className={nasStyles.imageOverlay}></div>
