@@ -403,7 +403,7 @@ margin-top: 30px;
         }
     }
     .sidebar {
-        padding: 0 10px;
+        padding: 20px;
         .grid2 {
             border: none;
         }
@@ -443,7 +443,7 @@ margin-top: 30px;
         min-height: auto;
         img {
            position: relative !important;
-           object-fit: cover;
+           object-fit: contain;
         }
     }
     .heroEle {

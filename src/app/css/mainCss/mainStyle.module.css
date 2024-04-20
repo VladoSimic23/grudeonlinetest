@@ -431,7 +431,7 @@
        object-fit: contain;
   }
   .sidebar {
-    padding: 0 10px;
+    padding: 20px;
   }
   .sidebar .grid2 {
     border: none;
@@ -467,8 +467,8 @@
   }
   .relativeEle img {
     position: relative !important;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .heroEle {
     min-height: 400px;
