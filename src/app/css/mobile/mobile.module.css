@@ -15,9 +15,46 @@
   line-height: 1.4;
 }
 
+.singleMobilePost:nth-child(3) .singleMobilePostTop, .singleMobilePost:nth-child(7) .singleMobilePostTop, .singleMobilePost:nth-child(12) .singleMobilePostTop, .singleMobilePost:nth-child(17) .singleMobilePostTop, .singleMobilePost:nth-child(20) .singleMobilePostTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.singleMobilePost:nth-child(3) .singleMobilePostTop a, .singleMobilePost:nth-child(3) .singleMobilePostTop h4, .singleMobilePost:nth-child(7) .singleMobilePostTop a, .singleMobilePost:nth-child(7) .singleMobilePostTop h4, .singleMobilePost:nth-child(12) .singleMobilePostTop a, .singleMobilePost:nth-child(12) .singleMobilePostTop h4, .singleMobilePost:nth-child(17) .singleMobilePostTop a, .singleMobilePost:nth-child(17) .singleMobilePostTop h4, .singleMobilePost:nth-child(20) .singleMobilePostTop a, .singleMobilePost:nth-child(20) .singleMobilePostTop h4 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.singleMobilePost:nth-child(3) .singleMobilePostTop img, .singleMobilePost:nth-child(7) .singleMobilePostTop img, .singleMobilePost:nth-child(12) .singleMobilePostTop img, .singleMobilePost:nth-child(17) .singleMobilePostTop img, .singleMobilePost:nth-child(20) .singleMobilePostTop img {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  max-width: 150px;
+  max-height: 125px;
+}
+
+.singleMobilePost:nth-child(3) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(7) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(12) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(17) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(20) .singleMobilePostTop .categoryImgTag {
+  width: 100%;
+  padding: 3px 0;
+  font-size: 10px;
+  text-align: center;
+}
+
+.singleMobilePost:nth-child(7) .mobilePostLink, .singleMobilePost:nth-child(17) .mobilePostLink {
+  -webkit-box-ordinal-group: 3 !important;
+      -ms-flex-order: 2 !important;
+          order: 2 !important;
+}
+
 .singleMobilePost {
   border-bottom: 1px solid #dbdbdb;
   padding: 15px 0;
+  margin-bottom: 5px;
 }
 
 .singleMobilePostBottom {
@@ -35,7 +72,6 @@
 }
 
 .singleMobilePostBottom span:nth-child(1) {
-  border-bottom: 1px solid #e79645;
   padding-bottom: 2px;
 }
 
@@ -76,20 +112,47 @@
   background: #e79645;
 }
 
+.loadingMorePosts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: red;
+  z-index: 1909;
+}
+
+.categoryImgTag {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 12px;
+  padding: 5px 10px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mobilePostLink {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
 @media only screen and (max-width: 768px) {
   .singleMobilePostTop h4 {
     margin-bottom: 0;
-    padding: 0 10px;
+    padding: 10px;
+  }
+  .singleMobilePostTop h4 a {
+    font-size: 18px !important;
   }
   .singleMobilePost {
     padding: 15px 0 0 0;
     border-bottom: none;
   }
   .singleMobilePostBottom {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 0;
-    padding-top: 10px;
+    padding: 10px;
   }
   .singleMobilePostBottom span:nth-child(1) {
     padding-bottom: 5px;
@@ -105,6 +168,33 @@
 @media only screen and (max-width: 992px) {
   .mobilePost {
     margin-top: 20px;
+    padding: 20px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 /*# sourceMappingURL=mobile.module.css.map */

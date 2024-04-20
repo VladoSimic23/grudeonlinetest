@@ -133,6 +133,13 @@ export const getRecentPostsHomepage = async (numOfPosts: number) => {
               }
             }
           }
+          categories {
+            edges {
+              node {
+                slug
+              }
+            }
+          }
         }
       }
     }`);

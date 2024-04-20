@@ -1,7 +1,13 @@
 "use client";
 import { useCustomSWR4 } from "@/app/lib/api";
 import { temporaryApiUrl } from "@/app/lib/fetchDb";
-import React, { useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import mobileStyles from "../../css/mobile/mobile.module.css";
 import Link from "next/link";
 import { FaComments } from "react-icons/fa";
@@ -14,6 +20,8 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
   const [numOfPosts, setPostNum] = useState(4);
   const [theData, setTheData] = useState<any[]>([]);
   const url = temporaryApiUrl; // Replace with your actual API endpoint
+  const [prevData, setPrevData] = useState<any[]>([]);
+  const buttonRef: any = useRef(null);
 
   // Use the custom SWR hook with the URL, category, and numberOfPosts
   const { data, error, isLoading } = useCustomSWR4({
@@ -21,9 +29,29 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
     category,
     numOfPosts,
   });
+
+  const handleScrollToLastPost = useCallback(() => {
+    if (prevData.length > 0) {
+      const lastPostIndex = prevData.length - 1;
+      scrollToPost(lastPostIndex);
+    }
+  }, [prevData]);
+
+  useEffect(() => {
+    handleScrollToLastPost();
+  }, [data, handleScrollToLastPost]);
+
   const handleClick = () => {
     setPostNum((prev) => prev + 1);
+    setPrevData([...theData]);
     setTheData(data);
+  };
+
+  const scrollToPost = (postNum: any) => {
+    const postElement = document.getElementById(`post-${postNum}`);
+    if (postElement) {
+      postElement.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   if (isLoading) return <div>Loading...</div>;
@@ -35,6 +63,7 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
       {theData.slice(2).map((item: any, idx: number) => {
         return (
           <div
+            id={`post-${idx + 1}`}
             key={idx}
             className={`${categoryStyles.grid2PostList} ${categoryStyles.categoryPaddingBottom}`}
           >
@@ -69,7 +98,9 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
         );
       })}
       <div className={mobileStyles.loadMoreBtn}>
-        <button onClick={handleClick}>Učitaj Više Objava</button>
+        <button ref={buttonRef} onClick={handleClick}>
+          Učitaj Više Objava
+        </button>
       </div>
     </div>
   );

@@ -14,9 +14,38 @@
         }
     }
 }
+.singleMobilePost:nth-child(3), .singleMobilePost:nth-child(7), .singleMobilePost:nth-child(12),.singleMobilePost:nth-child(17),.singleMobilePost:nth-child(20) {
+    //display: flex;
+    .singleMobilePostTop {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        a, h4 {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        img {
+            width: min-content;
+            max-width: 150px;
+            max-height: 125px;
+        }
+        .categoryImgTag {
+            width: 100%;
+            padding: 3px 0;
+            font-size: 10px;
+            text-align: center;
+        }
+    }
+}
+.singleMobilePost:nth-child(7),.singleMobilePost:nth-child(17) {
+    .mobilePostLink {
+        order: 2 !important;
+    }
+}
 .singleMobilePost {
     border-bottom: 1px solid rgb(219, 219, 219);
     padding: 15px 0;
+    margin-bottom: 5px;
 }
 .singleMobilePostBottom {
     font-size: 13px;
@@ -25,7 +54,7 @@
     justify-content: space-between;
     align-items: center;
     span:nth-child(1) {
-        border-bottom: 1px solid #e79645;
+        //border-bottom: 1px solid #e79645;
         padding-bottom: 2px;
     }
 }
@@ -61,12 +90,39 @@
         }
     }
 }
+.loadingMorePosts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: red;
+    z-index: 1909;
+}
+.categoryImgTag {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 12px;
+    padding: 5px 10px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.mobilePostLink {
+    display: block;
+    position: relative;
+    height: 100%;
+}
 
 @media only screen and (max-width: 768px) {
     .singleMobilePostTop {
         h4 {
             margin-bottom: 0;
-            padding: 0 10px;
+            padding: 10px;
+            a {
+                font-size: 18px !important;
+            }
         }
     }
     .singleMobilePost {
@@ -74,10 +130,7 @@
         border-bottom: none;
     }
     .singleMobilePostBottom {
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 0;
-        padding-top: 10px;
+       padding: 10px;
         span:nth-child(1) {
             padding-bottom: 5px;
         }
@@ -92,5 +145,24 @@
 @media only screen and (max-width: 992px) {
     .mobilePost {
         margin-top: 20px;
+        padding: 20px;
+        //transition: all 2s ease-in-out;
+        //animation: fadeIn 1s ease; 
     }
 }
+// .newPost {
+//     animation: fadeIn 0.5s ease; /* Example animation */
+//   }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  ///box-shadow: 0px 0px 30px -10px #80007e;

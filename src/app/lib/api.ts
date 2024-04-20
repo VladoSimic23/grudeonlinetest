@@ -42,7 +42,21 @@ export const fetcher3 = async ({
                   }
                 }
               }
+              categories {
+                edges {
+                  node {
+                    slug
+                  }
+                }
+              }
             }
+            edges {
+              cursor
+            }
+            pageInfo {
+      endCursor
+      hasNextPage
+    }
           }
         }`,
       }),
@@ -135,12 +149,13 @@ export const useCustomSWR3 = <T>(
   key: string | FetcherArgs,
   config?: SWRConfiguration<T>
 ) => {
-  const { data, error } = useSWR<any>(key, fetcher3, config);
+  const { data, error, mutate } = useSWR<any>(key, fetcher3, config);
 
   return {
     data,
     error,
     isLoading: !data && !error,
+    mutate,
   };
 };
 
