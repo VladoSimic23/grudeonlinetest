@@ -404,6 +404,9 @@ margin-top: 30px;
     }
     .sidebar {
         padding: 20px;
+        .flexSidebarParent {
+            border: none;
+        }
         .grid2 {
             border: none;
         }
@@ -411,15 +414,7 @@ margin-top: 30px;
             margin: 10px 0;
         }
     }
-    .sidebar {
-        padding: 0 10px;
-        .flexSidebarParent {
-            border: none;
-        }
-        h4 {
-            margin: 10px 0;
-        }
-    }
+ 
     .container {
         padding: 0;
     }

@@ -433,16 +433,10 @@
   .sidebar {
     padding: 20px;
   }
-  .sidebar .grid2 {
+  .sidebar .flexSidebarParent {
     border: none;
   }
-  .sidebar h4 {
-    margin: 10px 0;
-  }
-  .sidebar {
-    padding: 0 10px;
-  }
-  .sidebar .flexSidebarParent {
+  .sidebar .grid2 {
     border: none;
   }
   .sidebar h4 {
