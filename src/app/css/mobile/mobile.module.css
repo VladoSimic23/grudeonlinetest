@@ -125,7 +125,7 @@
 .categoryImgTag {
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 7px;
   font-size: 12px;
   padding: 5px 10px;
   color: white;
@@ -139,16 +139,114 @@
   height: 100%;
 }
 
+.carouselEdit > div > ul {
+  right: 150px !important;
+  right: 50% !important;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  height: 30px;
+}
+
+.carouselEdit {
+  display: -ms-grid;
+  display: grid;
+  margin-bottom: 20px;
+}
+
+.carouselEdit div ul {
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+.carouselEdit div ul [role="button"] {
+  background: #ea8624 !important;
+  margin: 10px 5px !important;
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 1;
+}
+
+.slide {
+  position: relative;
+}
+
+.slide h3 {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  position: absolute;
+  background: #000000d0;
+  padding: 10px 10px 30px 10px;
+  margin: 0;
+  bottom: 0;
+}
+
+.izdvojenoTop a {
+  text-decoration: none;
+  background: blueviolet;
+  color: white;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.activeSlide {
+  display: block;
+  width: 100%;
+}
+
+.dots {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dots span {
+  background: red;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.activeDot {
+  background: #ea8624 !important;
+}
+
 @media only screen and (max-width: 768px) {
   .singleMobilePostTop h4 {
     margin-bottom: 0;
-    padding: 10px;
+    padding: 0 10px;
   }
   .singleMobilePostTop h4 a {
     font-size: 18px !important;
   }
   .singleMobilePost {
-    padding: 15px 0 0 0;
+    padding: 30px 0 0 0;
     border-bottom: none;
   }
   .singleMobilePostBottom {
@@ -167,34 +265,7 @@
 
 @media only screen and (max-width: 992px) {
   .mobilePost {
-    margin-top: 20px;
-    padding: 20px;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    padding: 0 20px;
   }
 }
 /*# sourceMappingURL=mobile.module.css.map */

@@ -16,7 +16,9 @@ $borderGreys: #DEDEDE;
 }
 // NAV
 //
-
+.gallery {
+    display: none;
+}
 .active {
     color: #008ca1 !important;
 }
@@ -73,8 +75,7 @@ $borderGreys: #DEDEDE;
     margin-top: 60px;
 }
 .singlePostHeader {
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin: 30px 0 10px 0;
     text-align: center;
     h1 {
         font-size: 26px;
@@ -438,7 +439,7 @@ margin-top: 30px;
         min-height: auto;
         img {
            position: relative !important;
-           object-fit: contain;
+           object-fit: cover;
         }
     }
     .heroEle {
@@ -463,7 +464,7 @@ margin-top: 30px;
 }
 @media only screen and (max-width: 992px) {
     .wpEditorContent {
-    padding: 0 15px;
+    padding: 0 20px;
 }
     .tabletContainer,.sidebar,.naslovnicaContainer {
         max-width: 700px;
@@ -504,7 +505,7 @@ margin-top: 30px;
     }
     .heroEle {
         img {
-            object-fit: cover;
+            object-fit: contain;
         }
     }
 }
@@ -516,7 +517,7 @@ margin-top: 30px;
         height: 100%;
         img {
             height: 100% !important;
-            object-fit: cover;
+            //object-fit: cover;
         }
     }
 }

@@ -17,8 +17,6 @@ const MobileHomeClient = () => {
   const category = "Grude Online";
   const [prevData, setPrevData] = useState<any[]>([]);
   const buttonRef: any = useRef(null);
-  const [morePostsLoading, setMorePostsLoading] = useState(false);
-  console.log(theData);
 
   // Use the custom SWR hook with the URL, category, and numberOfPosts
   const { data, error, isLoading } = useCustomSWR3({
@@ -41,8 +39,6 @@ const MobileHomeClient = () => {
   }, [data, handleScrollToLastPost]);
 
   const handleClick = () => {
-    setMorePostsLoading(true);
-
     setPrevData([...theData]);
     setPostNum((prev) => prev + 5);
     setTheData(data);

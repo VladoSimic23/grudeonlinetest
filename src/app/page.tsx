@@ -17,6 +17,7 @@ import { headers } from "next/headers";
 import { Suspense } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import MobileIzdvojeno from "./components/MobileHomepage/MbileIzdvojeno/MobileIzdvojeno";
 
 export const metadata: Metadata = {
   title: "Grude Online - Grudski News Portal",
@@ -38,6 +39,9 @@ export default async function Home() {
         <div className={styles.tabletContainer}>
           {isMob && (
             <>
+              <Suspense fallback={<h2>Loading...</h2>}>
+                <MobileIzdvojeno />
+              </Suspense>
               <Suspense fallback={<h2>Loading...</h2>}>
                 <MobileComponent />
               </Suspense>

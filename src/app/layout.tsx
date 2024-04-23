@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import styles from "./css/mainCss/mainStyle.module.css";
 import FooterComponent from "./components/Footer/FooterComponent";
 import "@fortawesome/fontawesome-free/css/all.css";
 import dynamic from "next/dynamic";
 const Navbar = dynamic(() => import("./components/Nav/Navbar"), { ssr: false });
 
-const roboto = Roboto({
-  weight: ["300", "400", "700"],
+const roboto = Poppins({
+  weight: ["200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 

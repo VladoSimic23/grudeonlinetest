@@ -8,7 +8,6 @@ import { categoryStyles } from "@/app/lib/helpers";
 
 const MobileComponent = async () => {
   const data = await getRecentPostsHomepage(5);
-  console.log(data);
 
   return (
     <div className={mobileStyles.mobilePost}>

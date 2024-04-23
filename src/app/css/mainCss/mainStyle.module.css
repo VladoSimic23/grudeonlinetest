@@ -11,6 +11,10 @@
   display: inline-block;
 }
 
+.gallery {
+  display: none;
+}
+
 .active {
   color: #008ca1 !important;
 }
@@ -74,8 +78,7 @@
 }
 
 .singlePostHeader {
-  margin-top: 60px;
-  margin-bottom: 30px;
+  margin: 30px 0 10px 0;
   text-align: center;
 }
 
@@ -461,8 +464,8 @@
   }
   .relativeEle img {
     position: relative !important;
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .heroEle {
     min-height: 400px;
@@ -484,7 +487,7 @@
 
 @media only screen and (max-width: 992px) {
   .wpEditorContent {
-    padding: 0 15px;
+    padding: 0 20px;
   }
   .tabletContainer, .sidebar, .naslovnicaContainer {
     max-width: 700px;
@@ -528,8 +531,8 @@
        object-fit: cover;
   }
   .heroEle img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 
@@ -539,8 +542,6 @@
   }
   .relativeEle img {
     height: 100% !important;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 }
 /*# sourceMappingURL=mainStyle.module.css.map */
