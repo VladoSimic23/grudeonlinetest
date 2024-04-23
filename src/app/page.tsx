@@ -39,9 +39,9 @@ export default async function Home() {
         <div className={styles.tabletContainer}>
           {isMob && (
             <>
-              <Suspense fallback={<h2>Loading...</h2>}>
+              {/* <Suspense fallback={<h2>Loading...</h2>}>
                 <MobileIzdvojeno />
-              </Suspense>
+              </Suspense> */}
               <Suspense fallback={<h2>Loading...</h2>}>
                 <MobileComponent />
               </Suspense>
