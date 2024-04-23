@@ -29,6 +29,7 @@ const Slideshow = ({ images }: any) => {
                   width={300}
                   height={250}
                   alt={image?.title}
+                  priority={true}
                 />
               </div>
             </Link>
