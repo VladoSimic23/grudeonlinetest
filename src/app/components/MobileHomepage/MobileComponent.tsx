@@ -11,6 +11,7 @@ const MobileComponent = async () => {
 
   return (
     <div className={mobileStyles.mobilePost}>
+      <h2 className={mobileStyles.mobilePostHeading}>Najnovije</h2>
       {data.map((item: any, index: number) => {
         return (
           <div key={index} className={mobileStyles.singleMobilePost}>
