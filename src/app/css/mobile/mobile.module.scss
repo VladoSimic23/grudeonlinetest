@@ -162,7 +162,7 @@
         text-decoration: none;
     }
     .izdvojenoFirst {
-       padding: 20px 20px 0 20px;
+       padding: 20px 12px 0 12px;
        position: relative;
     h1 {
         font-size: 16px;
@@ -178,8 +178,8 @@
 }
 .izdvojenoRest {
     display: flex;
-    padding: 20px;
-    gap: 20px;
+    padding:  20px 12px;
+    gap: 12px;
     //grid-template-columns: 1fr 1fr;
     img {
         width: 100%;
@@ -308,6 +308,6 @@
 }
 @media only screen and (max-width: 992px) {
     .mobilePost {
-        padding: 0 20px;
+        padding: 0 12px;
     }
 }
