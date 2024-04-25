@@ -13,17 +13,19 @@ $borderColor:#dddddd;
     span {
         color: $greyText;
         padding: 20px 0 10px 0;
-        &::after {
-            background: #008ca1;
-            height: 1px;
-            width: 66px;
-            display: block;
-            content: "";
-            margin-top: 5px;
-        }
+        // &::after {
+        //     background: #008ca1;
+        //     height: 1px;
+        //     width: 66px;
+        //     display: block;
+        //     content: "";
+        //     margin-top: 5px;
+        // }
     }
 }
-
+.postListPadding {
+    padding: 0 12px;
+}
 .categoryPaddingBottom {
     padding: 45px 0 40px 0;
     border-bottom: 1px solid $borderColor;
@@ -36,6 +38,9 @@ $borderColor:#dddddd;
 .flexDate {
     display: block;
     margin-top: 15px;
+    span {
+        padding-bottom: 5px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -46,14 +51,14 @@ $borderColor:#dddddd;
             font-size: 16px !important;
         }
         span {
-            padding-bottom: 0;
+            //padding-bottom: 0;
             padding-top: 10px;
             font-size: 12px;
             color: #e4e4e4; 
-            &::after {
-                background: #ea8a2b;
-                width: 100%;
-            }
+            // &::after {
+            //     background: #ea8a2b;
+            //     width: 100%;
+            // }
         }
     }
     .flexDate {
@@ -77,7 +82,7 @@ $borderColor:#dddddd;
     }
     .categoryPaddingBottom {
         border: none;
-        padding: 15px 0 0 0;
+        padding: 15px 0 30px 0;
         a {
             font-size: 16px;
         }

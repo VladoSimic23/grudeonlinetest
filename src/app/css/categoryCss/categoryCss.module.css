@@ -19,13 +19,8 @@
   padding: 20px 0 10px 0;
 }
 
-.flexCategory span::after {
-  background: #008ca1;
-  height: 1px;
-  width: 66px;
-  display: block;
-  content: "";
-  margin-top: 5px;
+.postListPadding {
+  padding: 0 12px;
 }
 
 .categoryPaddingBottom {
@@ -46,6 +41,10 @@
   margin-top: 15px;
 }
 
+.flexDate span {
+  padding-bottom: 5px;
+}
+
 @media only screen and (max-width: 768px) {
   .flexCategory {
     -webkit-box-pack: justify;
@@ -57,14 +56,9 @@
     font-size: 16px !important;
   }
   .flexCategory span {
-    padding-bottom: 0;
     padding-top: 10px;
     font-size: 12px;
     color: #e4e4e4;
-  }
-  .flexCategory span::after {
-    background: #ea8a2b;
-    width: 100%;
   }
   .flexDate {
     display: -webkit-box;
@@ -93,7 +87,7 @@
   }
   .categoryPaddingBottom {
     border: none;
-    padding: 15px 0 0 0;
+    padding: 15px 0 30px 0;
   }
   .categoryPaddingBottom a {
     font-size: 16px;

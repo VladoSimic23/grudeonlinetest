@@ -14,7 +14,13 @@ const Kultura = async () => {
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
-        <h1 className={styles.headingEdit}>KULTURA</h1>
+        <h1 className={styles.headingEdit}>
+          <span
+            style={{ borderBottom: "1px solid brown", paddingBottom: "5px" }}
+          >
+            KULTURA
+          </span>
+        </h1>
         <Suspense>
           <PostList category={"kultura"} amount={2} />
         </Suspense>

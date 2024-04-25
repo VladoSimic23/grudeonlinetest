@@ -14,7 +14,13 @@ const Galerije = async () => {
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
-        <h1 className={styles.headingEdit}>GALERIJE</h1>
+        <h1 className={styles.headingEdit}>
+          <span
+            style={{ borderBottom: "1px solid purple", paddingBottom: "5px" }}
+          >
+            GALERIJE
+          </span>
+        </h1>
         <Suspense>
           <PostList category={"galerije"} amount={2} />
         </Suspense>

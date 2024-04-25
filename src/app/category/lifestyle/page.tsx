@@ -14,7 +14,16 @@ const Lifestyle = async () => {
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
-        <h1 className={styles.headingEdit}>LIFESTYLE</h1>
+        <h1 className={styles.headingEdit}>
+          <span
+            style={{
+              borderBottom: "1px solid darkmagenta",
+              paddingBottom: "5px",
+            }}
+          >
+            LIFESTYLE
+          </span>
+        </h1>
         <Suspense>
           <PostList category={"lifestyle"} amount={2} />
         </Suspense>

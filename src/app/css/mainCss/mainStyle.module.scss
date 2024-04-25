@@ -449,7 +449,8 @@ margin-top: 30px;
         margin-bottom: 25px;
     }
     .postList {
-        margin-top: 30px;
+        margin-top: 20px;
+
     }
     .singlePostHeader {
         h1 {
@@ -463,6 +464,9 @@ margin-top: 30px;
 
 }
 @media only screen and (max-width: 992px) {
+    // .postList {
+    //     padding: 0 12px;
+    // }
     .wpEditorContent {
     padding: 0 20px;
 }

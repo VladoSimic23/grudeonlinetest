@@ -14,7 +14,13 @@ const Vijesti = () => {
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
-        <h1 className={styles.headingEdit}>VIJESTI</h1>
+        <h1 className={styles.headingEdit}>
+          <span
+            style={{ borderBottom: "1px solid crimson", paddingBottom: "5px" }}
+          >
+            VIJESTI
+          </span>
+        </h1>
         <Suspense>
           <PostList category={"vijesti"} amount={2} />
         </Suspense>

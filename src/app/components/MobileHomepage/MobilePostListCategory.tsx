@@ -12,9 +12,10 @@ import mobileStyles from "../../css/mobile/mobile.module.css";
 import Link from "next/link";
 import { FaComments } from "react-icons/fa";
 import Image from "next/image";
-import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
+import categoryStylesCss from "../../css/categoryCss/categoryCss.module.css";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import { formatDateToCroatian } from "@/app/lib/utils";
+import { categoryStyles } from "@/app/lib/helpers";
 
 const MobilePostListCategory = ({ category }: { category: string }) => {
   const [numOfPosts, setPostNum] = useState(4);
@@ -59,13 +60,13 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
   if (!theData) return <div>No data available</div>;
 
   return (
-    <div>
+    <div className={categoryStylesCss.postListPadding}>
       {theData.slice(2).map((item: any, idx: number) => {
         return (
           <div
             id={`post-${idx + 1}`}
             key={idx}
-            className={`${categoryStyles.grid2PostList} ${categoryStyles.categoryPaddingBottom}`}
+            className={`${categoryStylesCss.grid2PostList} ${categoryStylesCss.categoryPaddingBottom}`}
           >
             <Link href={`/${item.slug}`}>
               <div className={styles.relativeEle}>
@@ -79,10 +80,19 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
                 <div className={styles.hoverOverlay}></div>
               </div>
             </Link>
-            <div className={categoryStyles.flexCategory}>
+            <div className={categoryStylesCss.flexCategory}>
               <Link href={`/${item.slug}`}>{item.title}</Link>
-              <div className={categoryStyles.flexDate}>
-                <span>{formatDateToCroatian(item?.date)}</span>
+              <div className={categoryStylesCss.flexDate}>
+                <span
+                  style={{
+                    borderBottom: `1px solid ${
+                      categoryStyles.find((style) => style.cat === category)
+                        ?.color || "black"
+                    }`,
+                  }}
+                >
+                  {formatDateToCroatian(item?.date)}
+                </span>
                 <p>
                   {item.comments.nodes.length} <FaComments />
                 </p>

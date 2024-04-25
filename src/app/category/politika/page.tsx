@@ -14,7 +14,11 @@ const Politika = async () => {
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
-        <h1 className={styles.headingEdit}>POLITIKA</h1>
+        <h1 className={styles.headingEdit}>
+          <span style={{ borderBottom: "1px solid red", paddingBottom: "5px" }}>
+            POLITIKA
+          </span>
+        </h1>
         <Suspense>
           <PostList category={"politika"} amount={2} />
         </Suspense>

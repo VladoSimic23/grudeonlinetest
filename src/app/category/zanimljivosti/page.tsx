@@ -14,7 +14,16 @@ const Zanimljivosti = async () => {
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
-        <h1 className={styles.headingEdit}>ZANIMLJIVOSTI</h1>
+        <h1 className={styles.headingEdit}>
+          <span
+            style={{
+              borderBottom: "1px solid cornflowerblue",
+              paddingBottom: "5px",
+            }}
+          >
+            ZANIMLJIVOSTI
+          </span>
+        </h1>
         <Suspense>
           <PostList category={"zanimljivosti"} amount={2} />
         </Suspense>

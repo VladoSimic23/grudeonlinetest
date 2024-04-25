@@ -14,7 +14,16 @@ const GrudeOnline = () => {
   return (
     <div className={`${styles.postList} ${styles.grid23}`}>
       <div>
-        <h1 className={styles.headingEdit}>GRUDE ONLINE</h1>
+        <h1 className={styles.headingEdit}>
+          <span
+            style={{
+              borderBottom: "1px solid chocolate",
+              paddingBottom: "5px",
+            }}
+          >
+            GRUDE ONLINE
+          </span>
+        </h1>
         <Suspense>
           <PostList category={"grude-online"} amount={2} />
         </Suspense>
