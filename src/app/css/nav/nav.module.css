@@ -1,27 +1,15 @@
 .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
-
 .navbar ul {
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   list-style: none;
 }
-
 .navbar ul li a {
   text-decoration: none;
   font-size: 12px;
@@ -39,17 +27,10 @@
 
 .imageContainer {
   padding: 30px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .imageContainer img {
   position: relative !important;
   height: auto !important;
@@ -59,17 +40,14 @@
 .searchStyle {
   width: 100%;
 }
-
 .searchStyle input {
   padding: 18px 20px;
   border: none;
   width: 100%;
 }
-
 .searchStyle input:focus-visible {
   outline: 1px solid #ea8624;
 }
-
 .searchStyle button {
   margin-left: 10px;
 }
@@ -77,7 +55,6 @@
 .navMarginLeft {
   margin-left: 100px;
 }
-
 .navMarginLeft svg {
   font-size: 18px;
   margin-top: 5px;
@@ -86,15 +63,9 @@
 
 /* NavMenu.css */
 .navMenu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   color: #fff;
 }
@@ -104,8 +75,6 @@
 }
 
 .navItems {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
   width: 100%;
@@ -119,33 +88,23 @@
 .mobileMenuToggle {
   font-size: 1.5rem;
   cursor: pointer;
-  display: none;
-  /* Initially hide on larger screens */
+  display: none; /* Initially hide on larger screens */
 }
 
 @media (max-width: 992px) {
   .navMobileWrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     margin-top: 8px;
   }
   .navMarginLeft {
     margin-right: 20px;
   }
   .navItems {
-    display: none;
-    /* Hide items on smaller screens */
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: none; /* Hide items on smaller screens */
+    flex-direction: column;
     position: absolute;
-    top: 41px;
-    /* Adjust the top position according to your design */
+    top: 41px; /* Adjust the top position according to your design */
     left: 0;
     width: 100%;
     background-color: #403633;
@@ -153,13 +112,8 @@
   }
   .navItems ul {
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .navItems ul li {
     text-align: center;
@@ -169,13 +123,10 @@
     color: white !important;
   }
   .navItems.mobileOpen {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .mobileMenuToggle {
-    display: block;
-    /* Show the toggle button on smaller screens */
+    display: block; /* Show the toggle button on smaller screens */
     margin-right: 30px;
   }
   .navWrap {
@@ -192,5 +143,4 @@
   .imageContainer {
     padding: 15px 0;
   }
-}
-/*# sourceMappingURL=nav.module.css.map */
+}/*# sourceMappingURL=nav.module.css.map */

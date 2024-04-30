@@ -2,7 +2,6 @@
   border-bottom: 2px solid #008ca1;
   padding-bottom: 5px;
 }
-
 .naslovnicaHeading a {
   text-decoration: none;
   background-color: #008ca1;
@@ -12,23 +11,18 @@
 }
 
 .grid2GrudeOnline {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
 
 .grid3GrudeOnline {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 
 .imageOverlay {
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   width: 100%;
   height: 100%;
@@ -47,12 +41,10 @@
 .naslovnaOverlay {
   position: relative;
 }
-
 .naslovnaOverlay img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .naslovnaOverlay a:hover .imageOverlay {
   background: rgba(255, 255, 255, 0.116);
 }
@@ -60,10 +52,8 @@
 .linkFont {
   font-size: 18px;
   text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .linkFont:hover {
   color: #008ca1;
 }
@@ -73,7 +63,6 @@
   padding: 20px 0 10px 0;
   font-size: 14px;
 }
-
 .grudeOnlineDate span::after {
   background: #008ca1;
   height: 1px;
@@ -88,11 +77,9 @@
 }
 
 .grudeOnlineGrid13 {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
-  border-bottom: 1px solid #e6e6e6;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid rgb(230, 230, 230);
   padding: 15px 0 10px 0;
 }
 
@@ -102,33 +89,21 @@
 }
 
 .grudeOnlineContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 .grudeOnlineContent h3 {
   margin-top: -5px;
 }
-
 .grudeOnlineContent h3 a {
   text-decoration: none;
   font-size: 14px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .grudeOnlineContent h3 a:hover {
   color: #008ca1;
 }
-
 .grudeOnlineContent span {
   font-size: 14px;
   color: #888888;
@@ -137,7 +112,6 @@
 .ostaleVijesti {
   margin-top: 20px;
 }
-
 .ostaleVijesti img {
   width: 100%;
   max-height: 172px;
@@ -149,7 +123,7 @@
 }
 
 .sportBorder {
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 .gospSportMargin {
@@ -160,25 +134,17 @@
   position: relative;
   min-height: 228px;
   padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
-
 .galerijeDetails .imageOverlay {
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   z-index: 3;
   background: rgba(29, 27, 27, 0.178);
 }
-
 .galerijeDetails .imageOverlay:hover {
   background: rgba(29, 27, 27, 0.719);
 }
-
 .galerijeDetails img {
   max-height: 268px;
   height: 100%;
@@ -189,7 +155,6 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .galerijeDetails a, .galerijeDetails span {
   color: white;
   font-size: 16px !important;
@@ -198,23 +163,18 @@
 .galerijeContentNaslovna {
   position: relative;
   z-index: 5;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .galerijeContentNaslovna:hover {
   background: rgba(29, 27, 27, 0.904);
   border-radius: 10px;
   padding: 15px;
 }
-
 .galerijeContentNaslovna:hover a {
   color: white !important;
 }
 
 .flexGrOnline {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
   border-bottom: 1px solid #e6e6e6;
@@ -226,8 +186,6 @@
     grid-gap: 15px;
   }
   .grid3GrudeOnline {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-}
-/*# sourceMappingURL=naslovnica.module.css.map */
+}/*# sourceMappingURL=naslovnica.module.css.map */

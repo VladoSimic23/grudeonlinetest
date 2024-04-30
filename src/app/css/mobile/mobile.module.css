@@ -3,12 +3,10 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .mobilePost h4 {
   line-height: 0;
   margin-top: 5px;
 }
-
 .mobilePost h4 a {
   font-size: 16px;
   text-decoration: none;
@@ -16,28 +14,20 @@
 }
 
 .singleMobilePost:nth-child(3) .singleMobilePostTop, .singleMobilePost:nth-child(7) .singleMobilePostTop, .singleMobilePost:nth-child(12) .singleMobilePostTop, .singleMobilePost:nth-child(17) .singleMobilePostTop, .singleMobilePost:nth-child(20) .singleMobilePostTop {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
-
 .singleMobilePost:nth-child(3) .singleMobilePostTop a, .singleMobilePost:nth-child(3) .singleMobilePostTop h4, .singleMobilePost:nth-child(7) .singleMobilePostTop a, .singleMobilePost:nth-child(7) .singleMobilePostTop h4, .singleMobilePost:nth-child(12) .singleMobilePostTop a, .singleMobilePost:nth-child(12) .singleMobilePostTop h4, .singleMobilePost:nth-child(17) .singleMobilePostTop a, .singleMobilePost:nth-child(17) .singleMobilePostTop h4, .singleMobilePost:nth-child(20) .singleMobilePostTop a, .singleMobilePost:nth-child(20) .singleMobilePostTop h4 {
   margin-top: 0;
   padding-top: 0;
 }
-
 .singleMobilePost:nth-child(3) .singleMobilePostTop img, .singleMobilePost:nth-child(7) .singleMobilePostTop img, .singleMobilePost:nth-child(12) .singleMobilePostTop img, .singleMobilePost:nth-child(17) .singleMobilePostTop img, .singleMobilePost:nth-child(20) .singleMobilePostTop img {
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   max-width: 150px;
   max-height: 125px;
 }
-
 .singleMobilePost:nth-child(3) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(7) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(12) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(17) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(20) .singleMobilePostTop .categoryImgTag {
   width: 100%;
   padding: 3px 0;
@@ -46,9 +36,7 @@
 }
 
 .singleMobilePost:nth-child(7) .mobilePostLink, .singleMobilePost:nth-child(17) .mobilePostLink {
-  -webkit-box-ordinal-group: 3 !important;
-      -ms-flex-order: 2 !important;
-          order: 2 !important;
+  order: 2 !important;
 }
 
 .mobilePostHeading {
@@ -60,7 +48,7 @@
 }
 
 .singleMobilePost {
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid rgb(219, 219, 219);
   padding: 15px 0;
   margin-bottom: 5px;
 }
@@ -68,17 +56,10 @@
 .singleMobilePostBottom {
   font-size: 13px;
   padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .singleMobilePostBottom span:nth-child(1) {
   padding-bottom: 2px;
 }
@@ -93,11 +74,8 @@
 .loadMoreBtn {
   margin-top: 30px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .loadMoreBtn button {
   font-size: 12px;
   border: none;
@@ -111,11 +89,9 @@
   color: white;
   font-weight: bold;
   letter-spacing: 1px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border-radius: 5px;
 }
-
 .loadMoreBtn button:hover {
   background: #e79645;
 }
@@ -150,7 +126,6 @@
 .imgIzdvojeno {
   position: relative;
 }
-
 .imgIzdvojeno h2 {
   position: absolute;
   background: #1720a2;
@@ -165,7 +140,6 @@
 .img2Izdvojeno {
   position: relative;
 }
-
 .img2Izdvojeno h2 {
   position: absolute;
   background: #1720a2;
@@ -180,29 +154,24 @@
 .izdvojenoContainer {
   position: relative;
 }
-
 .izdvojenoContainer::before {
   content: "";
   width: 2px;
   display: block;
   position: absolute;
 }
-
 .izdvojenoContainer a {
   text-decoration: none;
 }
-
 .izdvojenoContainer .izdvojenoFirst {
   padding: 20px 12px 0 12px;
   position: relative;
 }
-
 .izdvojenoContainer .izdvojenoFirst h1 {
   font-size: 16px;
   padding: 10px 0 0 0;
   margin: 0;
 }
-
 .izdvojenoContainer .izdvojenoFirst img {
   width: 100%;
   -o-object-fit: cover;
@@ -211,52 +180,41 @@
 }
 
 .izdvojenoRest {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 20px 12px;
   gap: 12px;
 }
-
 .izdvojenoRest img {
   width: 100%;
   border-radius: 6px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .izdvojenoRest h1 {
   font-size: 14px;
 }
-
 .izdvojenoRest div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 .carouselEdit > div > ul {
   right: 150px !important;
   right: 50% !important;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  transform: translateX(50%);
   height: 30px;
 }
 
 .carouselEdit {
-  display: -ms-grid;
   display: grid;
   margin-bottom: 20px;
 }
-
 .carouselEdit div ul {
   bottom: 0;
   right: 0;
   width: auto !important;
   margin: 0 !important;
 }
-
-.carouselEdit div ul [role="button"] {
+.carouselEdit div ul [role=button] {
   background: #ea8624 !important;
   margin: 10px 5px !important;
   width: 10px !important;
@@ -267,13 +225,12 @@
 .slide {
   position: relative;
 }
-
 .slide h3 {
   width: 100%;
   display: block;
   font-size: 14px;
   position: absolute;
-  background: #000000d0;
+  background: rgba(0, 0, 0, 0.8156862745);
   padding: 10px 10px 30px 10px;
   margin: 0;
   bottom: 0;
@@ -289,15 +246,6 @@
   letter-spacing: 1px;
 }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -306,7 +254,6 @@
     opacity: 1;
   }
 }
-
 .activeSlide {
   display: block;
   width: 100%;
@@ -314,11 +261,8 @@
 
 .dots {
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .dots span {
   background: red;
   display: inline-block;
@@ -352,16 +296,13 @@
     padding-bottom: 5px;
   }
 }
-
 @media only screen and (min-width: 992px) {
   .mobilePost {
     display: none;
   }
 }
-
 @media only screen and (max-width: 992px) {
   .mobilePost {
     padding: 0 12px;
   }
-}
-/*# sourceMappingURL=mobile.module.css.map */
+}/*# sourceMappingURL=mobile.module.css.map */

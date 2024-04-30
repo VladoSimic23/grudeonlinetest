@@ -2,7 +2,6 @@
   color: #313131;
   margin: 0;
 }
-
 .styleContainer a {
   color: #313131;
 }
@@ -20,11 +19,9 @@
 }
 
 .navLinks li a {
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   position: relative;
 }
-
 .navLinks li a::after {
   content: "";
   width: 0px;
@@ -33,28 +30,21 @@
   left: 0;
   bottom: -5px;
   background: #008ca1;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .navLinks li a:hover {
   color: #008ca1;
 }
-
 .navLinks li a:hover::after {
   width: 100%;
 }
 
 .tagsStyles {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .tagsStyles div {
   margin-right: 5px;
 }
-
 .tagsStyles div a {
   border: 1px solid #DEDEDE;
   text-decoration: none;
@@ -63,10 +53,8 @@
   padding: 6px 12px;
   display: block;
   color: #888888;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .tagsStyles div a:hover {
   border: 1px solid #008ca1;
   background: #008ca1;
@@ -81,12 +69,10 @@
   margin: 30px 0 10px 0;
   text-align: center;
 }
-
 .singlePostHeader h1 {
   font-size: 26px;
   margin-bottom: 10px;
 }
-
 .singlePostHeader span {
   font-size: 14px;
   color: #888888;
@@ -98,7 +84,6 @@
   height: 100%;
   min-height: 550px;
 }
-
 .heroEle img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -110,13 +95,11 @@
   height: 100%;
   min-height: 280px;
 }
-
 .relativeEle img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
 }
-
 .relativeEle:hover .hoverOverlay {
   background: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, rgba(5, 8, 8, 0.5) 100%);
   position: absolute;
@@ -138,43 +121,37 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-
 .container p {
   font-size: 14px;
   line-height: 1.8;
 }
-
 .container iFrame {
   width: 100%;
   height: 50vh;
 }
 
 .grid2, .grid3, .grid4, .grid23, .grid2Vijesti {
-  display: -ms-grid;
   display: grid;
 }
 
 .grid2 {
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
 
 .grid2Vijesti {
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
 }
 
 .grid23 {
-  -ms-grid-columns: 3fr 1fr;
-      grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-gap: 50px;
+  overflow: hidden;
 }
 
 .grid3 {
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 45px;
 }
 
@@ -185,7 +162,6 @@
 .sidebar {
   margin-top: 70px;
 }
-
 .sidebar .flexSidebarParent img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -193,69 +169,50 @@
   max-width: 70px;
   max-height: 70px;
 }
-
 .sidebar .flexSidebarParent a {
   font-size: 14px;
   text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .sidebar .flexSidebarParent a:hover {
   color: #008ca1;
 }
-
 .sidebar .flexSidebarParent span {
   font-size: 12px;
   color: #888888;
 }
 
 .flexSidebarParent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
   border-bottom: 1px solid #d5d4d4;
   padding: 13px 0 10px;
 }
-
 .flexSidebarParent a {
   font-size: 14px;
   text-decoration: none;
 }
 
 .flexSidebar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-item-align: center;
-      align-self: center;
+  flex-direction: column;
+  align-self: center;
 }
-
 .flexSidebar a {
   margin-bottom: 5px;
 }
 
 .naslovnaLink {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .naslovnicaWrap {
   margin-top: 30px;
 }
-
 .naslovnicaWrap a {
   text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .naslovnicaWrap a:hover .naslovnicaOverly {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -263,8 +220,6 @@
 .naslovnica1 {
   width: 100%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: auto;
   padding: 20px;
@@ -273,7 +228,6 @@
   background-size: cover;
   cursor: pointer;
 }
-
 .naslovnica1 img {
   width: 100%;
   max-height: 461px;
@@ -284,7 +238,6 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .naslovnica1 h3 {
   margin-bottom: 10px;
   font-size: 22px;
@@ -294,8 +247,6 @@
 .naslovnica {
   width: 100%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 20px;
   background-position: center;
@@ -304,7 +255,6 @@
   cursor: pointer;
   height: 188px;
 }
-
 .naslovnica img {
   width: 100%;
   max-height: 228px;
@@ -315,7 +265,6 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .naslovnica h3 {
   font-size: 16px;
   color: white;
@@ -326,9 +275,7 @@
   position: relative;
   z-index: 1;
 }
-
 .naslovnicaContainer .naslovnicaOverly {
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -344,26 +291,16 @@
   color: white;
   position: relative;
   z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .loadMoreBtnCat {
   margin-top: 30px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .loadMoreBtnCat button {
   font-size: 12px;
   border: none;
@@ -377,11 +314,9 @@
   color: white;
   font-weight: bold;
   letter-spacing: 1px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border-radius: 5px;
 }
-
 .loadMoreBtnCat button:hover {
   background: #e79645;
 }
@@ -390,12 +325,31 @@
   text-align: center;
 }
 
+.carouselContainer img {
+  max-height: 700px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.carousel1 {
+  max-width: 1000px;
+}
+.carousel1 img {
+  max-width: 100%;
+}
+
+.carousel2 {
+  max-width: 1000px;
+}
+.carousel2 img {
+  max-height: 120px;
+}
+
 @media only screen and (max-width: 600px) {
   .heroEle {
     min-height: 300px !important;
   }
 }
-
 @media only screen and (max-width: 768px) {
   .tagsStyles {
     padding: 0 15px;
@@ -419,7 +373,6 @@
     color: #e4e4e4;
   }
   .hoverOverlay {
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(14, 14, 14, 0.3)), to(rgba(204, 200, 191, 0.1)));
     background: linear-gradient(0deg, rgba(14, 14, 14, 0.3) 0%, rgba(204, 200, 191, 0.1) 100%);
     position: absolute;
     top: 0;
@@ -484,7 +437,6 @@
     grid-gap: 40px;
   }
 }
-
 @media only screen and (max-width: 992px) {
   .wpEditorContent {
     padding: 0 20px;
@@ -497,8 +449,7 @@
     height: 350px;
   }
   .grid2Vijesti {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .grid2Vijesti .naslovnica1 {
     width: 100%;
@@ -507,20 +458,17 @@
     width: 100% !important;
   }
   .grid2VijestiOstale {
-    -ms-grid-columns: 1fr 1fr !important;
-        grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
   }
   .grid2VijestiOstale .naslovnica {
     width: 100%;
   }
   .grid3 {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     text-align: center;
   }
   .grid23 {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .relativeEle {
     height: 100%;
@@ -535,7 +483,6 @@
        object-fit: contain;
   }
 }
-
 @media only screen and (max-width: 1366px) {
   .relativeEle {
     height: 100%;
@@ -544,4 +491,41 @@
     height: 100% !important;
   }
 }
-/*# sourceMappingURL=mainStyle.module.css.map */
+@media only screen and (min-width: 992px) {
+  .carouselContainer {
+    max-width: 1000px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .carousel1, .carousel2 {
+    padding: 0 20px;
+  }
+  .carousel1 img {
+    height: auto !important;
+  }
+  .carousel2 {
+    margin-top: 10px;
+  }
+  .carousel2 img {
+    -o-object-fit: cover !important;
+       object-fit: cover !important;
+    max-height: 80px;
+  }
+  .carouselContainer {
+    max-width: auto !important;
+    text-align: center;
+  }
+  .carouselContainer img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .carouselContainer {
+    max-width: 300px;
+  }
+  .carouselContainer img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}/*# sourceMappingURL=mainStyle.module.css.map */

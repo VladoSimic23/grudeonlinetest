@@ -29,6 +29,7 @@ const PostList = async ({
 }) => {
   const data = await getData(category, amount);
   const isMobile = isMobileDevice();
+  console.log(data);
 
   return (
     <div className={categoryStylesCss.postListPadding}>

@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "gallery.module.scss"
-    ],
-    "names": [],
-    "file": "gallery.module.css"
-}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"gallery.module.css"}

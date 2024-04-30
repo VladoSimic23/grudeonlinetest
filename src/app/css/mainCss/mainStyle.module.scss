@@ -155,6 +155,7 @@ $borderGreys: #DEDEDE;
 .grid23 {
     grid-template-columns: 3fr 1fr;
     grid-gap: 50px;
+    overflow: hidden;
 }
 .grid3 {
     grid-template-columns: 1fr 1fr 1fr;
@@ -335,6 +336,29 @@ margin-top: 30px;
         text-align: center;
     }
    
+}
+
+//// CAROUSEL
+/// 
+.carouselContainer {      
+    img {  
+        max-height: 700px;
+        object-fit: contain;
+    }
+}
+.carousel1 {
+    max-width: 1000px;
+    img {
+        max-width: 100%;
+        //max-height: auto;
+    }
+}
+.carousel2 {
+    max-width: 1000px;
+    img {
+        //max-width: 100px;
+        max-height: 120px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -525,3 +549,52 @@ margin-top: 30px;
         }
     }
 }
+@media only screen and (min-width: 992px) {
+    .carouselContainer {
+        max-width: 1000px;
+    }
+    // .carousel1 {
+    //     img {
+    //         max-height: 600px;
+    //     }
+    //}
+}
+@media only screen and (max-width: 992px) {
+    .carousel1,.carousel2 {
+        padding: 0 20px;
+    }
+    .carousel1 {
+        //max-height: 600px;
+        img {
+            height: auto !important;
+        }
+    }
+    .carousel2 {
+        margin-top: 10px;
+        img {
+            object-fit: cover !important;
+            max-height: 80px;
+        }
+    }
+    .carouselContainer {
+
+        max-width: auto !important;
+        img {
+            object-fit: contain;
+            
+            //max-width: 100% !important;
+            //width: auto !important;
+           // max-height: 400px;
+        }
+        text-align: center;
+    }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .carouselContainer {
+            max-width: 300px;
+            img {
+                object-fit: contain;
+            }
+        }
+        }
