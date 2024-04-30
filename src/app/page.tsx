@@ -45,6 +45,7 @@ export default async function Home() {
               <Suspense fallback={<h2>Loading...</h2>}>
                 <MobileComponent />
               </Suspense>
+              gdfg
               <MobileHomeClient />
             </>
           )}
@@ -88,7 +89,6 @@ export default async function Home() {
           <Sidebar />
         </div>
       </div>
-      {/* <GalerijaNaslovna /> */}
     </>
   );
 }
