@@ -14,6 +14,9 @@
         }
     }
 }
+.mobilePostSecondStyle:last-child {
+    margin-bottom: 0;
+}
 .mobilePostSecondStyle {
     margin-bottom: 30px;
     h4 {
@@ -44,7 +47,8 @@
 
     }
     .singleMobilePostBottom {
-        padding-top: 0;
+        margin-top: 20px;
+        padding: 0;
     }
 }
 // .singleMobilePost:nth-child(3), .singleMobilePost:nth-child(7), .singleMobilePost:nth-child(12),.singleMobilePost:nth-child(17),.singleMobilePost:nth-child(20) {
@@ -83,11 +87,11 @@
     margin-top: 10px;
 }
 .mobilePostHeadingSecond {
-    border-bottom: 1px solid maroon;
+    border-bottom: 1px solid royalblue;
     display: inline-block;
     //padding: 0 0 10px 0;
     margin-bottom: 30px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .singleMobilePost {
@@ -115,7 +119,7 @@
     }
 }
 .loadMoreBtn {
-    margin-top: 30px;
+    margin-top: 40px;
     width: 100%;
     display: flex;
     button {

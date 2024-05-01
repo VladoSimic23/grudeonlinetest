@@ -14,6 +14,7 @@ const SinglePost = async ({ slug }: any) => {
   removedGal(".gallery").remove();
   const modH = removedGal.html();
   const $ = cheerio.load(thePost?.content);
+  console.log(thePost);
 
   // // Extract image URLs
   const images: any = [];

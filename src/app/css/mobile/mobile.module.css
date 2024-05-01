@@ -13,6 +13,10 @@
   line-height: 1.4;
 }
 
+.mobilePostSecondStyle:last-child {
+  margin-bottom: 0;
+}
+
 .mobilePostSecondStyle {
   margin-bottom: 30px;
 }
@@ -44,7 +48,8 @@
   order: 2 !important;
 }
 .mobilePostSecondStyle .singleMobilePostBottom {
-  padding-top: 0;
+  margin-top: 20px;
+  padding: 0;
 }
 
 .mobilePostHeading {
@@ -56,10 +61,10 @@
 }
 
 .mobilePostHeadingSecond {
-  border-bottom: 1px solid maroon;
+  border-bottom: 1px solid royalblue;
   display: inline-block;
   margin-bottom: 30px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .singleMobilePost {
@@ -87,7 +92,7 @@
 }
 
 .loadMoreBtn {
-  margin-top: 30px;
+  margin-top: 40px;
   width: 100%;
   display: flex;
 }

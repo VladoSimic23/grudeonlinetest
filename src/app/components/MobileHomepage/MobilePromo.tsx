@@ -41,26 +41,28 @@ const MobilePromo = async () => {
                   {item.categories.edges[0]?.node.slug}
                 </span>
               </Link>
-              <h4>
-                <Link href={`/${item?.slug}`}>{item?.title}</Link>
-              </h4>
-            </div>
-            <div className={mobileStyles.singleMobilePostBottom}>
-              <span
-                style={{
-                  borderBottom: `1px solid ${
-                    categoryStyles.find(
-                      (style) =>
-                        style.cat === item.categories.edges[0]?.node.slug
-                    )?.color || "black"
-                  }`,
-                }}
-              >
-                {formatDateToCroatian(item?.date)}
-              </span>
-              <span>
-                {item?.comments?.nodes?.length} <FaComments />
-              </span>
+              <div>
+                <h4>
+                  <Link href={`/${item?.slug}`}>{item?.title}</Link>
+                </h4>
+                <div className={mobileStyles.singleMobilePostBottom}>
+                  <span
+                    style={{
+                      borderBottom: `1px solid ${
+                        categoryStyles.find(
+                          (style) =>
+                            style.cat === item.categories.edges[0]?.node.slug
+                        )?.color || "black"
+                      }`,
+                    }}
+                  >
+                    {formatDateToCroatian(item?.date)}
+                  </span>
+                  {/* <span>
+                    {item?.comments?.nodes?.length} <FaComments />
+                  </span> */}
+                </div>
+              </div>
             </div>
           </div>
         );
