@@ -1,5 +1,3 @@
-//import styles from "./page.module.css";
-
 import GalerijaNaslovna from "./components/NaslovnaComponents/Galerija/GalerijaNaslovna";
 import GospodarstvoNaslovna from "./components/NaslovnaComponents/Gospodarstvo/GospodarstvoNaslovna";
 import MobileComponent from "./components/MobileHomepage/MobileComponent";
@@ -15,9 +13,9 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { isMobileDevice } from "./lib/deviceCheck";
 import { headers } from "next/headers";
 import { Suspense } from "react";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import MobileIzdvojeno from "./components/MobileHomepage/MbileIzdvojeno/MobileIzdvojeno";
+import MobilePromo from "./components/MobileHomepage/MobilePromo";
 
 export const metadata: Metadata = {
   title: "Grude Online - Grudski News Portal",
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const isMob = isMobileDevice();
-  const heads = headers();
+  //const heads = headers();
 
   return (
     <>
@@ -45,8 +43,10 @@ export default async function Home() {
               <Suspense fallback={<h2>Loading...</h2>}>
                 <MobileComponent />
               </Suspense>
-              gdfg
               <MobileHomeClient />
+              <Suspense fallback={<h2>Loading...</h2>}>
+                <MobilePromo />
+              </Suspense>
             </>
           )}
           {!isMob && (

@@ -33,4 +33,5 @@ export const categoryStyles = [
   { cat: "vijesti", color: "crimson" },
   { cat: "zanimljivosti", color: "cornflowerblue" },
   { cat: "ostale-vijesti", color: "cadetblue" },
+  { cat: "promo", color: "maroon" },
 ];

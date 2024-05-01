@@ -13,30 +13,38 @@
   line-height: 1.4;
 }
 
-.singleMobilePost:nth-child(3) .singleMobilePostTop, .singleMobilePost:nth-child(7) .singleMobilePostTop, .singleMobilePost:nth-child(12) .singleMobilePostTop, .singleMobilePost:nth-child(17) .singleMobilePostTop, .singleMobilePost:nth-child(20) .singleMobilePostTop {
+.mobilePostSecondStyle {
+  margin-bottom: 30px;
+}
+.mobilePostSecondStyle h4 {
+  padding: 0 !important;
+}
+.mobilePostSecondStyle .singleMobilePostTop {
   display: flex;
   gap: 10px;
   align-items: flex-start;
 }
-.singleMobilePost:nth-child(3) .singleMobilePostTop a, .singleMobilePost:nth-child(3) .singleMobilePostTop h4, .singleMobilePost:nth-child(7) .singleMobilePostTop a, .singleMobilePost:nth-child(7) .singleMobilePostTop h4, .singleMobilePost:nth-child(12) .singleMobilePostTop a, .singleMobilePost:nth-child(12) .singleMobilePostTop h4, .singleMobilePost:nth-child(17) .singleMobilePostTop a, .singleMobilePost:nth-child(17) .singleMobilePostTop h4, .singleMobilePost:nth-child(20) .singleMobilePostTop a, .singleMobilePost:nth-child(20) .singleMobilePostTop h4 {
+.mobilePostSecondStyle .singleMobilePostTop a, .mobilePostSecondStyle .singleMobilePostTop h4 {
   margin-top: 0;
   padding-top: 0;
 }
-.singleMobilePost:nth-child(3) .singleMobilePostTop img, .singleMobilePost:nth-child(7) .singleMobilePostTop img, .singleMobilePost:nth-child(12) .singleMobilePostTop img, .singleMobilePost:nth-child(17) .singleMobilePostTop img, .singleMobilePost:nth-child(20) .singleMobilePostTop img {
+.mobilePostSecondStyle .singleMobilePostTop img {
   width: -moz-min-content;
   width: min-content;
   max-width: 150px;
   max-height: 125px;
 }
-.singleMobilePost:nth-child(3) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(7) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(12) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(17) .singleMobilePostTop .categoryImgTag, .singleMobilePost:nth-child(20) .singleMobilePostTop .categoryImgTag {
+.mobilePostSecondStyle .singleMobilePostTop .categoryImgTag {
   width: 100%;
   padding: 3px 0;
   font-size: 10px;
   text-align: center;
 }
-
-.singleMobilePost:nth-child(7) .mobilePostLink, .singleMobilePost:nth-child(17) .mobilePostLink {
+.mobilePostSecondStyle .singleMobilePostTop .mobilePostLink {
   order: 2 !important;
+}
+.mobilePostSecondStyle .singleMobilePostBottom {
+  padding-top: 0;
 }
 
 .mobilePostHeading {
@@ -45,6 +53,13 @@
   padding: 0 0 10px 0;
   margin-bottom: 0;
   margin-top: 10px;
+}
+
+.mobilePostHeadingSecond {
+  border-bottom: 1px solid maroon;
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .singleMobilePost {
