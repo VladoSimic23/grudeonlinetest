@@ -90,6 +90,7 @@
 }
 
 .relativeEle {
+  display: flex;
   position: relative;
   width: 100%;
   height: 100%;
@@ -99,6 +100,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 .relativeEle:hover .hoverOverlay {
   background: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, rgba(5, 8, 8, 0.5) 100%);
@@ -106,7 +108,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 99%;
+  height: 100%;
 }
 
 .headingEdit {
@@ -378,7 +380,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 99%;
+    height: 100%;
   }
   .wpEditorContent img {
     width: 100%;

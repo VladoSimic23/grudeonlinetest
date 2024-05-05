@@ -129,7 +129,7 @@
 .categoryImgTag {
   position: absolute;
   left: 0;
-  bottom: 7px;
+  bottom: 0;
   font-size: 12px;
   padding: 5px 10px;
   color: white;
@@ -138,13 +138,13 @@
 }
 
 .mobilePostLink {
-  display: block;
+  display: flex;
   position: relative;
   height: 100%;
 }
-
 .imgIzdvojeno {
   position: relative;
+  display: flex;
 }
 .imgIzdvojeno h2 {
   position: absolute;
@@ -153,12 +153,13 @@
   margin: 0;
   padding: 3px 8px;
   letter-spacing: 1px;
-  bottom: 7px;
+  bottom: 0;
   border-bottom-left-radius: 6px;
 }
 
 .img2Izdvojeno {
   position: relative;
+  display: flex;
 }
 .img2Izdvojeno h2 {
   position: absolute;
@@ -167,7 +168,7 @@
   margin: 0;
   padding: 4px 8px 3px 8px;
   letter-spacing: 1px;
-  bottom: 7px;
+  bottom: 0;
   border-bottom-left-radius: 6px;
 }
 

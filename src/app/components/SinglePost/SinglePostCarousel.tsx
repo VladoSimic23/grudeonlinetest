@@ -50,6 +50,11 @@ const SinglePostCarousel = ({ photos }: any) => {
         ref={(slider1) => setNav1(slider1)}
         adaptiveHeight={true}
         arrows={false}
+        speed={500}
+        focusOnSelect={false}
+        cssEase="linear"
+        slidesToScroll={1}
+        slidesToShow={1}
       >
         {windowWidth !== "undefined" &&
           photos?.map((img: any, index: number) => {

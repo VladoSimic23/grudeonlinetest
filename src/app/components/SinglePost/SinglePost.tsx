@@ -14,7 +14,6 @@ const SinglePost = async ({ slug }: any) => {
   removedGal(".gallery").remove();
   const modH = removedGal.html();
   const $ = cheerio.load(thePost?.content);
-  console.log(thePost);
 
   // // Extract image URLs
   const images: any = [];
@@ -30,7 +29,7 @@ const SinglePost = async ({ slug }: any) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
   };

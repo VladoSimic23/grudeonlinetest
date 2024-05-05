@@ -2,7 +2,8 @@ import { getPostsByCategory } from "@/app/lib/service";
 import Image from "next/image";
 import Link from "next/link";
 import mobileStyles from "../../css/mobile/mobile.module.css";
-import { FaComments } from "react-icons/fa";
+import { FaComments, FaPhotoVideo } from "react-icons/fa";
+import { MdOutlinePhoto } from "react-icons/md";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { categoryStyles } from "@/app/lib/helpers";
 
