@@ -71,8 +71,17 @@
   border-bottom: 1px solid rgb(219, 219, 219);
   padding: 15px 0;
   margin-bottom: 5px;
+  animation: fadeIn 1.5s;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .singleMobilePostBottom {
   font-size: 13px;
   padding: 5px;
@@ -91,6 +100,55 @@
      object-fit: cover;
 }
 
+.loadMoreLoading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100000;
+  background: black;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+}
+.loadMoreLoading h2 {
+  text-align: center;
+}
+.loadMoreLoading h2 span {
+  padding: 5px;
+  top: 15px;
+  display: inline-block;
+  position: relative;
+  left: -9999px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ea8624;
+  color: #ea8624;
+  box-shadow: 9999px 0 0 -5px;
+  animation: dotPulse 1s infinite linear;
+  margin-right: 10px;
+}
+.loadMoreLoading h2 span:nth-child(1) {
+  animation-delay: 0.25s;
+}
+.loadMoreLoading h2 span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.loadMoreLoading h2 span:nth-child(3) {
+  animation-delay: 0.75s;
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 9999px 0 0 1px;
+  }
+  60%, 100% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+}
 .loadMoreBtn {
   margin-top: 40px;
   width: 100%;

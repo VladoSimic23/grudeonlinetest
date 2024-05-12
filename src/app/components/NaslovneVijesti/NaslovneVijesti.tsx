@@ -6,6 +6,7 @@ import { formatDateToCroatian } from "@/app/lib/utils";
 import { getPopularPosts } from "@/app/lib/service";
 import Image from "next/image";
 import { FaComments } from "react-icons/fa";
+import defaultImage from "../../../../public/noImage.jpg";
 
 const NaslovneVijesti = async () => {
   const data = await getPopularPosts(5);
@@ -22,11 +23,13 @@ const NaslovneVijesti = async () => {
               <div className={styles.naslovnicaOverly}></div>
               <div className={`${styles.naslovnica1}`}>
                 <Image
-                  src={data[0]?.featuredImage?.node?.sourceUrl}
+                  src={
+                    data[0]?.featuredImage?.node?.sourceUrl
+                      ? data[0]?.featuredImage?.node?.sourceUrl
+                      : defaultImage
+                  }
                   width={400}
                   height={250}
-                  // fill
-                  // sizes="auto"
                   priority={true}
                   alt={data[0]?.title}
                 />

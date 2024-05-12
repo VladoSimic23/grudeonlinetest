@@ -16,6 +16,7 @@ import categoryStylesCss from "../../css/categoryCss/categoryCss.module.css";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { categoryStyles } from "@/app/lib/helpers";
+import defaultImage from "../../../../public/noImage.jpg";
 
 const MobilePostListCategory = ({ category }: { category: string }) => {
   const [numOfPosts, setPostNum] = useState(4);
@@ -33,7 +34,7 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
 
   const handleScrollToLastPost = useCallback(() => {
     if (prevData.length > 0) {
-      const lastPostIndex = prevData.length - 1;
+      const lastPostIndex = prevData.length - 2;
       scrollToPost(lastPostIndex);
     }
   }, [prevData]);
@@ -43,7 +44,7 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
   }, [data, handleScrollToLastPost]);
 
   const handleClick = () => {
-    setPostNum((prev) => prev + 1);
+    setPostNum((prev) => prev + 2);
     setPrevData([...theData]);
     setTheData(data);
   };
@@ -71,7 +72,11 @@ const MobilePostListCategory = ({ category }: { category: string }) => {
             <Link href={`/${item.slug}`}>
               <div className={styles.relativeEle}>
                 <Image
-                  src={item.featuredImage.node.sourceUrl}
+                  src={
+                    item?.featuredImage?.node?.sourceUrl
+                      ? item?.featuredImage?.node?.sourceUrl
+                      : defaultImage
+                  }
                   alt={item.title}
                   width={315}
                   height={280}

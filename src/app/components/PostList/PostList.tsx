@@ -9,6 +9,7 @@ import { formatDateToCroatian } from "@/app/lib/utils";
 import { isMobileDevice } from "@/app/lib/deviceCheck";
 import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import { categoryStyles } from "@/app/lib/helpers";
+import defaultImage from "../../../../public/noImage.jpg";
 
 export async function getData(category: string, nums: number) {
   const res = await getPostsByCategory(category, nums);
@@ -29,7 +30,6 @@ const PostList = async ({
 }) => {
   const data = await getData(category, amount);
   const isMobile = isMobileDevice();
-  console.log(data);
 
   return (
     <div className={categoryStylesCss.postListPadding}>
@@ -43,7 +43,11 @@ const PostList = async ({
               <Link href={`/${item.slug}`}>
                 <div className={styles.relativeEle}>
                   <Image
-                    src={item.featuredImage.node.sourceUrl}
+                    src={
+                      item?.featuredImage?.node?.sourceUrl
+                        ? item?.featuredImage?.node?.sourceUrl
+                        : defaultImage
+                    }
                     alt={item.title}
                     width={(isMobile && 190) || (!isMobile && 315) || 0}
                     //{isMobile && width={150}}

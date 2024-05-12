@@ -3,24 +3,26 @@ import Link from "next/link";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
+import defaultImage from "../../../../../public/noImage.jpg";
 
 const GalerijeNaslovnaDetails = async ({ data }: any) => {
-  const {
-    title,
-    slug,
-    date,
-    featuredImage: {
-      node: { sourceUrl },
-    },
-  } = data;
+  const { title, slug, date, featuredImage } = data;
+
   return (
     <div className={nasStyles.galerijeDetails}>
-      {/* <div className={`${nasStyles.naslovnaOverlay}`}>
-      </div> */}
       <div className={`${nasStyles.grudeOnlineContent} ${nasStyles.ostalo}`}>
         <Link href={`/${slug}`}>
           <div className={nasStyles.imageOverlay}></div>
-          <Image src={sourceUrl} width={300} height={160} alt={title} />
+          <Image
+            src={
+              featuredImage?.node?.sourceUrl
+                ? featuredImage?.node?.sourceUrl
+                : defaultImage
+            }
+            width={300}
+            height={160}
+            alt={title}
+          />
         </Link>
         <div className={nasStyles.galerijeContentNaslovna}>
           <h3>

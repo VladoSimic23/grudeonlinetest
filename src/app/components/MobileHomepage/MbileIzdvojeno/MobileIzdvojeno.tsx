@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "../../../css/mobile/mobile.module.css";
 import Link from "next/link";
+import defaultImage from "../../../../../public/noImage.jpg";
 
 const MobileIzdvojeno = async () => {
   const data = await getPostsByCategory("izdvojeno", 5);
@@ -15,7 +16,11 @@ const MobileIzdvojeno = async () => {
             <h2>IZDVOJENO</h2>
 
             <Image
-              src={data[0]?.featuredImage?.node?.sourceUrl}
+              src={
+                data[0]?.featuredImage?.node?.sourceUrl
+                  ? data[0]?.featuredImage?.node?.sourceUrl
+                  : defaultImage
+              }
               width={300}
               height={200}
               alt={"Izdvojeno Slika 0"}
@@ -33,7 +38,11 @@ const MobileIzdvojeno = async () => {
                   <div className={styles.img2Izdvojeno}>
                     <h2>IZDVOJENO</h2>
                     <Image
-                      src={item?.featuredImage?.node?.sourceUrl}
+                      src={
+                        item?.featuredImage?.node?.sourceUrl
+                          ? item?.featuredImage?.node?.sourceUrl
+                          : defaultImage
+                      }
                       width={200}
                       height={100}
                       alt={`Izdvojeno Slika ${index}`}

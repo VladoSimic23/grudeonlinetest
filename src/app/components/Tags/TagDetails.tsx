@@ -5,6 +5,7 @@ import styles from "../../css/mainCss/mainStyle.module.css";
 import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import defaultImage from "../../../../public/noImage.jpg";
 
 export const metadata: Metadata = {
   title: "Tags",
@@ -27,7 +28,11 @@ const TagDetails = async ({ tag }: { tag: string }) => {
               <Link href={`/${item.slug}`}>
                 <div className={styles.relativeEle}>
                   <Image
-                    src={item.featuredImage.node.sourceUrl}
+                    src={
+                      item?.featuredImage?.node?.sourceUrl
+                        ? item?.featuredImage?.node?.sourceUrl
+                        : defaultImage
+                    }
                     alt={item.title}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     fill

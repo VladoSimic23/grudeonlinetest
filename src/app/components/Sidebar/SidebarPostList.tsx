@@ -3,6 +3,7 @@ import styles from "../../css/mainCss/mainStyle.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { FaComments } from "react-icons/fa";
+import defaultImage from "../../../../public/noImage.jpg";
 
 const SidebarPostList = async ({ data }: any) => {
   return (
@@ -14,7 +15,11 @@ const SidebarPostList = async ({ data }: any) => {
             <div>
               <Link href={`/${item?.slug}`}>
                 <Image
-                  src={item?.featuredImage?.node?.sourceUrl}
+                  src={
+                    item?.featuredImage?.node?.sourceUrl
+                      ? item?.featuredImage?.node?.sourceUrl
+                      : defaultImage
+                  }
                   alt={item?.title}
                   width={100}
                   height={100}

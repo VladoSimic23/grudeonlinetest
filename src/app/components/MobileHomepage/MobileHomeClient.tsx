@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FaComments } from "react-icons/fa";
 import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
-import { daysInWeek } from "date-fns/constants";
+import defaultImage from "../../../../public/noImage.jpg";
 import { categoryStyles } from "@/app/lib/helpers";
 
 const MobileHomeClient = () => {
@@ -17,6 +17,7 @@ const MobileHomeClient = () => {
   const category = "Grude Online";
   const [prevData, setPrevData] = useState<any[]>([]);
   const buttonRef: any = useRef(null);
+  const [loadingEnd, setLoadingEnd] = useState(true);
 
   // Use the custom SWR hook with the URL, category, and numberOfPosts
   const { data, error, isLoading } = useCustomSWR3({
@@ -28,11 +29,22 @@ const MobileHomeClient = () => {
   const handleScrollToLastPost = useCallback(() => {
     if (prevData.length > 0) {
       const lastPostIndex = prevData.length - 4;
-      setTimeout(() => {
-        scrollToPost(lastPostIndex);
-      }, 100);
+      //setTimeout(() => {
+      scrollToPost(lastPostIndex);
+      //}, 100);
     }
   }, [prevData]);
+
+  // useEffect(() => {
+  //   if (isLoading) {
+  //     setLoadingEnd(true);
+  //   }
+  //   if (!isLoading) {
+  //     setTimeout(() => {
+  //       setLoadingEnd(false);
+  //     }, 1000);
+  //   }
+  // }, [isLoading]);
 
   useEffect(() => {
     handleScrollToLastPost();
@@ -67,7 +79,16 @@ const MobileHomeClient = () => {
   //   window.scrollTo(0, scrollPosition);
   // }, [theData]);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div className={mobileStyles.loadMoreLoading}>
+        <h2>
+          <span></span>
+          <span></span>
+          <span></span>
+        </h2>
+      </div>
+    );
   if (error) return <div>Loading more posts not available</div>;
   if (!theData) return <div>No data available</div>;
   // if (morePostsLoading) {
@@ -90,7 +111,11 @@ const MobileHomeClient = () => {
                 className={mobileStyles.mobilePostLink}
               >
                 <Image
-                  src={item?.featuredImage?.node?.sourceUrl}
+                  src={
+                    item?.featuredImage?.node?.sourceUrl
+                      ? item?.featuredImage?.node?.sourceUrl
+                      : defaultImage
+                  }
                   width={190}
                   height={200}
                   // fill

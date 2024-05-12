@@ -5,6 +5,7 @@ import mobileStyles from "../../css/mobile/mobile.module.css";
 import { FaComments } from "react-icons/fa";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { categoryStyles } from "@/app/lib/helpers";
+import defaultImage from "../../../../public/noImage.jpg";
 
 const MobileComponent = async () => {
   const data = await getRecentPostsHomepage(5);
@@ -21,7 +22,11 @@ const MobileComponent = async () => {
                 className={mobileStyles.mobilePostLink}
               >
                 <Image
-                  src={item?.featuredImage?.node?.sourceUrl}
+                  src={
+                    item?.featuredImage?.node?.sourceUrl
+                      ? item?.featuredImage?.node?.sourceUrl
+                      : defaultImage
+                  }
                   width={190}
                   height={200}
                   alt={item.title}

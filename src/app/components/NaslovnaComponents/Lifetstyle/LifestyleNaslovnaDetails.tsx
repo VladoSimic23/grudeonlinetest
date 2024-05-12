@@ -3,6 +3,7 @@ import Link from "next/link";
 import nasStyles from "../../../css/naslovnicaCss/naslovnica.module.css";
 import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
+import defaultImage from "../../../../../public/noImage.jpg";
 
 const LifestyleNaslovnaDetails = async ({ data }: any) => {
   const {
@@ -18,7 +19,12 @@ const LifestyleNaslovnaDetails = async ({ data }: any) => {
       <div className={`${nasStyles.naslovnaOverlay}`}>
         <Link href={`/${slug}`}>
           <div className={nasStyles.imageOverlay}></div>
-          <Image src={sourceUrl} width={220} height={120} alt={title} />
+          <Image
+            src={sourceUrl ? sourceUrl : defaultImage}
+            width={220}
+            height={120}
+            alt={title}
+          />
         </Link>
       </div>
       <div className={`${nasStyles.grudeOnlineContent} ${nasStyles.ostalo}`}>

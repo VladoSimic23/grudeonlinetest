@@ -2,10 +2,9 @@ import { getPostsByCategory } from "@/app/lib/service";
 import Image from "next/image";
 import Link from "next/link";
 import mobileStyles from "../../css/mobile/mobile.module.css";
-import { FaComments, FaPhotoVideo } from "react-icons/fa";
-import { MdOutlinePhoto } from "react-icons/md";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { categoryStyles } from "@/app/lib/helpers";
+import defaultImage from "../../../../public/noImage.jpg";
 
 const MobilePromo = async () => {
   const promoNews = await getPostsByCategory("promo", 3);
@@ -22,7 +21,11 @@ const MobilePromo = async () => {
                 className={mobileStyles.mobilePostLink}
               >
                 <Image
-                  src={item?.featuredImage?.node?.sourceUrl}
+                  src={
+                    item?.featuredImage?.node?.sourceUrl
+                      ? item?.featuredImage?.node?.sourceUrl
+                      : defaultImage
+                  }
                   width={190}
                   height={200}
                   alt={item.title}

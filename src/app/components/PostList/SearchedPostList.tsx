@@ -6,9 +6,11 @@ import Image from "next/image";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { FaComments } from "react-icons/fa";
 import { isMobileDevice } from "@/app/lib/deviceCheck";
+import defaultImage from "../../../../public/noImage.jpg";
 
 const SearchedPostList = ({ data }: { data: any }) => {
   const isMobile = isMobileDevice();
+
   return (
     <div>
       {data?.map((item: any, idx: number) => {
@@ -20,7 +22,11 @@ const SearchedPostList = ({ data }: { data: any }) => {
             <Link href={`/${item?.slug}`}>
               <div className={styles.relativeEle}>
                 <Image
-                  src={item?.featuredImage?.node?.sourceUrl}
+                  src={
+                    item?.featuredImage?.node?.sourceUrl
+                      ? item?.featuredImage?.node?.sourceUrl
+                      : defaultImage
+                  }
                   alt={item?.title}
                   width={315}
                   height={280}

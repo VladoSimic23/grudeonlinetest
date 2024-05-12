@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 const SinglePostCarousel = dynamic(() => import("./SinglePostCarousel"), {
   ssr: false,
 });
+import defaultImage from "../../../../public/noImage.jpg";
 
 const SinglePost = async ({ slug }: any) => {
   const thePost = await getSinglePost(slug);
@@ -26,13 +27,13 @@ const SinglePost = async ({ slug }: any) => {
     });
   });
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 300,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  // };
 
   return (
     <div>
@@ -42,7 +43,11 @@ const SinglePost = async ({ slug }: any) => {
       </div>
       <div className={styles.heroEle}>
         <Image
-          src={thePost?.featuredImage?.node?.sourceUrl}
+          src={
+            thePost?.featuredImage?.node?.sourceUrl
+              ? thePost?.featuredImage?.node?.sourceUrl
+              : defaultImage
+          }
           alt={thePost?.title}
           sizes="1000px"
           fill

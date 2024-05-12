@@ -6,6 +6,7 @@ import Image from "next/image";
 import GospodarstvoNaslovnaDetails from "./GospodarstvoNaslovnaDetails";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { getPostsByCategory } from "@/app/lib/service";
+import defaultImage from "../../../../../public/noImage.jpg";
 
 const GospodarstvoNaslovna = async () => {
   const data = await getPostsByCategory("gospodarstvo", 6);
@@ -23,7 +24,11 @@ const GospodarstvoNaslovna = async () => {
                 <Link href={`/${data[0].slug}`}>
                   <div className={nasStyles.imageOverlay}></div>
                   <Image
-                    src={data[0].featuredImage.node.sourceUrl}
+                    src={
+                      data[0].featuredImage.node.sourceUrl
+                        ? data[0].featuredImage.node.sourceUrl
+                        : defaultImage
+                    }
                     width={260}
                     height={120}
                     alt={data[0].title}

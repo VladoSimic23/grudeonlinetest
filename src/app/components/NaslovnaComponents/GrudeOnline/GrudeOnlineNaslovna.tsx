@@ -6,6 +6,7 @@ import Image from "next/image";
 import GrudeOnlineNaslovnaDetails from "./GrudeOnlineNaslovnaDetails";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { getPostsByCategory } from "@/app/lib/service";
+import defaultImage from "../../../../../public/noImage.jpg";
 
 const GrudeOnlineNaslovna = async () => {
   const data = await getPostsByCategory("grude-online", 5);
@@ -21,7 +22,11 @@ const GrudeOnlineNaslovna = async () => {
             <Link href={`/${data[0].slug}`}>
               <div className={nasStyles.imageOverlay}></div>
               <Image
-                src={data[0].featuredImage.node.sourceUrl}
+                src={
+                  data[0].featuredImage.node.sourceUrl
+                    ? data[0].featuredImage.node.sourceUrl
+                    : defaultImage
+                }
                 width={300}
                 height={200}
                 alt={data[0].title}

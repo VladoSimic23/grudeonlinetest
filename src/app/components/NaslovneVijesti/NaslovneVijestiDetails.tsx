@@ -5,6 +5,7 @@ import Link from "next/link";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import Image from "next/image";
 import { FaComments } from "react-icons/fa";
+import defaultImage from "../../../../public/noImage.jpg";
 
 const NaslovneVijestiDetails = async ({ data }: any) => {
   return (
@@ -12,7 +13,11 @@ const NaslovneVijestiDetails = async ({ data }: any) => {
       <div className={styles.naslovnicaOverly}></div>
       <div className={styles.naslovnica}>
         <Image
-          src={data?.featuredImage?.node?.sourceUrl}
+          src={
+            data?.featuredImage?.node?.sourceUrl
+              ? data?.featuredImage?.node?.sourceUrl
+              : defaultImage
+          }
           width={250}
           height={150}
           priority={true}

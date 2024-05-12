@@ -141,6 +141,9 @@
   
     .navItems.mobileOpen {
       display: flex;
+      a {
+        padding:10px 0;
+      }
     }
   
     .mobileMenuToggle {
