@@ -7,7 +7,7 @@ export async function getData(slug: string) {
   const res = await getSinglePost(slug);
 
   if (!res) {
-    return;
+    throw new Error("Failed to fetch data");
   }
 
   return res;

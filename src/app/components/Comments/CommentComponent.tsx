@@ -5,17 +5,15 @@ import Image from "next/image";
 import { fetchClientComments } from "@/app/lib/fetchDb";
 import CommentDetails from "./CommentDetails";
 
-const CommentComponent = ({ post, isMobile }: any) => {
-  const [comments, setComments] = useState<any[]>([]);
+const CommentComponent = ({ post }: any) => {
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    if (post?.slug) {
-      const getData = async () => {
-        const data = await fetchClientComments(post?.slug);
-        setComments(data);
-      };
-      getData();
-    }
+    const getData = async () => {
+      const data = await fetchClientComments(post?.slug);
+      setComments(data);
+    };
+    getData();
   }, [post?.slug]);
 
   if (!post?.comments?.nodes) {
@@ -65,13 +63,9 @@ const CommentComponent = ({ post, isMobile }: any) => {
           </div>
         );
       })} */}
-      {comments.length > 0 &&
-        comments?.map((item: any, idx: number) => {
-          if (!item) {
-            return;
-          }
-          return <CommentDetails key={idx} item={item} />;
-        })}
+      {comments?.map((item: any, idx: number) => {
+        return <CommentDetails key={idx} item={item} />;
+      })}
     </div>
   );
 };

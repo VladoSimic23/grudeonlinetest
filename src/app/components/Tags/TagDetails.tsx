@@ -6,8 +6,6 @@ import categoryStyles from "../../css/categoryCss/categoryCss.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import defaultImage from "../../../../public/noImage.jpg";
-import { formatDateToCroatian } from "@/app/lib/utils";
-import { isMobileDevice } from "@/app/lib/deviceCheck";
 
 export const metadata: Metadata = {
   title: "Tags",
@@ -16,7 +14,6 @@ export const metadata: Metadata = {
 
 const TagDetails = async ({ tag }: { tag: string }) => {
   const data = await getAllPostsByTags(tag);
-  const isMobile = isMobileDevice();
 
   return (
     <div className={styles.postList}>
@@ -44,17 +41,14 @@ const TagDetails = async ({ tag }: { tag: string }) => {
                   <div className={styles.hoverOverlay}></div>
                 </div>
               </Link>
-
               <div className={categoryStyles.flexCategory}>
                 <Link href={`/${item.slug}`}>{item.title}</Link>
-                <span>{formatDateToCroatian(item?.date)}</span>
-                {!isMobile && (
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: item?.content.slice(0, 200) + " ...",
-                    }}
-                  ></div>
-                )}
+                <span>{item.date}</span>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: item?.content.slice(0, 200) + " ...",
+                  }}
+                ></div>
               </div>
             </div>
           );
