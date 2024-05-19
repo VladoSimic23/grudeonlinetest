@@ -2,67 +2,40 @@
 import React from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
+import { isMobileDevice } from "@/app/lib/deviceCheck";
 
-export interface CommentItem {
-  author: {
-    node: {
-      name: string;
-    };
-  };
-  date: string;
-  content: string;
-}
-
-const CommentDetails = ({
-  item,
-  isMobile,
-}: {
-  item: CommentItem;
-  isMobile: any;
-}) => {
-  if (!item || !item.author || !item.date || !item.content) {
-    return <h2>Učitavam komentare...</h2>;
-  }
+const CommentDetails = ({ item }: any) => {
+  //const isMobile = isMobileDevice();
 
   return (
     <div className={commentStyles.commentWrapper}>
       <div className={commentStyles.displayComments}>
-        {isMobile && (
-          <div>
-            <div className={commentStyles.mobileComments}>
-              <Image
-                src={"/none.jpg"}
-                width={60}
-                height={60}
-                alt="commentIcon"
-              />{" "}
-              <div>
-                <h4>{item?.author?.node?.name}</h4>
-                <span>{item?.date}</span>
-              </div>{" "}
-            </div>
-            <div className={commentStyles.mobileCommentsContent}>
-              <p>{item?.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}</p>{" "}
-            </div>
-          </div>
-        )}
-        {!isMobile && (
-          <>
+        {/* {isMobile && ( */}
+        <div>
+          <div className={commentStyles.mobileComments}>
+            <Image src={"/none.jpg"} width={60} height={60} alt="commentIcon" />{" "}
             <div>
-              <Image
-                src={"/none.jpg"}
-                width={60}
-                height={60}
-                alt="commentIcon"
-              />
-            </div>
-            <div className={commentStyles.commentDetails}>
               <h4>{item?.author?.node?.name}</h4>
               <span>{item?.date}</span>
-              <p>{item?.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}</p>
-            </div>
-          </>
-        )}
+            </div>{" "}
+          </div>
+          <div className={commentStyles.mobileCommentsContent}>
+            <p>{item?.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}</p>{" "}
+          </div>
+        </div>
+        {/* )}
+        {!isMobile && ( */}
+        <>
+          <div>
+            <Image src={"/none.jpg"} width={60} height={60} alt="commentIcon" />
+          </div>
+          <div className={commentStyles.commentDetails}>
+            <h4>{item?.author?.node?.name}</h4>
+            <span>{item?.date}</span>
+            <p>{item?.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}</p>
+          </div>
+        </>
+        {/* )} */}
       </div>
 
       <div>

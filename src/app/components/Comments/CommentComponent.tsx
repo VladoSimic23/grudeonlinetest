@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
 import { fetchClientComments } from "@/app/lib/fetchDb";
-import CommentDetails, { CommentItem } from "./CommentDetails";
+import CommentDetails from "./CommentDetails";
 
 const CommentComponent = ({ post, isMobile }: any) => {
-  const [comments, setComments] = useState<CommentItem[]>([]);
+  const [comments, setComments] = useState<any[]>([]);
 
   useEffect(() => {
     if (post?.slug) {
@@ -66,11 +66,11 @@ const CommentComponent = ({ post, isMobile }: any) => {
         );
       })} */}
       {comments.length > 0 &&
-        comments?.map((item: CommentItem, idx: number) => {
+        comments?.map((item: any, idx: number) => {
           if (!item) {
             return;
           }
-          return <CommentDetails key={idx} item={item} isMobile={isMobile} />;
+          return <CommentDetails key={idx} item={item} />;
         })}
     </div>
   );

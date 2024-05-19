@@ -2,7 +2,7 @@ import CommentComponent from "@/app/components/Comments/CommentComponent";
 import CommentForm from "@/app/components/Comments/CommentsForm";
 import SinglePost from "@/app/components/SinglePost/SinglePost";
 import TagsComponent from "@/app/components/Tags/TagsComp";
-import { isMobileDevice } from "@/app/lib/deviceCheck";
+//import { isMobileDevice } from "@/app/lib/deviceCheck";
 import { getAllPosts, getSinglePost } from "@/app/lib/service";
 import React, { Suspense } from "react";
 
@@ -18,7 +18,7 @@ const SingleCrnaKronika = async ({ params }: any) => {
   const category = "crna-kronika";
   const { slug } = params;
   const thePost = await getSinglePost(slug);
-  const isMobile = isMobileDevice();
+  // const isMobile = isMobileDevice();
 
   return (
     <div>
@@ -30,7 +30,7 @@ const SingleCrnaKronika = async ({ params }: any) => {
           <TagsComponent slug={slug} />
         </Suspense>
         {thePost?.commentStatus === "open" && (
-          <CommentComponent post={thePost} isMobile={isMobile} />
+          <CommentComponent post={thePost} />
         )}
         {thePost?.commentStatus === "open" && (
           <CommentForm slug={slug} id={thePost?.postId} />
