@@ -81,26 +81,14 @@ export async function getSinglePost(slug: string) {
   };
   try {
     const data = await fetchAPI(query, { variables });
-
     if (!data || !data.postBy) {
-      //console.warn("Post not found for slug:", slug); // Use console.warn instead of throwing an error
-      return null; // Return null or an empty object instead of throwing an error
+      throw new Error("Post not found");
     }
     return data.postBy;
   } catch (error) {
     console.error("Error fetching single post:", error);
-    return null; // Return null or an empty object instead of throwing an error
+    throw new Error("Failed to fetch single post");
   }
-  // try {
-  //   const data = await fetchAPI(query, { variables });
-  //   if (!data || !data.postBy) {
-  //     throw new Error("Post not found");
-  //   }
-  //   return data.postBy;
-  // } catch (error) {
-  //   console.error("Error fetching single post:", error);
-  //   throw new Error("Failed to fetch single post");
-  // }
   // try {
   //   const data = await fetchAPI(query, { variables });
   //   return data?.postBy; // Adjust this based on the actual response structure
