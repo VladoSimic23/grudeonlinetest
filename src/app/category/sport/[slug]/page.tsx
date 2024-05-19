@@ -20,6 +20,7 @@ import React from "react";
 import { Suspense } from "react";
 import styles from "../../../css/mainCss/mainStyle.module.css";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
+import { isMobileDevice } from "@/app/lib/deviceCheck";
 
 type Props = {
   params: { id: string };
@@ -52,6 +53,7 @@ const SingleSport = async ({ params }: any) => {
   const category = "sport";
   const { slug } = params;
   const thePost = await getSinglePost(slug);
+  const isMobile = isMobileDevice();
 
   return (
     <div className={styles.grid23}>
@@ -64,7 +66,7 @@ const SingleSport = async ({ params }: any) => {
         </Suspense>
 
         {thePost?.commentStatus === "open" && (
-          <CommentComponent post={thePost} />
+          <CommentComponent post={thePost} isMobile={isMobile} />
         )}
         {thePost?.commentStatus === "open" && (
           <CommentForm slug={slug} id={thePost?.postId} />

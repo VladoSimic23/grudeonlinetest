@@ -27,7 +27,7 @@ export const fetchClientComments = async (contentName: string) => {
     });
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      return;
     }
 
     const result = await response.json();
@@ -78,7 +78,7 @@ export const fetchClientApi = async (category: string, numOfPosts: number) => {
     });
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      return;
     }
 
     const result = await response.json();
@@ -134,7 +134,7 @@ export async function fetchAPI2(query: string, variables: any = {}) {
     const json = await res.json();
 
     if (json.errors) {
-      throw new Error(`GraphQL Error: ${JSON.stringify(json.errors)}`);
+      return;
     }
 
     return json.data;
@@ -190,7 +190,7 @@ export const fetcher = async (
     });
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      return;
     }
 
     const result = await response.json();
@@ -246,7 +246,7 @@ export const fetcher2 = async (
     console.log("API Response:", response);
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      return;
     }
 
     const result = await response.json();

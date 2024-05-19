@@ -23,6 +23,7 @@ const MobileIzdvojeno = async () => {
               }
               width={300}
               height={200}
+              quality={50}
               alt={"Izdvojeno Slika 0"}
             />
           </div>

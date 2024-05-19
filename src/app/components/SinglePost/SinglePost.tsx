@@ -11,7 +11,7 @@ import defaultImage from "../../../../public/noImage.jpg";
 
 const SinglePost = async ({ slug }: any) => {
   const thePost = await getSinglePost(slug);
-  const removedGal = cheerio.load(thePost?.content);
+  const removedGal = cheerio.load(thePost?.content) || "";
   removedGal(".gallery").remove();
   const modH = removedGal.html();
   const $ = cheerio.load(thePost?.content);

@@ -1,11 +1,28 @@
-"use server";
+"use client";
 import React from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
-import { isMobileDevice } from "@/app/lib/deviceCheck";
 
-const CommentDetails = ({ item }: any) => {
-  const isMobile = isMobileDevice();
+export interface CommentItem {
+  author: {
+    node: {
+      name: string;
+    };
+  };
+  date: string;
+  content: string;
+}
+
+const CommentDetails = ({
+  item,
+  isMobile,
+}: {
+  item: CommentItem;
+  isMobile: any;
+}) => {
+  if (!item || !item.author || !item.date || !item.content) {
+    return <h2>Učitavam komentare...</h2>;
+  }
 
   return (
     <div className={commentStyles.commentWrapper}>

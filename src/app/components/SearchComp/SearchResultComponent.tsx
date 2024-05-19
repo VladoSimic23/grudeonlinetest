@@ -1,7 +1,6 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import navStyles from "../../css/nav/nav.module.css";
 import SearchedPostList from "@/app/components/PostList/SearchedPostList";
 import styles from "../../css/mainCss/mainStyle.module.css";
 import { temporaryApiUrl } from "@/app/lib/fetchDb";

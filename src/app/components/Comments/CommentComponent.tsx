@@ -3,17 +3,19 @@ import { useEffect, useState } from "react";
 import commentStyles from "../../css/commentsCss/comments.module.css";
 import Image from "next/image";
 import { fetchClientComments } from "@/app/lib/fetchDb";
-import CommentDetails from "./CommentDetails";
+import CommentDetails, { CommentItem } from "./CommentDetails";
 
-const CommentComponent = ({ post }: any) => {
-  const [comments, setComments] = useState([]);
+const CommentComponent = ({ post, isMobile }: any) => {
+  const [comments, setComments] = useState<CommentItem[]>([]);
 
   useEffect(() => {
-    const getData = async () => {
-      const data = await fetchClientComments(post?.slug);
-      setComments(data);
-    };
-    getData();
+    if (post?.slug) {
+      const getData = async () => {
+        const data = await fetchClientComments(post?.slug);
+        setComments(data);
+      };
+      getData();
+    }
   }, [post?.slug]);
 
   if (!post?.comments?.nodes) {
@@ -63,9 +65,13 @@ const CommentComponent = ({ post }: any) => {
           </div>
         );
       })} */}
-      {comments?.map((item: any, idx: number) => {
-        return <CommentDetails key={idx} item={item} />;
-      })}
+      {comments.length > 0 &&
+        comments?.map((item: CommentItem, idx: number) => {
+          if (!item) {
+            return;
+          }
+          return <CommentDetails key={idx} item={item} isMobile={isMobile} />;
+        })}
     </div>
   );
 };

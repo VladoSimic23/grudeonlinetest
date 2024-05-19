@@ -65,6 +65,7 @@
 
 .mobileComments {
   display: flex;
+  align-items: center;
 }
 .mobileComments img {
   margin-right: 20px;
@@ -100,7 +101,7 @@
     height: 50px;
   }
   .commentWrapper button {
-    padding: 4px 18px;
+    padding: 5px 18px 3px 18px;
   }
   .commentWrapper button img {
     width: 18px;

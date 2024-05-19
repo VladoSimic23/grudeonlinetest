@@ -4,7 +4,11 @@ import { useState } from "react";
 import navStyles from "../../css/nav/nav.module.css";
 import { useDebouncedCallback } from "use-debounce";
 
-const SearchBar: React.FC = () => {
+const SearchBar = ({
+  setMenu,
+}: {
+  setMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const router: any = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const searchParams = useSearchParams();
@@ -20,6 +24,7 @@ const SearchBar: React.FC = () => {
 
     try {
       router.push(`/search/?s=${encodeURIComponent(searchQuery)}`);
+      setMenu(false);
     } catch (error: any) {
       console.error("Error navigating to search:", error.message);
     }

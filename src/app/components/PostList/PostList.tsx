@@ -7,7 +7,6 @@ import Image from "next/image";
 import { FaComments } from "react-icons/fa";
 import { formatDateToCroatian } from "@/app/lib/utils";
 import { isMobileDevice } from "@/app/lib/deviceCheck";
-import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import { categoryStyles } from "@/app/lib/helpers";
 import defaultImage from "../../../../public/noImage.jpg";
 
@@ -15,7 +14,7 @@ export async function getData(category: string, nums: number) {
   const res = await getPostsByCategory(category, nums);
 
   if (!res) {
-    throw new Error("Failed to fetch data..");
+    return;
   }
 
   return res;

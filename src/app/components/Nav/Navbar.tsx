@@ -82,8 +82,10 @@ const Navbar = () => {
               </div>
             </div>
             {/**/}
-            {isSearch && windowSize.width > 993 && <SearchBar />}
-            {isMobileMenuOpen && <SearchBar />}
+            {isSearch && windowSize.width > 993 && (
+              <SearchBar setMenu={setIsMobileMenuOpen} />
+            )}
+            {isMobileMenuOpen && <SearchBar setMenu={setIsMobileMenuOpen} />}
 
             {!isSearch && windowSize.width > 993 && (
               <span
