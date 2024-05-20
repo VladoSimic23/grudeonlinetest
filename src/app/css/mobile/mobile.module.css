@@ -17,6 +17,34 @@
   margin-bottom: 0;
 }
 
+.floatRight {
+  right: 0 !important;
+}
+
+.hasPhoto {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.hasPhoto svg {
+  font-size: 22px;
+  color: white;
+  padding: 3px 8px 3px 8px;
+}
+
+.hasVideo {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 38px;
+}
+.hasVideo svg {
+  font-size: 22px;
+  color: white;
+  padding: 3px 8px 3px 8px;
+}
+
 .mobilePostSecondStyle {
   margin-bottom: 30px;
 }

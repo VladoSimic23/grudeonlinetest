@@ -26,6 +26,7 @@ export const fetcher3 = async ({
               title
               slug
               date
+              content
               featuredImage {
                 node {
                   sourceUrl(size: LARGE)

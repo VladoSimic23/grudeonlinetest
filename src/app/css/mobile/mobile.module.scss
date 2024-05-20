@@ -17,6 +17,33 @@
 .mobilePostSecondStyle:last-child {
     margin-bottom: 0;
 }
+.floatRight {
+    right: 0 !important;
+}
+.hasPhoto {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    svg {
+        font-size: 22px;
+        color: white;
+        //background: #000000b6;
+        padding: 3px 8px 3px 8px;
+    }
+}
+.hasVideo {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 38px;
+    svg {
+        font-size: 22px;
+        color: white;
+        //background: #000000b6;
+        padding: 3px 8px 3px 8px;
+    }
+}
 .mobilePostSecondStyle {
     margin-bottom: 30px;
     h4 {

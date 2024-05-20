@@ -117,6 +117,7 @@ export const getRecentPostsHomepage = async (numOfPosts: number) => {
           title
           slug
           date
+          content
           featuredImage {
             node {
               sourceUrl(size: LARGE)
